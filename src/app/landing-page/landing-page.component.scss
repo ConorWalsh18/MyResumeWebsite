@@ -1,0 +1,146 @@
+body{
+  overflow:hidden;
+}
+
+.pyramid{
+  $size: 100vw;
+  position:absolute;
+  right: 50vw;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  transform: translateX(0);
+  border-style: solid;
+  border-width: 0 $size $size*1.2 $size;
+  border-color: transparent transparent #E8A653 transparent;
+  z-index: 3;
+}
+
+.sand{
+  position:absolute;
+  bottom: -10vw;
+  width: 100%;
+  height: 20vw;
+  min-height: 8rem;
+  background:#FFBD4D;
+  z-index: 2;
+}
+
+.ternary-system{
+  position:absolute;
+  bottom:0;
+  right:17vw;
+}
+
+.sun{
+  position:relative;
+  border-radius:50%;
+  background:#FFDE72;
+}
+
+.sun.small{
+  position: absolute;
+  top: 9.2vw;
+  left: 4vw;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.sun.medium{
+  position: absolute;
+  top: 5vw;
+  left: 0vw;
+  width: 3rem;
+  height: 3rem;
+}
+
+.sun.big{
+  position: absolute;
+  top: 2vw;
+  left: 5vw;
+  width: 16vw;
+  max-width: 6rem;
+  height: 16vw;
+  max-height: 6rem;
+}
+
+.sun.super-big{
+  left: 10rem;
+  width:80vw;
+  max-width: 800px;
+  height:80vw;
+  max-height: 800px;
+}
+
+.text{
+  position: absolute;
+  width: auto;
+  top: 14vw;
+  right: 14.5vw;
+  bottom: calc(63vh);
+  font-size: 2.6rem;
+  z-index: 1;
+}
+
+.title{
+  text-align:center;
+  font-size: 1em;
+  font-family:'Oswald';
+  font-weight:300;
+  text-transform:uppercase;
+  line-height:1.3em;
+  margin:0;
+  color:#222;
+}
+
+.title strong{
+  display:block;
+  font-weight:700;
+  font-size:2em;
+  line-height:1em;
+}
+
+.title em{
+  font-style:normal;
+  font-weight:400;
+  font-size:1.899em;
+  line-height:1em;
+  letter-spacing:.29em;
+  margin-left:0.25em;
+}
+
+p{
+  position: absolute;
+  left: 50%;
+  transform: translateX(3.2em);
+  font-family:'Oswald';
+  font-size: 0.6em;
+  color:#222;
+  margin:0 17px;
+  padding:0;
+  text-align:right;
+}
+
+@media only screen and (orientation: portrait) {
+  .text{
+    right: 50%;
+    top: 10%;
+    transform: translateX(50%);
+    font-size: 7vw;
+  }
+  .title{ 
+    font-size: 1em;
+  }
+}
+
+.contact-container {  
+  position: absolute;
+  bottom: 18vw;
+  right: 24vw;
+  z-index: 1;
+}
+
+.fab, .fas {
+  font-size: 3rem;
+  padding-right: 14px;
+}
