@@ -1,4 +1,6 @@
 /* TODO: Move the CSS that should be global to styles.css at the end */
+/* TODO: Change all these conter: url... properties to actual imgs by moving the images folder
+         to the assets folder. */
 
 #giraffe {
     content: url(../images/giraffe.png);
@@ -35,20 +37,27 @@
     content: url(../images/male_phone.png);
 }
 
-#face {
-    content: url(../images/faceless_male.png);
+#face {    
+    width: 35%;
+    position: relative;
+    z-index: 1;
 }
 
 h1 {
-    font-family: 'Saira Extra Condensed', serif;
-    font-size: 120px;    
-}
+    font-size: 5em;
+    font-family: 'Oswald';
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1.3em;
+    text-align: left;
+    color: black;
+} 
 
-p {
-    font-family: 'Saira Extra Condensed', serif;
+p, em {
+    font-family:'Oswald';
     margin-left: 10px;
     font-size: 32px;
-    font-weight: 800;
+    font-weight: 400;
     text-align: justify;
     color: #CC5500;  /* Burnt Orange */
 }
@@ -59,7 +68,7 @@ p {
 }
 
 .text-item {
-    margin-bottom: 1px;
+    margin-bottom: 20px;
     margin-top: 1px;    
 }
 
@@ -93,15 +102,6 @@ p {
     60%{-webkit-transform: rotate(5deg);}
     80%{-webkit-transform: rotate(-5deg);}
     100%{-webkit-transform: rotate(0deg);} 
-}
-
-@keyframes swinging {
-    0%{transform: rotate(0deg);}
-    20%{transform: rotate(10deg);}
-    40%{transform: rotate(-10deg);}
-    60%{transform: rotate(5deg);}
-    80%{transform: rotate(-5deg);}
-    100%{transform: rotate(0deg);} 
 }
 
 @keyframes swinging {
@@ -158,3 +158,37 @@ p {
     z-index: 1;
     transform: scale(1.05);
 }
+
+.image-container {    
+    position: relative;
+    left: 30%;
+    text-align: center;
+}
+
+/* After the parallax transition switch to this class so it scales correctly */
+/* Also add the correct top and left properties */
+.static-top-face-text {
+    transform: translate(-50%, -50%);
+}
+
+.top-face-text, .bottom-face-text {
+    position: absolute;    
+    font-size: 10vh;
+    color: #CC5500;
+}
+
+.top-face-text {
+    bottom: 900px;
+    left: 39.5%;
+}
+
+.bottom-face-text {
+    top: 805px;
+    left: 45.5%;
+}
+
+@media screen and (max-width: 1250px) {
+    .top-face-text, .bottom-face-text {
+       font-size: 8vw;
+    }
+  }

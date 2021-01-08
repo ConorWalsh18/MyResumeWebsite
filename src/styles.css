@@ -5,5 +5,13 @@ section {
     overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
+    background-color: beige;
+}
+
+.section-seperator {
+    width: 100%;
+    height: 25vh;
+    background-color: beige;
+    z-index: 0;
 }

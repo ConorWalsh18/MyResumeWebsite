@@ -1,0 +1,118 @@
+/* reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  min-height: 100vh;
+  padding: 20px;
+
+  font-family: 'Oswald';
+}
+
+
+/* other */
+.info {
+  margin: 20px 0;
+  text-align: center;
+}
+
+p {
+  color: #2e2e2e;
+  margin-bottom: 20px;
+}
+
+
+/* block-$ */
+.block-effect {
+  font-size: calc(8px + 3vw);
+}
+
+.block-reveal {
+  --t: calc(var(--td) + var(--d));
+
+  color: transparent;
+  padding: 4px;
+
+  position: relative;
+  overflow: hidden;
+
+  animation: revealBlock 0s var(--t) forwards;
+}
+
+.block-reveal::after {
+  content: '';
+
+  width: 0%;
+  height: 100%;
+  padding-bottom: 4px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: var(--bc);
+  animation: revealingIn var(--td) var(--d) forwards, revealingOut var(--td) var(--t) forwards;  
+}
+
+
+/* animations */
+@keyframes revealBlock {
+  100% {
+    color: #0f0f0f;
+  }
+}
+
+@keyframes revealingIn {
+
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes revealingOut {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+
+}
+
+.block-reveal-container {
+    position: absolute;
+    top: 57%;
+    left: 3%;
+    width: 55%;
+    transform: translate(0px, -57%);
+}
+
+.block-header-text {
+    font-family: 'Oswald';
+    font-weight: 400;
+    text-align: justify;
+}
+
+.block-body-text {
+    font-family: 'Oswald';
+    margin-left: 4px;
+    margin-bottom: 10px;
+    font-size: 2vw;
+    font-weight: 100;
+}

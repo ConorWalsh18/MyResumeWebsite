@@ -53,6 +53,8 @@ export class MainComponent implements OnInit {
 
           // console.log("window.pageYOffset = ", window.pageYOffset);
 
+          //TODO: Decide if you want to reverse the about me text instead of just stopping it at the end of its section
+          // if (target[index].dataset.direction === 'vertical' && (target[index].dataset.section == "sectionFour" && window.pageYOffset < 3001)) {
           if (target[index].dataset.direction === 'vertical') {
             target[index].style.transform = 'translate3d(0px,'+pos+'px, 0px)';
           }          
@@ -74,7 +76,6 @@ export class MainComponent implements OnInit {
           else {
               posX = window.pageYOffset * Number(target[index].dataset.ratex);
               posY = window.pageYOffset * Number(target[index].dataset.ratey);              
-              // target[index].style.transform = 'translate3d('+posX+'px, 0px, 0px)';
 
               // console.log("posX = ", posX);
               // console.log("posY = ", posY);

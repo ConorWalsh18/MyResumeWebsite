@@ -44,6 +44,7 @@ body{
   left: 4vw;
   width: 1.5rem;
   height: 1.5rem;
+  background: #CC5500;
 }
 
 .sun.medium{
@@ -52,6 +53,7 @@ body{
   left: 0vw;
   width: 3rem;
   height: 3rem;
+  background: #CC5500;
 }
 
 .sun.big{
@@ -62,6 +64,7 @@ body{
   max-width: 6rem;
   height: 16vw;
   max-height: 6rem;
+  background: #CC5500;
 }
 
 .sun.super-big{
@@ -136,11 +139,15 @@ p{
 .contact-container {  
   position: absolute;
   bottom: 18vw;
-  right: 24vw;
+  right: 23.5vw;
   z-index: 1;
 }
 
 .fab, .fas {
   font-size: 3rem;
   padding-right: 14px;
+}
+
+.fab:hover, .fas:hover {
+  color: #CC5500
 }
