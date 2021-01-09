@@ -1,4 +1,3 @@
-import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,9 +10,12 @@ export class MainComponent implements OnInit {
   constructor() { }
 
   stopSwinging: boolean = false;
-  isScrolling: any;  
+  isScrolling: any;
+  showBlockReveal: boolean = false;
+  mainWindow: any;
 
   ngOnInit(): void {
+    this.mainWindow = window;
     //TODO: Break a lot of this logic out into their own methods
 
     var pictureFrame = document.getElementById("pictureFrame");
@@ -41,21 +43,33 @@ export class MainComponent implements OnInit {
         this.stopSwinging = true;
       }, 66);
 
-      //TODO: Rename some variables, clean up the comments/commented out code, and refactor some of the code
+      //TODO: Rename some variables, clean up the comments/commented out code, and refactor some of the code.
+      //TODO: Look into adding a reverse rate property and use that to reverse the direction instead of the wacky
+      //      equations we're creating now.
       var target = document.getElementsByName("parallax");
       var index = 0
       var length = target.length;
 
       for (index; index < length; index++) {      
-          var pos = window.pageYOffset * Number(target[index].dataset.rate);  //Add data-rate attribute to tag if this is needed
+          var pos = window.pageYOffset * Number(target[index].dataset.rate);
           var posX = 0;
           var posY = 0;
+          var reverseRate = 0;
 
           // console.log("window.pageYOffset = ", window.pageYOffset);
-
-          //TODO: Decide if you want to reverse the about me text instead of just stopping it at the end of its section
-          // if (target[index].dataset.direction === 'vertical' && (target[index].dataset.section == "sectionFour" && window.pageYOffset < 3001)) {
-          if (target[index].dataset.direction === 'vertical') {
+          
+          if (target[index].dataset.direction === 'vertical') {            
+            if (window.pageYOffset > 1000 && target[index].dataset.section == "sectionTwo") {                            
+              if (Number(target[index].dataset.rate) > 0) {
+                reverseRate = window.pageYOffset * Number(target[index].dataset.rate) - 50;
+                pos = 450 - reverseRate;
+              }
+              else {                
+                reverseRate = window.pageYOffset * Number(target[index].dataset.rate) + 50;
+                pos = -450 - reverseRate;
+              }
+            }
+            
             target[index].style.transform = 'translate3d(0px,'+pos+'px, 0px)';
           }          
           else if (window.pageYOffset > 1000 && target[index].dataset.section == "sectionTwo") {
@@ -72,7 +86,7 @@ export class MainComponent implements OnInit {
           }
           else if (window.pageYOffset > 1000 && target[index].dataset.section == "sectionThree") {
             target[index].style.animationPlayState = "running";
-          }
+          }          
           else {
               posX = window.pageYOffset * Number(target[index].dataset.ratex);
               posY = window.pageYOffset * Number(target[index].dataset.ratey);              

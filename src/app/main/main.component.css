@@ -1,33 +1,13 @@
+/* Color Palete */
+/* Burnt Orange: #CC5500 */
+/* Sand: #E8A653 */
+/* Golden Taninoi: #FFBD4D */
+/* Burgundy: #800020 */
+/* Light Burgundy: #9d3e0c */
+
 /* TODO: Move the CSS that should be global to styles.css at the end */
 /* TODO: Change all these conter: url... properties to actual imgs by moving the images folder
-         to the assets folder. */
-
-#giraffe {
-    content: url(../images/giraffe.png);
-    position: absolute;
-    bottom: -1%;
-    left: -460px;
-    width: 18%;
-    height: 100%;
-}
-
-#panda {
-    content: url(../images/panda.png);
-    position: absolute;
-    bottom: 75px;
-    right: -505px;
-    height: 50%;
-    width: 25%
-}
-
-#bubble {
-    content: url(../images/cool_bubble_beige.png);
-    position: absolute;
-    top: -175px;
-    right: -525px;
-    height: 100%;
-    width: 50%;    
-}
+         to the assets folder. */        
 
 #femalePhone {
     content: url(../images/female_phone.png);
@@ -60,29 +40,6 @@ p, em {
     font-weight: 400;
     text-align: justify;
     color: #CC5500;  /* Burnt Orange */
-}
-
-.container {    
-    height: 100%;
-    width: 50%;    
-}
-
-.text-item {
-    margin-bottom: 20px;
-    margin-top: 1px;    
-}
-
-.text-container {
-    width: 90%;
-    height: 54%;
-    margin-bottom: 30px;
-    margin-top: -20px;
-    background-color: beige;
-    border-color: black;
-    border-style: groove;
-    box-shadow: rgb(204, 85, 0) -55px -55px;
-    padding: 15px;
-    overflow: hidden; /* This is temporary until we fix the text not resizing correctly */
 }
 
 .picture-frame {
@@ -178,13 +135,13 @@ p, em {
 }
 
 .top-face-text {
-    bottom: 900px;
-    left: 39.5%;
+    bottom: 150vh;
+    left: 66.3%;
 }
 
 .bottom-face-text {
-    top: 805px;
-    left: 45.5%;
+    top: 141vh;
+    left: 66.5%;
 }
 
 @media screen and (max-width: 1250px) {

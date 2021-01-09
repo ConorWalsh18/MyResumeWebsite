@@ -1,3 +1,11 @@
+<!-- PAGE LAYOUT (WIP) -->
+<!-- Landing Page -->
+<!-- About Me -->
+<!-- Work Experience -->
+<!-- Skills -->
+<!-- Contact Me (picture frames page) -->
+<!-- Resume (download page) -->
+
 <!-- TODO: NEED to fix the resizing issue with some of the elements (e.g. the text on the landing page).
            Adding width: auto might be the best call for some of these resizing issues. For the text be
            sure to change the font-size to use vw instead of px since vw scales with the view as well as
@@ -9,28 +17,12 @@
 
 <!-- TODO: Adjust the swinging animation for the picture frames so they're more smooth -->
 
-<landing-page></landing-page>
+<!-- <landing-page></landing-page> -->
+<alternative-landing-page></alternative-landing-page>
 
 <!-- <div class="section-seperator"></div> -->
 
-<section>
-    <div class="container">
-        <div name="parallax" data-rate="0.2" data-direction="vertical" data-section="sectionTwo" class="text-container">
-            <h1 class="text-item">
-                Test Heading
-            </h1>
-            <em class="text-item">
-                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.
-            </em>
-        </div>
-        <span id="giraffe" name="parallax" data-rateY="0" data-rateX="0.5" data-direction="horizontal" data-section="sectionTwo">
-        </span>
-        <span id="panda" name="parallax" data-rateY="0" data-rateX="-0.5" data-direction="horizontal" data-section="sectionTwo">
-        </span>
-        <span id="bubble" name="parallax" data-rateY="0" data-rateX="-0.5" data-direction="horizontal" data-section="sectionTwo">
-        </span>
-    </div>
-</section>
+<about-me></about-me>
 
 <section>
     <div class="picture-frame swingimage"
@@ -51,17 +43,20 @@
 </section>
 
 <section>
-    <div class="image-container" name="parallax">
+    <!-- <div class="image-container">
         <img src="../../assets/faceless_male.png" id="face" />
-        <h1 class="top-face-text" name="parallax" data-rate="0.2" data-direction="vertical" data-section="sectionFour">About</h1>
-        <h1 class="bottom-face-text" name="parallax" data-rate="-0.2" data-direction="vertical" data-section="sectionFour">Me</h1>
-    </div>
+        <h1 class="top-face-text" name="parallax" data-rate="0.2" data-direction="vertical" data-section="sectionFour">Work</h1>
+        <h1 class="bottom-face-text" name="parallax" data-rate="-0.2" data-direction="vertical" data-section="sectionFour">Experience</h1>
+    </div> -->
 
-    <block-reveal></block-reveal>
+    <h1 class="top-face-text" name="parallax" data-rate="0.35" data-direction="vertical" data-section="sectionFour">Work</h1>
+    <h1 class="bottom-face-text" name="parallax" data-rate="-0.35" data-direction="vertical" data-section="sectionFour">Experience</h1>
+
+    <div *ngIf="this.mainWindow.pageYOffset > 2000 && this.mainWindow.pageYOffset < 4000">
+        <block-reveal></block-reveal>
+    </div>
 </section>
 
-<section style="background-color: blue">
+<section>
     <h1>Resume Page</h1>
 </section>
-
-<!-- TODO: Add a download resume page as the last page. Use the big pointing finger image to point to the download button. -->

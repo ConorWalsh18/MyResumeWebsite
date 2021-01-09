@@ -6,13 +6,17 @@ import { MainComponent } from './main/main.component';
 import { CommonModule } from '@angular/common';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { BlockRevealComponent } from './block-reveal/block-reveal.component';
+import { AlternativeLandingPageComponent } from './alternative-landing-page/alternative-landing-page.component';
+import { AboutMeComponent } from './about-me/about-me.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     LandingPageComponent,
-    BlockRevealComponent    
+    BlockRevealComponent,
+    AlternativeLandingPageComponent,
+    AboutMeComponent    
   ],
   imports: [
     BrowserModule,
