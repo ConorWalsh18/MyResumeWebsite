@@ -8,6 +8,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { BlockRevealComponent } from './block-reveal/block-reveal.component';
 import { AlternativeLandingPageComponent } from './alternative-landing-page/alternative-landing-page.component';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AboutMeComponent } from './about-me/about-me.component';
     LandingPageComponent,
     BlockRevealComponent,
     AlternativeLandingPageComponent,
-    AboutMeComponent    
+    AboutMeComponent,
+    SkillsComponent    
   ],
   imports: [
     BrowserModule,

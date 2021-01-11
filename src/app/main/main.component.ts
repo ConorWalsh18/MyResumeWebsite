@@ -58,7 +58,7 @@ export class MainComponent implements OnInit {
 
           // console.log("window.pageYOffset = ", window.pageYOffset);
           
-          if (target[index].dataset.direction === 'vertical') {            
+          if (target[index].dataset.direction === 'vertical') {
             if (window.pageYOffset > 1000 && target[index].dataset.section == "sectionTwo") {                            
               if (Number(target[index].dataset.rate) > 0) {
                 reverseRate = window.pageYOffset * Number(target[index].dataset.rate) - 50;
