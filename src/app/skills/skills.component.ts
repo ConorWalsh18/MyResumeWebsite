@@ -73,24 +73,32 @@ export class SkillsComponent implements OnInit {
 
   constructor() { }
 
+  skillsText: string;
+
   ngOnInit(): void {
     window.addEventListener('scroll', () => {
       if (window.pageYOffset <= (window.innerHeight * 2)) {
-        var element = <unknown>document.getElementById("theMotionPath");
-        var svgPath = <SVGPathElement>element;
-        var svgPathLen = svgPath.getTotalLength();            
-          
-        var dots = document.getElementsByName("dot");                  
-        for (var i = 0; i < dots.length; i++) {
-          var scrollPercentage = (document.documentElement.scrollTop - window.innerHeight) / window.innerHeight;
-          console.log("scrollPercentage = ", scrollPercentage);
-          var pt = svgPath.getPointAtLength((scrollPercentage * Number(dots[i].dataset.rate)) * svgPathLen);
-          dots[i].setAttribute("transform", "translate("+ pt.x + "," + pt.y + ")");             
-        }            
+        this.moveDots(true);
       }
-      // else if (window.pageYOffset >= (window.innerHeight * 2)) {
-      //   console.log("scrollPercentage = ", scrollPercentage);
-      // }
-     })
-  };
+     });
+
+     if (window.pageYOffset >= (window.innerHeight * 2)) {
+      this.moveDots(false);
+    };
+    
+    this.skillsText = "Test";
+  }
+
+  moveDots(animate: boolean) {
+    var element = <unknown>document.getElementById("theMotionPath");
+    var svgPath = <SVGPathElement>element;
+    var svgPathLen = svgPath.getTotalLength();  
+    var dots = document.getElementsByName("dot");                  
+
+    for (var i = 0; i < dots.length; i++) {    
+      var scrollPercentage = animate ? (document.documentElement.scrollTop - window.innerHeight) / window.innerHeight : 1;
+      var pt = svgPath.getPointAtLength((scrollPercentage * Number(dots[i].dataset.rate)) * svgPathLen);
+      dots[i].setAttribute("transform", "translate("+ pt.x + "," + pt.y + ")");             
+    }
+  }
 }
