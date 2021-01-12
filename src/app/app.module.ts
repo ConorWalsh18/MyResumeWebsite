@@ -9,6 +9,7 @@ import { BlockRevealComponent } from './block-reveal/block-reveal.component';
 import { AlternativeLandingPageComponent } from './alternative-landing-page/alternative-landing-page.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillsComponent } from './skills/skills.component';
+import { AlternativeSkillsComponent } from './alternative-skills/alternative-skills.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SkillsComponent } from './skills/skills.component';
     BlockRevealComponent,
     AlternativeLandingPageComponent,
     AboutMeComponent,
-    SkillsComponent    
+    SkillsComponent,
+    AlternativeSkillsComponent    
   ],
   imports: [
     BrowserModule,

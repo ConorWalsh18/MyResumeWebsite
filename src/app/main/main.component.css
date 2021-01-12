@@ -135,13 +135,12 @@ p, em {
     color: #CC5500;
 }
 
-.top-face-text {
-    bottom: 150vh;
+.top-face-text {    
     left: 66.3%;
 }
 
 .bottom-face-text {
-    top: 141vh;
+    top: 45vh;
     left: 66.5%;
 }
 

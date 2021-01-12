@@ -13,9 +13,12 @@ export class MainComponent implements OnInit {
   isScrolling: any;
   showBlockReveal: boolean = false;
   mainWindow: any;
+  mainDocument: any;
 
   ngOnInit(): void {
     this.mainWindow = window;
+    this.mainDocument = document;
+    
     //TODO: Break a lot of this logic out into their own methods
 
     var pictureFrame = document.getElementById("pictureFrame");
@@ -56,7 +59,7 @@ export class MainComponent implements OnInit {
           var posY = 0;
           var reverseRate = 0;
 
-          // console.log("window.pageYOffset = ", window.pageYOffset);
+          console.log("window.pageYOffset = ", window.pageYOffset);
           
           if (target[index].dataset.direction === 'vertical') {
             if (window.pageYOffset > 1000 && target[index].dataset.section == "sectionTwo") {                            
@@ -86,7 +89,12 @@ export class MainComponent implements OnInit {
           }
           else if (window.pageYOffset > 1000 && target[index].dataset.section == "sectionThree") {
             target[index].style.animationPlayState = "running";
-          }          
+          }
+          else if (target[index].dataset.section == "skills") {
+            if (window.pageYOffset < 3100) {
+              target[index].style.transform = 'translate3d(0px,'+pos+'px, 0px) rotate(-90deg)';
+            }    
+          }         
           else {
               posX = window.pageYOffset * Number(target[index].dataset.ratex);
               posY = window.pageYOffset * Number(target[index].dataset.ratey);              

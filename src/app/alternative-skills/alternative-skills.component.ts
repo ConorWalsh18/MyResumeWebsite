@@ -1,31 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'skills',
-  templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.css']
+  selector: 'alternative-skills',
+  templateUrl: './alternative-skills.component.html',
+  styleUrls: ['./alternative-skills.component.css']
 })
-export class SkillsComponent implements OnInit {
+export class AlternativeSkillsComponent implements OnInit {
 
   constructor() { }
 
   skillsText: string = "Skills & Tools";
 
   ngOnInit(): void {
-    window.addEventListener('scroll', () => {
-      console.log("inner height = ", window.innerHeight);
+    var lastScrollTop = 0;
 
-      if (window.pageYOffset <= (window.innerHeight * 2)) {
-      // if (window.pageYOffset >= window.innerHeight + 400 && window.pageYOffset <= ((window.innerHeight + 200) * 2)) {
-        this.moveDots(true);
-                
-        console.log("in skills");        
-        console.log("window.pageYOffset = ", window.pageYOffset);
+    window.addEventListener('scroll', () => {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var scrollingUp = false;
+
+      if (scrollTop < lastScrollTop) {
+        scrollingUp = true;
       }
-      else {
-      // else if (window.pageYOffset >= (window.innerHeight * 2) + 500) {
+
+      if ((window.pageYOffset >= window.innerHeight + 600 || scrollingUp) && window.pageYOffset <= ((window.innerHeight + 300) * 2)) {
+        this.moveDots(true);                        
+      }
+      else if (window.pageYOffset >= ((window.innerHeight + 300)* 2)) {
         this.moveDots(false);
       }
+      
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
      });
 
      if (window.pageYOffset >= (window.innerHeight * 2)) {
@@ -53,12 +57,7 @@ export class SkillsComponent implements OnInit {
     var dots = document.getElementsByName("dot");                  
 
     for (var i = 0; i < dots.length; i++) {    
-      var scrollPercentage = animate ? (document.documentElement.scrollTop - window.innerHeight) / (window.innerHeight) : 1;
-      
-      // console.log(scrollPercentage);
-      // console.log("scrollTop = ", document.documentElement.scrollTop);
-      // console.log("window.innerHeight = ", window.innerHeight);
-
+      var scrollPercentage = animate ? (document.documentElement.scrollTop - window.innerHeight - 600) / (window.innerHeight) : 1;      
       var pt = svgPath.getPointAtLength((scrollPercentage * Number(dots[i].dataset.rate)) * svgPathLen);
       dots[i].setAttribute("transform", "translate("+ pt.x + "," + pt.y + ")");             
     }

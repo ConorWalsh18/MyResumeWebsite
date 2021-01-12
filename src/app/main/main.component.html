@@ -2,6 +2,7 @@
 <!-- Landing Page -->
 <!-- About Me -->
 <!-- Work Experience -->
+<!-- School (potentially add this page) -->
 <!-- Skills -->
 <!-- Contact Me (picture frames page) -->
 <!-- Resume (download page) -->
@@ -24,7 +25,8 @@
 
 <about-me></about-me>
 
-<skills></skills>
+<!-- <skills></skills> -->
+<alternative-skills></alternative-skills>
 
 <section>
     <div class="picture-frame swingimage"
@@ -51,10 +53,10 @@
         <h1 class="bottom-face-text" name="parallax" data-rate="-0.2" data-direction="vertical" data-section="sectionFour">Experience</h1>
     </div> -->
 
-    <h1 class="top-face-text" name="parallax" data-rate="0.35" data-direction="vertical" data-section="sectionFour">Work</h1>
-    <h1 class="bottom-face-text" name="parallax" data-rate="-0.35" data-direction="vertical" data-section="sectionFour">Experience</h1>
+    <h1 class="top-face-text">Work</h1>
+    <h1 class="bottom-face-text">Experience</h1>
 
-    <div *ngIf="this.mainWindow.pageYOffset > 2000 && this.mainWindow.pageYOffset < 4000">
+    <div *ngIf="this.mainWindow.pageYOffset > this.mainWindow.innerHeight * 4 && this.mainWindow.pageYOffset < this.mainWindow.innerHeight * 6">
         <block-reveal></block-reveal>
     </div>
 </section>
