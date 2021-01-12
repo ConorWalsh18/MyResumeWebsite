@@ -22,10 +22,12 @@ export class AlternativeSkillsComponent implements OnInit {
         scrollingUp = true;
       }
 
-      if ((window.pageYOffset >= window.innerHeight + 600 || scrollingUp) && window.pageYOffset <= ((window.innerHeight + 300) * 2)) {
+      console.log("window.innerHeight = ", window.innerHeight);
+
+      if ((window.pageYOffset >= window.innerHeight + 1100 || scrollingUp) && window.pageYOffset <= ((window.innerHeight + 550) * 2)) {
         this.moveDots(true);                        
       }
-      else if (window.pageYOffset >= ((window.innerHeight + 300)* 2)) {
+      else if (window.pageYOffset >= ((window.innerHeight + 550)* 2)) {
         this.moveDots(false);
       }
       
@@ -57,7 +59,7 @@ export class AlternativeSkillsComponent implements OnInit {
     var dots = document.getElementsByName("dot");                  
 
     for (var i = 0; i < dots.length; i++) {    
-      var scrollPercentage = animate ? (document.documentElement.scrollTop - window.innerHeight - 600) / (window.innerHeight) : 1;      
+      var scrollPercentage = animate ? (document.documentElement.scrollTop - window.innerHeight - 1100) / (window.innerHeight) : 1;      
       var pt = svgPath.getPointAtLength((scrollPercentage * Number(dots[i].dataset.rate)) * svgPathLen);
       dots[i].setAttribute("transform", "translate("+ pt.x + "," + pt.y + ")");             
     }

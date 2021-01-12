@@ -91,9 +91,45 @@ export class MainComponent implements OnInit {
             target[index].style.animationPlayState = "running";
           }
           else if (target[index].dataset.section == "skills") {
-            if (window.pageYOffset < 3100) {
-              target[index].style.transform = 'translate3d(0px,'+pos+'px, 0px) rotate(-90deg)';
-            }    
+            // Works with 238vh
+            if (window.pageYOffset >= 4650) {
+              target[index].style.position = "absolute";
+              target[index].style.top = "175.2vh";
+            }
+            else {
+              target[index].style.position = "fixed";
+              target[index].style.top = "14vh";
+            }
+
+            // // Works with 250vh
+            // if (window.pageYOffset >= 4830) {
+            //   target[index].style.position = "absolute";
+            //   target[index].style.top = "189.9vh";
+            // }
+            // else {
+            //   target[index].style.position = "fixed";
+            //   target[index].style.top = "14vh";
+            // }
+
+            // // Works with 275vh
+            // if (window.pageYOffset >= 5110) {
+            //   target[index].style.position = "absolute";
+            //   target[index].style.top = "211vh";
+            // }
+            // else {
+            //   target[index].style.position = "fixed";
+            //   target[index].style.top = "14vh";
+            // }
+            
+            // Works with 215vh
+            // if (window.pageYOffset >= 4300) {
+            //   target[index].style.position = "absolute";
+            //   target[index].style.top = "148.7vh";
+            // }
+            // else {
+            //   target[index].style.position = "fixed";
+            //   target[index].style.top = "14vh";
+            // }
           }         
           else {
               posX = window.pageYOffset * Number(target[index].dataset.ratex);
