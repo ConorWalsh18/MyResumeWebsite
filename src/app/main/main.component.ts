@@ -11,18 +11,17 @@ export class MainComponent implements OnInit {
 
   stopSwinging: boolean = false;
   isScrolling: any;
-  showBlockReveal: boolean = false;
   mainWindow: any;
   mainDocument: any;
 
   ngOnInit(): void {
     this.mainWindow = window;
-    this.mainDocument = document;
-    
-    //TODO: Break a lot of this logic out into their own methods
+    this.mainDocument = document;        
 
     var pictureFrame = document.getElementById("pictureFrame");
     var pictureFrameTwo = document.getElementById("pictureFrame2");
+    var contactSection = document.getElementById("contactSection");
+    var skillsSection = document.getElementById("skillsSection");
 
     pictureFrame.addEventListener("animationiteration", () => {
       if (this.stopSwinging) {
@@ -35,8 +34,17 @@ export class MainComponent implements OnInit {
       }
     }, false);
 
+    var lastScrollTop = 0;
+
+    //TODO: Refactor/break a lot of this logic out into their own methods
     //Do the animation logic when the user is scrolling
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', () => {      
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var scrollingUp = false;
+
+      if (scrollTop < lastScrollTop) {
+        scrollingUp = true;
+      }
 
       //Clear our timeout throughout the scroll
       window.clearTimeout(this.isScrolling);
@@ -51,7 +59,7 @@ export class MainComponent implements OnInit {
       //      equations we're creating now.
       var target = document.getElementsByName("parallax");
       var index = 0
-      var length = target.length;
+      var length = target.length;      
 
       for (index; index < length; index++) {      
           var pos = window.pageYOffset * Number(target[index].dataset.rate);
@@ -60,6 +68,7 @@ export class MainComponent implements OnInit {
           var reverseRate = 0;
 
           console.log("window.pageYOffset = ", window.pageYOffset);
+          // console.log("window.innerHeight = ", window.innerHeight);
           
           if (target[index].dataset.direction === 'vertical') {
             if (window.pageYOffset > 1000 && target[index].dataset.section == "sectionTwo") {                            
@@ -91,57 +100,66 @@ export class MainComponent implements OnInit {
             target[index].style.animationPlayState = "running";
           }
           else if (target[index].dataset.section == "skills") {
-            // Works with 238vh
-            if (window.pageYOffset >= 4650) {
+            // Works with 275vh            
+            if (window.pageYOffset >= contactSection.offsetTop - skillsSection.offsetTop + window.innerHeight) {
               target[index].style.position = "absolute";
-              target[index].style.top = "175.2vh";
+
+              //The 20 subtracted at the end is accounting for the starting top value of -2vh
+              var skillCircleTop = (contactSection.offsetTop - skillsSection.offsetTop - window.innerHeight - 20) / 10;
+              target[index].style.top = skillCircleTop.toString() + 'vh';
             }
             else {
               target[index].style.position = "fixed";
-              target[index].style.top = "14vh";
+              target[index].style.top = "-2vh";
             }
-
-            // // Works with 250vh
-            // if (window.pageYOffset >= 4830) {
-            //   target[index].style.position = "absolute";
-            //   target[index].style.top = "189.9vh";
-            // }
-            // else {
-            //   target[index].style.position = "fixed";
-            //   target[index].style.top = "14vh";
-            // }
-
-            // // Works with 275vh
-            // if (window.pageYOffset >= 5110) {
-            //   target[index].style.position = "absolute";
-            //   target[index].style.top = "211vh";
-            // }
-            // else {
-            //   target[index].style.position = "fixed";
-            //   target[index].style.top = "14vh";
-            // }
-            
-            // Works with 215vh
-            // if (window.pageYOffset >= 4300) {
-            //   target[index].style.position = "absolute";
-            //   target[index].style.top = "148.7vh";
-            // }
-            // else {
-            //   target[index].style.position = "fixed";
-            //   target[index].style.top = "14vh";
-            // }
-          }         
-          else {
-              posX = window.pageYOffset * Number(target[index].dataset.ratex);
-              posY = window.pageYOffset * Number(target[index].dataset.ratey);              
-
-              // console.log("posX = ", posX);
-              // console.log("posY = ", posY);
-
-              // This is for vertical and horizontal movement
-              target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';              
           }
+          else if (target[index].dataset.section == "skillsImages") {
+            var imageOrder = target[index].dataset.order;
+
+            if (window.pageYOffset <= contactSection.offsetTop - skillsSection.offsetTop + window.innerHeight) { 
+              if (imageOrder == "1") {
+                if (window.pageYOffset < skillsSection.offsetTop + 450) {
+                  posX = window.pageYOffset * Number(target[index].dataset.ratex);
+                  posY = window.pageYOffset * Number(target[index].dataset.ratey);
+                  target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
+                }
+                else if (window.pageYOffset > skillsSection.offsetTop + 450) {
+                  posX = 2450 * Number(target[index].dataset.ratex);
+                  posY = window.pageYOffset * Number(target[index].dataset.ratey);
+                  target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
+                }
+              }
+              
+              if (imageOrder == "2") {
+                if ((window.pageYOffset > skillsSection.offsetTop + 500 || scrollingUp) && window.pageYOffset < skillsSection.offsetTop + 1000) {
+                  posX = window.pageYOffset * Number(target[index].dataset.ratex);
+                  posY = window.pageYOffset * Number(target[index].dataset.ratey);
+                  target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
+                }
+                else if (window.pageYOffset > skillsSection.offsetTop + 1000) {
+                  posX = 3000 * Number(target[index].dataset.ratex);
+                  posY = window.pageYOffset * Number(target[index].dataset.ratey);
+                  target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
+                }
+              }
+            }
+          }
+          else {
+            // This is for vertical and horizontal movement
+            posX = window.pageYOffset * Number(target[index].dataset.ratex);
+            posY = window.pageYOffset * Number(target[index].dataset.ratey);
+            target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
+          }
+
+          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
       }
-  });
-  }  
+    });
+  }
+
+  showBlockReveal() {
+    var workExperienceSection = document.getElementById("workExperienceSection");
+
+    return (window.pageYOffset > workExperienceSection.offsetTop - window.innerHeight
+            && window.pageYOffset < workExperienceSection.offsetTop + window.innerHeight);
+  }
 }

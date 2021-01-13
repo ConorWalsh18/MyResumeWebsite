@@ -12,6 +12,7 @@ export class AlternativeSkillsComponent implements OnInit {
   skillsText: string = "Skills & Tools";
 
   ngOnInit(): void {
+    var skillsSection = document.getElementById("skillsSection");
     var lastScrollTop = 0;
 
     window.addEventListener('scroll', () => {
@@ -20,9 +21,7 @@ export class AlternativeSkillsComponent implements OnInit {
 
       if (scrollTop < lastScrollTop) {
         scrollingUp = true;
-      }
-
-      console.log("window.innerHeight = ", window.innerHeight);
+      }      
 
       if ((window.pageYOffset >= window.innerHeight + 1100 || scrollingUp) && window.pageYOffset <= ((window.innerHeight + 550) * 2)) {
         this.moveDots(true);                        
@@ -34,9 +33,12 @@ export class AlternativeSkillsComponent implements OnInit {
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
      });
 
-     if (window.pageYOffset >= (window.innerHeight * 2)) {
+    if (window.pageYOffset >= ((window.innerHeight + 550) * 2)) {
       this.moveDots(false);
-    };
+    }
+    else if (window.pageYOffset < skillsSection.offsetTop + 100) {
+      this.moveDots(false, true);
+    }
         
     var dots = document.getElementsByClassName("button");
     for (var i = 0; i < dots.length; i++) {
@@ -52,14 +54,20 @@ export class AlternativeSkillsComponent implements OnInit {
     }
   }
 
-  moveDots(animate: boolean) {
+  moveDots(animate: boolean, above: boolean = false) {
+    var skillsSection = document.getElementById("skillsSection");
     var element = <unknown>document.getElementById("theMotionPath");
     var svgPath = <SVGPathElement>element;
     var svgPathLen = svgPath.getTotalLength();  
     var dots = document.getElementsByName("dot");                  
 
-    for (var i = 0; i < dots.length; i++) {    
-      var scrollPercentage = animate ? (document.documentElement.scrollTop - window.innerHeight - 1100) / (window.innerHeight) : 1;      
+    for (var i = 0; i < dots.length; i++) {
+      var scrollPercentage = animate ? (document.documentElement.scrollTop - window.innerHeight - 1100) / (window.innerHeight) : 1;
+
+      if (above) {
+        scrollPercentage = 0;
+      }
+
       var pt = svgPath.getPointAtLength((scrollPercentage * Number(dots[i].dataset.rate)) * svgPathLen);
       dots[i].setAttribute("transform", "translate("+ pt.x + "," + pt.y + ")");             
     }
