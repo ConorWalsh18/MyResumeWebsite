@@ -20,7 +20,8 @@ export class MainComponent implements OnInit {
 
     var pictureFrame = document.getElementById("pictureFrame");
     var pictureFrameTwo = document.getElementById("pictureFrame2");
-    var contactSection = document.getElementById("contactSection");
+    // var contactSection = document.getElementById("contactSection");
+    var workExperienceSection = document.getElementById("workExperienceSection");
     var skillsSection = document.getElementById("skillsSection");
 
     pictureFrame.addEventListener("animationiteration", () => {
@@ -36,9 +37,8 @@ export class MainComponent implements OnInit {
 
     var lastScrollTop = 0;
 
-    //TODO: Refactor/break a lot of this logic out into their own methods
     //Do the animation logic when the user is scrolling
-    window.addEventListener('scroll', () => {      
+    window.addEventListener('scroll', () => {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       var scrollingUp = false;
 
@@ -54,9 +54,11 @@ export class MainComponent implements OnInit {
         this.stopSwinging = true;
       }, 66);
 
-      //TODO: Rename some variables, clean up the comments/commented out code, and refactor some of the code.
+      //TODO: Replace the hardcoded pageYOffset checks with generuc inner height, offsetTop, etc. values
+      //TODO: Rename some variables, clean up the comments/commented out code, and refactor/break a lot of this
+      //      logic out into their own methods      
       //TODO: Look into adding a reverse rate property and use that to reverse the direction instead of the wacky
-      //      equations we're creating now.
+      //      equations we're creating now      
       var target = document.getElementsByName("parallax");
       var index = 0
       var length = target.length;      
@@ -101,11 +103,11 @@ export class MainComponent implements OnInit {
           }
           else if (target[index].dataset.section == "skills") {
             // Works with 275vh            
-            if (window.pageYOffset >= contactSection.offsetTop - skillsSection.offsetTop + window.innerHeight) {
+            if (window.pageYOffset >= workExperienceSection.offsetTop - skillsSection.offsetTop + window.innerHeight) {              
               target[index].style.position = "absolute";
 
               //The 20 subtracted at the end is accounting for the starting top value of -2vh
-              var skillCircleTop = (contactSection.offsetTop - skillsSection.offsetTop - window.innerHeight - 20) / 10;
+              var skillCircleTop = (workExperienceSection.offsetTop - skillsSection.offsetTop - window.innerHeight - 20) / 10;
               target[index].style.top = skillCircleTop.toString() + 'vh';
             }
             else {
@@ -114,35 +116,37 @@ export class MainComponent implements OnInit {
             }
           }
           else if (target[index].dataset.section == "skillsImages") {
-            var imageOrder = target[index].dataset.order;
-
-            if (window.pageYOffset <= contactSection.offsetTop - skillsSection.offsetTop + window.innerHeight) { 
-              if (imageOrder == "1") {
-                if (window.pageYOffset < skillsSection.offsetTop + 450) {
-                  posX = window.pageYOffset * Number(target[index].dataset.ratex);
-                  posY = window.pageYOffset * Number(target[index].dataset.ratey);
-                  target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
-                }
-                else if (window.pageYOffset > skillsSection.offsetTop + 450) {
-                  posX = 2450 * Number(target[index].dataset.ratex);
-                  posY = window.pageYOffset * Number(target[index].dataset.ratey);
-                  target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
-                }
+            if (window.pageYOffset > skillsSection.offsetTop + window.innerHeight + 100
+                && window.pageYOffset <= workExperienceSection.offsetTop - skillsSection.offsetTop + window.innerHeight) {
+              if (target[index].id == "robotTwo") {
+                target[index].style.transform = 'translate3d(-3100px, 0px, 0px)';
               }
               
-              if (imageOrder == "2") {
-                if ((window.pageYOffset > skillsSection.offsetTop + 500 || scrollingUp) && window.pageYOffset < skillsSection.offsetTop + 1000) {
-                  posX = window.pageYOffset * Number(target[index].dataset.ratex);
-                  posY = window.pageYOffset * Number(target[index].dataset.ratey);
-                  target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
-                }
-                else if (window.pageYOffset > skillsSection.offsetTop + 1000) {
-                  posX = 3000 * Number(target[index].dataset.ratex);
-                  posY = window.pageYOffset * Number(target[index].dataset.ratey);
-                  target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
-                }
-              }
+              target[index].style.position = "fixed";
+              target[index].style.bottom = "90px";
             }
+            else if (window.pageYOffset >= workExperienceSection.offsetTop - skillsSection.offsetTop + window.innerHeight) {           
+              if (target[index].id == "robotTwo") {
+                target[index].style.transform = 'translate3d(-3100px, 0px, 0px)';
+              }
+
+              target[index].style.position = "absolute";
+              target[index].style.bottom = "90px";
+            }
+            else {
+              if (target[index].id == "robot") {
+                target[index].style.position = "absolute";
+                target[index].style.bottom = "720px";                              
+              }
+              else {
+                target[index].style.position = "absolute";
+                target[index].style.bottom = "3840px";
+
+                posX = window.pageYOffset * Number(target[index].dataset.ratex);
+                posY = window.pageYOffset * Number(target[index].dataset.ratey);
+                target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
+              }
+            }            
           }
           else {
             // This is for vertical and horizontal movement
@@ -154,12 +158,7 @@ export class MainComponent implements OnInit {
           lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
       }
     });
-  }
 
-  showBlockReveal() {
-    var workExperienceSection = document.getElementById("workExperienceSection");
-
-    return (window.pageYOffset > workExperienceSection.offsetTop - window.innerHeight
-            && window.pageYOffset < workExperienceSection.offsetTop + window.innerHeight);
+    console.log(workExperienceSection.offsetTop)
   }
 }

@@ -1,9 +1,9 @@
 <!-- PAGE LAYOUT (WIP) -->
 <!-- Landing Page -->
 <!-- About Me -->
+<!-- Skills (potentially move this below work experience if we want to reposition things)-->
 <!-- Work Experience -->
 <!-- School (potentially add this page) -->
-<!-- Skills -->
 <!-- Contact Me (picture frames page) -->
 <!-- Resume (download page) -->
 
@@ -14,6 +14,8 @@
 <!-- TODO: Make the background color gradually change smoothly as you scroll -->
 <!-- TODO: Maybe turn some of these elements into their own components (e.g. the picture frame) -->
 <!-- TODO: Adjust the swinging animation for the picture frames so they're more smooth -->
+<!-- TODO: Remove a lot of the effects and animations at a certain width/height so everything fits -->
+<!-- TODO: Maybe make the skills page a shorter -->
 
 <!-- NOTE: Use px instead of vh or vw for parallax functionality -->
 
@@ -27,38 +29,9 @@
 <!-- <skills></skills> -->
 <alternative-skills></alternative-skills>
 
-<section id="contactSection">
-    <div class="picture-frame swingimage"
-         style="left: 11.5%;"
-         id="pictureFrame"
-         name="parallax"
-         data-section="sectionThree">
-         <span class="phone" id="femalePhone"></span>
-    </div>
+<work-experience></work-experience>
 
-    <div class="picture-frame swingimage"
-         style="right: 11.5%; animation-direction: reverse"
-         id="pictureFrame2"
-         name="parallax"
-         data-section="sectionThree">
-         <span class="phone" id="malePhone"></span>
-    </div>
-</section>
-
-<section id="workExperienceSection">
-    <!-- <div class="image-container">
-        <img src="../../assets/faceless_male.png" id="face" />
-        <h1 class="top-face-text" name="parallax" data-rate="0.2" data-direction="vertical" data-section="sectionFour">Work</h1>
-        <h1 class="bottom-face-text" name="parallax" data-rate="-0.2" data-direction="vertical" data-section="sectionFour">Experience</h1>
-    </div> -->
-
-    <h1 class="top-face-text">Work</h1>
-    <h1 class="bottom-face-text">Experience</h1>
-
-    <div *ngIf="showBlockReveal()">
-        <block-reveal></block-reveal>
-    </div>
-</section>
+<contact></contact>
 
 <section>
     <h1>Resume Page</h1>

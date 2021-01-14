@@ -10,6 +10,8 @@ import { AlternativeLandingPageComponent } from './alternative-landing-page/alte
 import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillsComponent } from './skills/skills.component';
 import { AlternativeSkillsComponent } from './alternative-skills/alternative-skills.component';
+import { ContactComponent } from './contact/contact.component';
+import { WorkExperienceComponent } from './work-experience/work-experience.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { AlternativeSkillsComponent } from './alternative-skills/alternative-ski
     AlternativeLandingPageComponent,
     AboutMeComponent,
     SkillsComponent,
-    AlternativeSkillsComponent    
+    AlternativeSkillsComponent,
+    ContactComponent,
+    WorkExperienceComponent    
   ],
   imports: [
     BrowserModule,
