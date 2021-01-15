@@ -3,47 +3,46 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'work-experience',
   templateUrl: './work-experience.component.html',
-  styleUrls: ['./work-experience.component.css']
+  styleUrls: ['./work-experience.component.scss']
 })
 export class WorkExperienceComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
-    var header = document.getElementById("header");
-    var topBody = document.getElementById("topBody");
-    var bottomBody = document.getElementById("bottomBody");    
+    window.addEventListener('scroll', () => {
+      var elements = document.getElementsByClassName("text-transition");
 
-    window.addEventListener('scroll', () => { 
-      //TODO: Change the hardcoded pageYOffset to generic values
-      
-      //Starting positions
-      if (window.pageYOffset < 4860) {
-        header.style.top = "105vh";
-        topBody.style.top = "119.7vh";
-        bottomBody.style.top = "131.7vh";
-      }
-      
-      //Ending positions
-      if (window.pageYOffset >= 4860) {
-        header.style.top = "97.7vh";
-      }
-
-      if (window.pageYOffset >= 5000) {
-        topBody.style.top = "110.7vh";
-      }
-
-      if (window.pageYOffset >= 5100) {
-        bottomBody.style.top = "121.7vh";
+      for (var i = 0; i < elements.length; i++) {
+        if (elements[i].id == "partial" && this.isElementInView(elements[i], false)) {
+          elements[i].classList.add("show")
+        }
+        if (elements[i].id != "partial" && this.isElementInView(elements[i], true)) {
+          elements[i].classList.add("show")
+        }
+        // Figure out a better way to remove the class
+        // else if (this.isElementInView(elements[i], false)) {
+        //   elements[i].classList.remove("show")
+        // }
       }
     });
   }
 
-  showBlockReveal() {
-    var workExperienceSection = document.getElementById("workExperienceSection");
-
-    return (window.pageYOffset > workExperienceSection.offsetTop - window.innerHeight
-            && window.pageYOffset < workExperienceSection.offsetTop + window.innerHeight);
+  // Make this a global function and use this for all future in view checks
+  isElementInView(element, fullyInView) {
+    // If we want to check and see if the element is partially in the view then pass false in for fullyInView
+    var pageTop = $(window).scrollTop();
+    var pageBottom = pageTop + $(window).height();
+    var elementTop = $(element).offset().top;
+    var elementBottom = elementTop + $(element).height();
+    
+    // Checks if the element is fully in the view
+    if (fullyInView === true) {
+        return ((pageTop < elementTop) && (pageBottom > elementBottom));
+    }
+    // Checks if the element is partially in the view
+    else {
+        return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
+    }
   }
-
 }

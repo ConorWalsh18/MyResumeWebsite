@@ -12,6 +12,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { AlternativeSkillsComponent } from './alternative-skills/alternative-skills.component';
 import { ContactComponent } from './contact/contact.component';
 import { WorkExperienceComponent } from './work-experience/work-experience.component';
+import * as $ from 'jquery';
 
 @NgModule({
   declarations: [

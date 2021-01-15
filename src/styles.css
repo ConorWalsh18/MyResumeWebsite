@@ -11,19 +11,16 @@ section {
 }
 
 h1 {
-    font-size: 5em;
     font-family: 'Oswald';
     font-weight: 500;
     text-transform: uppercase;
-    line-height: 1.3em;
-    text-align: left;
     color: black;
+    margin-block: 0;
 } 
 
 p, em {
     font-family:'Oswald';
     margin-left: 10px;
-    /* font-size: 32px; */
     font-weight: 400;
     text-align: justify;
     color: #CC5500;  /* Burnt Orange */
@@ -42,4 +39,8 @@ p, em {
     position: absolute;
     bottom: 76vh;
     background-color: black;
+}
+
+* {
+    box-sizing: border-box;
 }

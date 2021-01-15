@@ -1,16 +1,44 @@
 <!-- Change background color back to beige when done -->
-<section id="workExperienceSection" style="height: 150vh; background-color: pink;">
-    <h1 class="title left-title-text">Working</h1>
-    <h1 class="title right-title-text">Experience</h1>
-    <img src="../../assets/man_announcing.png" id="workGuy" />    
+<section id="workExperienceSection" style="background-color: pink;">
+    
+    <!-- Add class="text-transition" to all text elements after positiong -->
 
-    <h1 class="header" id="header">Header 1</h1>
-    <div class="text-mask" style="z-index: 2; top: 108vh;"></div>
+    <div class="work-experience-container">        
+        <div class="title-text-container">
+            <div class="title text-transition">Work</div>
+            <div class="title text-transition" id="experienceText">Experience</div>
+        </div>        
     
-    <em id="topBody">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</em>
-    <div class="text-mask" style="z-index: 4; top: 120vh;"></div>
-    
-    <em id="bottomBody" style="z-index: 5;">Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.</em>
-    <!-- <div class="text-mask" style="z-index: 6; top: 129vh;"></div> -->
-    <div class="text-mask" style="z-index: 6; top: 132vh;"></div>
+        <div class="body-text-container">
+            <div>
+                <h1 class="text-transition">Header 1</h1>    
+                <!-- <div class="text-transition" id="partial">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.</div> -->
+                <div class="text-transition">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</div>
+                <!-- <br> -->
+                <div class="text-transition" id="partial">Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.</div>
+            </div>
+
+            <div>
+                <h1 class="text-transition">Header 2</h1>
+                <!-- <div class="text-transition">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.</div> -->
+                <div class="text-transition">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</div>
+                <!-- <br> -->
+                <div class="text-transition" id="partial">Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.</div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- <img src="../../assets/man_announcing.png" id="workGuy" /> -->
 </section>
+
+
+
+<!-- This is another way to transition text in by making it seem like the text is moving up from behing something -->
+<!-- For this to work you need to add JS code to move the text elements up once a certain pageYOffset is hit -->
+<!-- <h1 class="header" id="header">Header 1</h1>
+<div class="text-mask" style="z-index: 2; top: 108vh;"></div>
+<em id="topBody">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</em>
+<div class="text-mask" style="z-index: 4; top: 120vh;"></div>
+<em id="bottomBody" style="z-index: 5;">Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.</em>
+<div class="text-mask" style="z-index: 6; top: 132vh;"></div> -->

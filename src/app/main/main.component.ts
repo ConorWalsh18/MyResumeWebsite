@@ -69,11 +69,11 @@ export class MainComponent implements OnInit {
           var posY = 0;
           var reverseRate = 0;
 
-          console.log("window.pageYOffset = ", window.pageYOffset);
+          // console.log("window.pageYOffset = ", window.pageYOffset);
           // console.log("window.innerHeight = ", window.innerHeight);
           
           if (target[index].dataset.direction === 'vertical') {
-            if (window.pageYOffset > 1000 && target[index].dataset.section == "sectionTwo") {                            
+            if (window.pageYOffset > 1000 && target[index].dataset.section == "sectionTwo") {
               if (Number(target[index].dataset.rate) > 0) {
                 reverseRate = window.pageYOffset * Number(target[index].dataset.rate) - 50;
                 pos = 450 - reverseRate;
@@ -87,16 +87,19 @@ export class MainComponent implements OnInit {
             target[index].style.transform = 'translate3d(0px,'+pos+'px, 0px)';
           }          
           else if (window.pageYOffset > 1000 && target[index].dataset.section == "sectionTwo") {
-            if (Number(target[index].dataset.ratex) > 0) {
-              //For the reverse direction we need to subtract the difference of the end position of the image with
-              //the growing pageYOffset * rate from the end position of the image.
-              posX = 500 - (window.pageYOffset * Number(target[index].dataset.ratex) - 500);
-            }
-            else {
-              posX = -500 - (window.pageYOffset * Number(target[index].dataset.ratex) + 500);
-            }
+            // This reverses the direction of the parallax effect for sectionTwo. Not sure if this looks good
+            // so I'm commenting it out for now.
+
+            // if (Number(target[index].dataset.ratex) > 0) {
+            //   //For the reverse direction we need to subtract the difference of the end position of the image with
+            //   //the growing pageYOffset * rate from the end position of the image.
+            //   posX = 500 - (window.pageYOffset * Number(target[index].dataset.ratex) - 500);
+            // }
+            // else {
+            //   posX = -500 - (window.pageYOffset * Number(target[index].dataset.ratex) + 500);
+            // }
             
-            target[index].style.transform = 'translate3d('+posX+'px, 0px, 0px)';            
+            // target[index].style.transform = 'translate3d('+posX+'px, 0px, 0px)';
           }
           else if (window.pageYOffset > 1000 && target[index].dataset.section == "sectionThree") {
             target[index].style.animationPlayState = "running";
@@ -158,7 +161,5 @@ export class MainComponent implements OnInit {
           lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
       }
     });
-
-    console.log(workExperienceSection.offsetTop)
   }
 }
