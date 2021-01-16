@@ -9,21 +9,21 @@ export class MainComponent implements OnInit {
 
   constructor() { }
 
+  target: any;
   stopSwinging: boolean = false;
   isScrolling: any;
-  mainWindow: any;
-  mainDocument: any;
+  aboutMeSection: any;
+  skillsSection: any;
+  workExperienceSection: any;
 
   ngOnInit(): void {
-    this.mainWindow = window;
-    this.mainDocument = document;        
+    this.target = document.getElementsByName("parallax");
+    this.aboutMeSection = document.getElementById("aboutMeSection");
+    this.skillsSection = document.getElementById("skillsSection");
+    this.workExperienceSection = document.getElementById("workExperienceSection");
 
     var pictureFrame = document.getElementById("pictureFrame");
     var pictureFrameTwo = document.getElementById("pictureFrame2");
-    // var contactSection = document.getElementById("contactSection");
-    var workExperienceSection = document.getElementById("workExperienceSection");
-    var skillsSection = document.getElementById("skillsSection");
-
     pictureFrame.addEventListener("animationiteration", () => {
       if (this.stopSwinging) {
         pictureFrame.style.animationPlayState = "paused";
@@ -36,6 +36,8 @@ export class MainComponent implements OnInit {
     }, false);
 
     var lastScrollTop = 0;
+
+    // console.log("window.innerHeight = ", window.innerHeight);
 
     //Do the animation logic when the user is scrolling
     window.addEventListener('scroll', () => {
@@ -59,103 +61,104 @@ export class MainComponent implements OnInit {
       //      logic out into their own methods      
       //TODO: Look into adding a reverse rate property and use that to reverse the direction instead of the wacky
       //      equations we're creating now      
-      var target = document.getElementsByName("parallax");
+      // var this.target = document.getElementsByName("parallax");
       var index = 0
-      var length = target.length;      
+      var length = this.target.length;      
 
       for (index; index < length; index++) {      
-          var pos = window.pageYOffset * Number(target[index].dataset.rate);
+          var pos = window.pageYOffset * Number(this.target[index].dataset.rate);
           var posX = 0;
           var posY = 0;
           var reverseRate = 0;
 
-          // console.log("window.pageYOffset = ", window.pageYOffset);
-          // console.log("window.innerHeight = ", window.innerHeight);
+          // console.log("window.pageYOffset = ", window.pageYOffset);          
           
-          if (target[index].dataset.direction === 'vertical') {
-            if (window.pageYOffset > 1000 && target[index].dataset.section == "sectionTwo") {
-              if (Number(target[index].dataset.rate) > 0) {
-                reverseRate = window.pageYOffset * Number(target[index].dataset.rate) - 50;
+          if (this.target[index].dataset.direction === 'vertical') {
+            if (window.pageYOffset > 1000 && this.target[index].dataset.section == "sectionTwo") {
+              if (Number(this.target[index].dataset.rate) > 0) {
+                reverseRate = window.pageYOffset * Number(this.target[index].dataset.rate) - 50;
                 pos = 450 - reverseRate;
               }
               else {                
-                reverseRate = window.pageYOffset * Number(target[index].dataset.rate) + 50;
+                reverseRate = window.pageYOffset * Number(this.target[index].dataset.rate) + 50;
                 pos = -450 - reverseRate;
               }
             }
             
-            target[index].style.transform = 'translate3d(0px,'+pos+'px, 0px)';
+            this.target[index].style.transform = 'translate3d(0px,'+pos+'px, 0px)';
           }          
-          else if (window.pageYOffset > 1000 && target[index].dataset.section == "sectionTwo") {
-            // This reverses the direction of the parallax effect for sectionTwo. Not sure if this looks good
-            // so I'm commenting it out for now.
-
-            // if (Number(target[index].dataset.ratex) > 0) {
+          else if (window.pageYOffset > this.aboutMeSection.offsetTop && this.target[index].dataset.section == "sectionTwo") {
+            // This keeps the aboutMe section images static
+            posX = this.aboutMeSection.offsetTop * Number(this.target[index].dataset.ratex);
+            this.target[index].style.transform = 'translate3d('+posX+'px, 0px, 0px)';
+            
+            // TODO: Determine if we want to reverse the direction of the parallax for the about me section
+            // if (Number(this.target[index].dataset.ratex) > 0) {
             //   //For the reverse direction we need to subtract the difference of the end position of the image with
             //   //the growing pageYOffset * rate from the end position of the image.
-            //   posX = 500 - (window.pageYOffset * Number(target[index].dataset.ratex) - 500);
+            //   posX = 500 - (window.pageYOffset * Number(this.target[index].dataset.ratex) - 500);
             // }
             // else {
-            //   posX = -500 - (window.pageYOffset * Number(target[index].dataset.ratex) + 500);
+            //   posX = -500 - (window.pageYOffset * Number(this.target[index].dataset.ratex) + 500);
             // }
             
-            // target[index].style.transform = 'translate3d('+posX+'px, 0px, 0px)';
+            // this.target[index].style.transform = 'translate3d('+posX+'px, 0px, 0px)';
           }
-          else if (window.pageYOffset > 1000 && target[index].dataset.section == "sectionThree") {
-            target[index].style.animationPlayState = "running";
+          else if (window.pageYOffset > 1000 && this.target[index].dataset.section == "sectionThree") {
+            this.target[index].style.animationPlayState = "running";
           }
-          else if (target[index].dataset.section == "skills") {
+          else if (this.target[index].dataset.section == "skills") {
             // Works with 275vh            
-            if (window.pageYOffset >= workExperienceSection.offsetTop - skillsSection.offsetTop + window.innerHeight) {              
-              target[index].style.position = "absolute";
+            if (window.pageYOffset >= this.workExperienceSection.offsetTop - this.skillsSection.offsetTop + window.innerHeight) {              
+              this.target[index].style.position = "absolute";
 
               //The 20 subtracted at the end is accounting for the starting top value of -2vh
-              var skillCircleTop = (workExperienceSection.offsetTop - skillsSection.offsetTop - window.innerHeight - 20) / 10;
-              target[index].style.top = skillCircleTop.toString() + 'vh';
+              var skillCircleTop = (this.workExperienceSection.offsetTop - this.skillsSection.offsetTop - window.innerHeight - 20) / 10;
+              this.target[index].style.top = skillCircleTop.toString() + 'vh';
             }
             else {
-              target[index].style.position = "fixed";
-              target[index].style.top = "-2vh";
+              this.target[index].style.position = "fixed";
+              this.target[index].style.top = "-2vh";
             }
           }
-          else if (target[index].dataset.section == "skillsImages") {
-            if (window.pageYOffset > skillsSection.offsetTop + window.innerHeight + 100
-                && window.pageYOffset <= workExperienceSection.offsetTop - skillsSection.offsetTop + window.innerHeight) {
-              if (target[index].id == "robotTwo") {
-                target[index].style.transform = 'translate3d(-3100px, 0px, 0px)';
+          else if (this.target[index].dataset.section == "skillsImages") {
+            if (window.pageYOffset > this.skillsSection.offsetTop + window.innerHeight + 100
+                && window.pageYOffset <= this.workExperienceSection.offsetTop - this.skillsSection.offsetTop + window.innerHeight) {
+              if (this.target[index].id == "robotTwo") {
+                this.target[index].style.transform = 'translate3d(-3100px, 0px, 0px)';
               }
               
-              target[index].style.position = "fixed";
-              target[index].style.bottom = "90px";
+              this.target[index].style.position = "fixed";
+              this.target[index].style.bottom = "90px";
             }
-            else if (window.pageYOffset >= workExperienceSection.offsetTop - skillsSection.offsetTop + window.innerHeight) {           
-              if (target[index].id == "robotTwo") {
-                target[index].style.transform = 'translate3d(-3100px, 0px, 0px)';
+            else if (window.pageYOffset >= this.workExperienceSection.offsetTop - this.skillsSection.offsetTop + window.innerHeight) {           
+              if (this.target[index].id == "robotTwo") {
+                this.target[index].style.transform = 'translate3d(-3100px, 0px, 0px)';
               }
 
-              target[index].style.position = "absolute";
-              target[index].style.bottom = "90px";
+              this.target[index].style.position = "absolute";
+              this.target[index].style.bottom = "90px";
             }
             else {
-              if (target[index].id == "robot") {
-                target[index].style.position = "absolute";
-                target[index].style.bottom = "720px";                              
+              if (this.target[index].id == "robot") {
+                this.target[index].style.position = "absolute";
+                this.target[index].style.bottom = "720px";                              
               }
               else {
-                target[index].style.position = "absolute";
-                target[index].style.bottom = "3840px";
+                this.target[index].style.position = "absolute";
+                this.target[index].style.bottom = "3840px";
 
-                posX = window.pageYOffset * Number(target[index].dataset.ratex);
-                posY = window.pageYOffset * Number(target[index].dataset.ratey);
-                target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
+                posX = window.pageYOffset * Number(this.target[index].dataset.ratex);
+                posY = window.pageYOffset * Number(this.target[index].dataset.ratey);
+                this.target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
               }
             }            
           }
           else {
             // This is for vertical and horizontal movement
-            posX = window.pageYOffset * Number(target[index].dataset.ratex);
-            posY = window.pageYOffset * Number(target[index].dataset.ratey);
-            target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
+            posX = window.pageYOffset * Number(this.target[index].dataset.ratex);
+            posY = window.pageYOffset * Number(this.target[index].dataset.ratey);
+            this.target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
           }
 
           lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;

@@ -8,7 +8,6 @@
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     justify-content: center;
-    padding: 0 5% 0;
 }
 
 .title-text-container {
@@ -19,6 +18,7 @@
     text-align: center;
     width: 100%;    
     flex: 1;
+    padding-top: 8vw;
 }
 
 .body-text-container {
@@ -29,16 +29,17 @@
     flex: 0 0 70%;
     display: flex;
     transform: scale(0.7);
+    padding-top: 5vw;
+    text-align: justify;
 }
 
 .title {
-    // font-size: 10vw;
-    text-shadow: 11px 11px 0 #04839d;
+    text-shadow: 11px 11px 0 #CC5500;
     font-weight: 700;
     -webkit-text-stroke: 2px;
-    -webkit-text-stroke-color: #04839d;
+    -webkit-text-stroke-color: #CC5500;
     margin-block: 0px;
-    color: pink;    //Change this to the actual background color at the end    
+    color: beige;
 }
 
 #experienceText {
@@ -52,7 +53,7 @@
     max-width: 250px;
 }
 
-.text-transition {
+.fade-and-move-in {
     transform: translateY(50px);
     opacity: 0;
     transition: transform, opacity;
@@ -65,27 +66,52 @@
     }
 }
 
-.body-text-container > div {
-    padding-right: 2vw;
+.header {
+    font-size: 5vw;
+    font-weight: 700;
+    text-decoration: underline 7.5px #CC5500;
+    padding-bottom: 20px;
+    text-align: center;
 }
 
+.inner-body-text-container {
+    background: #DAD870;
+    border-radius: 5%;
+    height: 100%;
+    padding: 50px;
+    border: 15px solid #CC5500;
+}
 
+.left-inner-body {
+    margin-right: 4vw;
+}
 
-// This is for the alternative text transition animation with the text masks
-// Probably not going to use this though, just leaving it here for reference
-// .text-mask {
-//     position: absolute;
-//     top: 108vh;
-//     left: 0vh;    
-//     width: 100%;
-//     height: 6%;
-//     background: pink;
-// }
+.inner-body-bottom-text {
+    height: 30%;
+}
 
-// #topBody {
-//     top: 119.7vh;
-// }
+@media only screen and (min-width: 1650px) {
+    .title-text-container {
+        font-size: 8vw;
+        line-height: 7vw;
+    }
+    .body-text-container {
+        font-size: 2vw;
+    }
+    .header {
+        font-size: 3.7vw;
+    }
+}
 
-// #bottomBody {
-//     top: 131.7vh;
-// }
+@media only screen and (min-width: 2350px) {
+    .title-text-container {
+        font-size: 7vw;
+        line-height: 5vw;
+    }
+    .body-text-container {
+        font-size: 1.5vw;
+    }
+    .header {
+        font-size: 2.7vw;
+    }
+}

@@ -45,72 +45,77 @@ p, em {
 }
 
 .container {    
-    height: 100%;
-    width: 50%;    
+    /* height: 100%;
+    width: 50%; */
+
+    width: 50vw;
 }
 
 .text-container {
-    position: absolute;
+    /* position: absolute;
     top: 11vw;
     left: 25vw;
     width: 45%;
-    height: 50%;    
-    padding: 15px;
-    overflow: hidden;
+    height: 50%;
+    text-align: justify;
+    z-index: 4; */
+    
     text-align: justify;
     z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.text-item {
+.text-container > div {
+    font-family: 'Oswald';
+    font-size: 1.5vw;
+    font-weight: 400;
+    text-align: justify;
+    color: black;
+}
+
+.text-item {    
     margin-bottom: 20px;
-    margin-top: 1px;    
+    margin-top: 1px;
+    width: 90%;
 }
 
 img {
+    margin: auto;
     position: absolute;
-    bottom: 16vh;    
-    height: 60%;
-    width: auto;    /* Change this to a percent or vw value (change height to vh as well) */
+    top: 0px;
+    bottom: 0px;
 }
 
 #femalePointing {
-    left: -23vw;
+    left: -425px;
+    max-width: 19%;
+    max-height: 70%;
 }
 
 #malePointing {
-    right: -23vw;
-}
-
-#maleAnnouncing {
-    height: 50%;
-    top: 2vh;
-    left: 5vw;
+    right: -440px;
+    width: 40%;
+    bottom: -20px;
+    max-width: 22%;
+    max-height: 70%;
 }
 
 .text-border {
-    position: absolute;
     border-radius: 20px;
-    left: 49vh;
-    width: 100vh;
-    height: 0.5vw;    
-    /* background-color: #E8A653; */
+    width: 100%;
+    height: 0.5vw;
     background-color: #FFBD4D;
+    
+    /* background-color: #E8A653; */
 }
 
-/* Works with data rate of 0.25 */
 #textBorderTop {    
-    bottom: 103vh;
+    margin-bottom: 10px;
 }
 
 #textBorderBottom {
-    bottom: -5vh;
+    bottom: 23.5vh;
 }
-
-/* Works with data rate of 0.5 */
-/* #textBorderTop {    
-    bottom: 128vh;
-}
-
-#textBorderBottom {
-    bottom: -30vh;
-} */

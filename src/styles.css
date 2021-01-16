@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 section {
     position: relative;
     width: 100%;    
@@ -41,6 +45,15 @@ p, em {
     background-color: black;
 }
 
-* {
-    box-sizing: border-box;
+.fade-and-move-in {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform, opacity;
+    transition-duration: .8s;
+    transition-timing-function: ease;
+}
+
+.fade-and-move-in.show {
+    transform: translateY(0);
+        opacity: 1;
 }
