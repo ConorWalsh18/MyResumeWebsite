@@ -45,21 +45,10 @@ p, em {
 }
 
 .container {    
-    /* height: 100%;
-    width: 50%; */
-
     width: 50vw;
 }
 
-.text-container {
-    /* position: absolute;
-    top: 11vw;
-    left: 25vw;
-    width: 45%;
-    height: 50%;
-    text-align: justify;
-    z-index: 4; */
-    
+.text-container {    
     text-align: justify;
     z-index: 4;
     display: flex;
@@ -90,13 +79,13 @@ img {
 }
 
 #femalePointing {
-    left: -425px;
+    left: -44vh;
     max-width: 19%;
     max-height: 70%;
 }
 
 #malePointing {
-    right: -440px;
+    right: -46vh;
     width: 40%;
     bottom: -20px;
     max-width: 22%;
@@ -108,14 +97,17 @@ img {
     width: 100%;
     height: 0.5vw;
     background-color: #FFBD4D;
-    
-    /* background-color: #E8A653; */
+}
+
+.smaller-text-border {
+    width: 82%;    
+    background: #CC5500;
 }
 
 #textBorderTop {    
-    margin-bottom: 10px;
+    margin-bottom: 1vw;
 }
 
 #textBorderBottom {
-    bottom: 23.5vh;
+    margin-top: 1vw;    
 }

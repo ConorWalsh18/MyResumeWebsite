@@ -74,12 +74,19 @@
     text-align: center;
 }
 
+// .inner-body-text-container {
+//     background: #DAD870;
+//     border-radius: 5%;
+//     height: 100%;
+//     padding: 50px;
+//     border: 15px solid #CC5500;
+// }
+
 .inner-body-text-container {
-    background: #DAD870;
-    border-radius: 5%;
     height: 100%;
     padding: 50px;
-    border: 15px solid #CC5500;
+    border: 5px solid #CC5500;
+    box-shadow: 30px 30px 0 #CC5500;
 }
 
 .left-inner-body {
