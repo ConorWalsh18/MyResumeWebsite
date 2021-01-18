@@ -14,7 +14,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: beige;
+    background-color: #F5F5DC;
     z-index: 1;
 }
 
@@ -37,7 +37,7 @@ p, em {
 .section-seperator {
     width: 100%;
     height: 25vh;
-    background-color: beige;
+    background-color: #F5F5DC;
     z-index: 0;
 }
 

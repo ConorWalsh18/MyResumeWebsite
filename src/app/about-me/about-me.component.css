@@ -1,3 +1,7 @@
+#aboutMeSection {
+    z-index: 5;
+}
+
 #giraffe {
     content: url(../images/giraffe.png);
     position: absolute;

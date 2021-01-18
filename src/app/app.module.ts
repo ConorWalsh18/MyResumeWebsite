@@ -13,6 +13,7 @@ import { AlternativeSkillsComponent } from './alternative-skills/alternative-ski
 import { ContactComponent } from './contact/contact.component';
 import { WorkExperienceComponent } from './work-experience/work-experience.component';
 import * as $ from 'jquery';
+import { ArrowTransitionComponent } from './arrow-transition/arrow-transition.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import * as $ from 'jquery';
     SkillsComponent,
     AlternativeSkillsComponent,
     ContactComponent,
-    WorkExperienceComponent    
+    WorkExperienceComponent,
+    ArrowTransitionComponent    
   ],
   imports: [
     BrowserModule,
