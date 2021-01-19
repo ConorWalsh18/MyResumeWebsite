@@ -25,7 +25,7 @@
     max-width: 950px;
     max-height: 950px;
     margin-bottom: 8%;
-    z-index: 1;
+    z-index: 7;
 }
 
 svg {
@@ -98,4 +98,96 @@ img {
 
 .fade-in.show {
     opacity: 1;
+}
+
+/* .circle {
+    border-radius: 50%;
+    position: fixed;
+}
+
+.first-circle {
+    z-index: 6;
+    height: 59vw;
+    width: 59vw;    
+    position: fixed;
+    background-color: beige;
+    top: 12.75vw;
+}
+
+.second-circle {
+    z-index: 5;
+    height: 66vw;
+    width: 66vw;
+    background-color: #CC5500;
+    top: 9.5vw;
+}
+
+.third-circle {
+    z-index: 4;
+    height: 73vw;
+    width: 73vw;
+    background-color: beige;
+    top: 6vw;
+}
+
+.fourth-circle {
+    z-index: 3;
+    height: 80vw;
+    width: 80vw;
+    background-color: #CC5500;
+    top: 2vw;
+}
+
+.fifth-circle {
+    z-index: 2;
+    height: 87vw;
+    width: 87vw;
+    background-color: beige;
+    top: -1.5vw;
+}
+
+.sixth-circle {
+    z-index: 1;
+    height: 94vw;
+    width: 94vw;
+    background-color: #CC5500;
+    top: -5vw;
+    max-height: 94vw;
+    max-width: 94vw;
+} */
+
+/* .radial {
+    position: fixed;
+    top: 0.5vw;
+    width: 100%;
+    height: 100%;
+    background: repeating-radial-gradient(
+        circle
+        ,beige
+        ,beige 25%
+        ,#FFBD4D calc(25% + 1px)
+        ,#FFBD4D 50%
+        ,beige calc(50% + 1px)
+        ,beige 75%
+        ,#FFBD4D calc(75% + 1px)
+        ,#FFBD4D 100%
+    );
+} */
+
+.radial {
+    position: fixed;
+    top: 0.5vw;
+    width: 100%;
+    height: 100%;
+    background: repeating-radial-gradient(
+        circle
+        ,#FFBD4D
+        ,#FFBD4D 25%
+        ,beige calc(25% + 1px)
+        ,beige 50%
+        ,#FFBD4D calc(50% + 1px)
+        ,#FFBD4D 75%
+        ,beige calc(75% + 1px)
+        ,beige 100%
+    );
 }
