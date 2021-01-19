@@ -13,14 +13,16 @@ export class MainComponent implements OnInit {
   stopSwinging: boolean = false;
   isScrolling: any;
   aboutMeSection: any;
-  skillsSection: any;
   workExperienceSection: any;
+  skillsSection: any;
+  contactSection: any;
 
   ngOnInit(): void {
     this.target = document.getElementsByName("parallax");
     this.aboutMeSection = document.getElementById("aboutMeSection");
     this.skillsSection = document.getElementById("skillsSection");
     this.workExperienceSection = document.getElementById("workExperienceSection");
+    this.contactSection = document.getElementById("contactSection");
 
     var pictureFrame = document.getElementById("pictureFrame");
     var pictureFrameTwo = document.getElementById("pictureFrame2");
@@ -35,9 +37,7 @@ export class MainComponent implements OnInit {
       }
     }, false);
 
-    var lastScrollTop = 0;
-
-    // console.log("window.innerHeight = ", window.innerHeight);
+    var lastScrollTop = 0;    
 
     //Do the animation logic when the user is scrolling
     window.addEventListener('scroll', () => {
@@ -71,7 +71,8 @@ export class MainComponent implements OnInit {
           var posY = 0;
           var reverseRate = 0;
 
-          // console.log("window.pageYOffset = ", window.pageYOffset);          
+          // console.log("window.pageYOffset = ", window.pageYOffset);
+          // console.log("window.innerHeight = ", window.innerHeight);
           
           if (this.target[index].dataset.direction === 'vertical') {
             if (window.pageYOffset > 1000 && this.target[index].dataset.section == "sectionTwo") {
@@ -108,51 +109,31 @@ export class MainComponent implements OnInit {
             this.target[index].style.animationPlayState = "running";
           }
           else if (this.target[index].dataset.section == "skills") {
-            // Works with 275vh            
-            if (window.pageYOffset >= this.workExperienceSection.offsetTop - this.skillsSection.offsetTop + window.innerHeight) {              
-              this.target[index].style.position = "absolute";
+            // The circle container starts in an absolute position, then switches to fixed, then switches to absoulte right
+            // before the bottom so it doesn't carry over to the contact page. Also need to switch back to absolute on scroll
+            // up so the circle container doesn't go behind the image transition section.
 
-              //The 20 subtracted at the end is accounting for the starting top value of -2vh
-              var skillCircleTop = (this.workExperienceSection.offsetTop - this.skillsSection.offsetTop - window.innerHeight - 20) / 10;
+            // Switch the circle container to fixed so it stays in a fixed position on the screen
+            if (window.pageYOffset >= this.skillsSection.offsetTop && window.pageYOffset <= this.skillsSection.offsetTop + 100) {
+              var circleTop = this.target[index].getBoundingClientRect();
+              this.target[index].style.position = "fixed";
+              this.target[index].style.top = "10vh";
+            }
+            // Switch the circle container to absolute so it doesn't carry over to the contact page
+            else if (window.pageYOffset >= this.contactSection.offsetTop - window.innerHeight) {
+              this.target[index].style.position = "absolute";              
+              var skillCircleTop = (this.contactSection.offsetTop - this.skillsSection.offsetTop - window.innerHeight + 100) / 10;
+              skillCircleTop = ((skillCircleTop / 4) + 100) - 8;
               this.target[index].style.top = skillCircleTop.toString() + 'vh';
             }
-            else {
-              this.target[index].style.position = "fixed";
-              this.target[index].style.top = "-2vh";
-            }
-          }
-          else if (this.target[index].dataset.section == "skillsImages") {
-            if (window.pageYOffset > this.skillsSection.offsetTop + window.innerHeight + 100
-                && window.pageYOffset <= this.workExperienceSection.offsetTop - this.skillsSection.offsetTop + window.innerHeight) {
-              if (this.target[index].id == "robotTwo") {
-                this.target[index].style.transform = 'translate3d(-3100px, 0px, 0px)';
-              }
-              
-              this.target[index].style.position = "fixed";
-              this.target[index].style.bottom = "90px";
-            }
-            else if (window.pageYOffset >= this.workExperienceSection.offsetTop - this.skillsSection.offsetTop + window.innerHeight) {           
-              if (this.target[index].id == "robotTwo") {
-                this.target[index].style.transform = 'translate3d(-3100px, 0px, 0px)';
-              }
-
+            else if (window.pageYOffset < this.skillsSection.offsetTop) {
               this.target[index].style.position = "absolute";
-              this.target[index].style.bottom = "90px";
+              this.target[index].style.top = "7.5vh";
             }
             else {
-              if (this.target[index].id == "robot") {
-                this.target[index].style.position = "absolute";
-                this.target[index].style.bottom = "720px";                              
-              }
-              else {
-                this.target[index].style.position = "absolute";
-                this.target[index].style.bottom = "3840px";
-
-                posX = window.pageYOffset * Number(this.target[index].dataset.ratex);
-                posY = window.pageYOffset * Number(this.target[index].dataset.ratey);
-                this.target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
-              }
-            }            
+              this.target[index].style.position = "fixed";
+              this.target[index].style.top = "10vh";              
+            }
           }
           else {
             // This is for vertical and horizontal movement

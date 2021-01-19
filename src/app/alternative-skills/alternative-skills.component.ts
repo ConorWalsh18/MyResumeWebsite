@@ -61,6 +61,11 @@ export class AlternativeSkillsComponent implements OnInit {
     var svgPathLen = svgPath.getTotalLength();  
     var dots = document.getElementsByName("dot");                  
 
+    // console.log("window.innerHeight = ", window.innerHeight);
+    // console.log("skillsSection offsetTop = ", skillsSection.offsetTop);
+    // console.log("document.documentElement.scrollTop = ", document.documentElement.scrollTop);
+    // console.log("document.documentElement.scrollTop - window.innerHeight - 1100 = ", document.documentElement.scrollTop - window.innerHeight - 1100);
+
     for (var i = 0; i < dots.length; i++) {
       var scrollPercentage = animate ? (document.documentElement.scrollTop - window.innerHeight - 1100) / (window.innerHeight) : 1;
 

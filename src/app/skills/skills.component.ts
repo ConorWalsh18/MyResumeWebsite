@@ -10,27 +10,59 @@ export class SkillsComponent implements OnInit {
   constructor() { }
 
   skillsText: string = "Skills & Tools";
+  skillsSection: any;
+  contactSection: any;
+  circleContainer: any;
+  circleContainerSize: any;
 
   ngOnInit(): void {
-    window.addEventListener('scroll', () => {
-      console.log("inner height = ", window.innerHeight);
+    this.skillsSection = document.getElementById("skillsSection");
+    this.contactSection = document.getElementById("contactSection");
+    var lastScrollTop = 0;
 
-      if (window.pageYOffset <= (window.innerHeight * 2)) {
-      // if (window.pageYOffset >= window.innerHeight + 400 && window.pageYOffset <= ((window.innerHeight + 200) * 2)) {
-        this.moveDots(true);
-                
-        console.log("in skills");        
-        console.log("window.pageYOffset = ", window.pageYOffset);
+    var parallaxTransition = document.getElementById("parallaxImageTransition");    
+    this.circleContainer = document.getElementById("container");
+    this.circleContainerSize = $(this.circleContainer).height();
+
+    // console.log("circle container size = ", this.circleContainerSize);
+
+    window.addEventListener('scroll', () => {
+      // console.log("document.documentElement.scrollTop = ", document.documentElement.scrollTop);
+
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var scrollingUp = false;
+
+      if (scrollTop < lastScrollTop) {
+        scrollingUp = true;
       }
-      else {
-      // else if (window.pageYOffset >= (window.innerHeight * 2) + 500) {
+
+      // Use this for the fade-in animation if we want to use it
+      // if (window.pageYOffset >= parallaxTransition.offsetTop + this.circleContainerSize) {
+      //   this.circleContainer.classList.add("show");
+      // }
+      // else {
+      //   this.circleContainer.classList.remove("show");
+      // }
+
+      if ((window.pageYOffset >= this.skillsSection.offsetTop - (this.circleContainerSize * 0.25) || scrollingUp) && window.pageYOffset < this.contactSection.offsetTop) {
+        this.moveDots(true);
+
+        // var posY = window.pageYOffset * Number(this.circleContainer.dataset.ratey) * -1;
+        // this.circleContainer.style.transform = 'rotate(-90deg) translate(0, -45%) translateX('+posY+'px)';
+      }
+      else if (window.pageYOffset >= this.contactSection.offsetTop) {
         this.moveDots(false);
       }
+      
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
      });
-
-     if (window.pageYOffset >= (window.innerHeight * 2)) {
+    
+    if (window.pageYOffset >= this.contactSection.offsetTop) {
       this.moveDots(false);
-    };
+    }
+    else if (window.pageYOffset < this.skillsSection.offsetTop + 100) {
+      this.moveDots(false, true);
+    }
         
     var dots = document.getElementsByClassName("button");
     for (var i = 0; i < dots.length; i++) {
@@ -46,21 +78,25 @@ export class SkillsComponent implements OnInit {
     }
   }
 
-  moveDots(animate: boolean) {
+  moveDots(animate: boolean, above: boolean = false) {
     var element = <unknown>document.getElementById("theMotionPath");
     var svgPath = <SVGPathElement>element;
     var svgPathLen = svgPath.getTotalLength();  
-    var dots = document.getElementsByName("dot");                  
+    var dots = document.getElementsByName("dot");        
 
-    for (var i = 0; i < dots.length; i++) {    
-      var scrollPercentage = animate ? (document.documentElement.scrollTop - window.innerHeight) / (window.innerHeight) : 1;
-      
-      // console.log(scrollPercentage);
-      // console.log("scrollTop = ", document.documentElement.scrollTop);
-      // console.log("window.innerHeight = ", window.innerHeight);
+    for (var i = 0; i < dots.length; i++) {
+      var scrollPercentage = animate ? (document.documentElement.scrollTop - (window.innerHeight * 4.25) - this.circleContainerSize) / (window.innerHeight) : 1;
+
+      if (above) {
+        scrollPercentage = 0;
+      }
+
+      if (scrollPercentage >= 1 ) {
+        scrollPercentage = 1;
+      }
 
       var pt = svgPath.getPointAtLength((scrollPercentage * Number(dots[i].dataset.rate)) * svgPathLen);
-      dots[i].setAttribute("transform", "translate("+ pt.x + "," + pt.y + ")");             
+      dots[i].setAttribute("transform", "translate("+ pt.x + "," + pt.y + ")");
     }
   }
 }

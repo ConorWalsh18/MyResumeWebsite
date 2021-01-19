@@ -1,22 +1,35 @@
+#skillsSection {
+    /* height: 275vh; */
+    height: 225vh;
+    z-index: 0;
+    
+    /* Use this z-index if you want to use the fade-in animation */
+    /* z-index: 2; */
+
+    /* Change this back to beige at the end */
+    /* background: pink; */
+}
+
 .circle-container {
     transform-origin: center center;
-    transform: rotate(-90deg);
-    position: relative;
-    
-    /* 30vh is perfect with no parallax scrolling */
-    /* bottom: 30vh; */
+    transform: rotate(-90deg) translate(0, -45%);
 
-    bottom: 70vh;
-    
-    left: 2vw;
+    /* position: fixed;
+    top: 10vh; */
+
+    position: absolute;
+    top: 7.5vh;
+
+    left: 50%;
     width: 70%;
-    height: 70%;
+    max-width: 950px;
+    max-height: 950px;
+    margin-bottom: 8%;
+    z-index: 1;
 }
 
 svg {
     position: relative;    
-    width: 100%;
-    height: 100%;
     overflow: visible;
 }
 
@@ -42,25 +55,47 @@ svg g g#innerGroup:hover {
     transform: scale(1.5);
 }
 
-h1 {
-    font-size: 5em;
+#middleTextHeader {
+    font-size: 2.5em;
     font-family: 'Oswald';
-    font-weight: 500;
-    text-transform: uppercase;
-    line-height: 1.3em;
-    text-align: left;
-    color: #9d3e0c;
-    position: absolute;
-    top: 33.5%;
-    left: 50%;
-    transform: translate(-45%, -50%);    
+    font-weight: 800;
+    text-transform: uppercase;    
+    fill: #CC5500;  
+    text-anchor: middle;
+    transform: rotate(90deg);
 } 
 
-p, em {
+#middleTextBody {
     font-family:'Oswald';
-    margin-left: 10px;
-    font-size: 32px;
+    font-size: 1.5em;
     font-weight: 400;
-    text-align: justify;
-    color: #CC5500;  /* Burnt Orange */
+    transform: rotate(90deg);
+    text-anchor: middle;
+}
+
+img {    
+    position: absolute;
+    width: 40%;
+    max-width: 780px;
+}
+
+#robot {    
+    bottom: 93vh;
+    left: -110px;    
+}
+
+#robotTwo {
+    bottom: 384vh;
+    right: -3210px;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+
+.fade-in.show {
+    opacity: 1;
 }

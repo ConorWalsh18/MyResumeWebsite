@@ -1,7 +1,21 @@
-<section id="skillsSection" style="height: 140vh;">
-    <div class="circle-container" id="container" name="parallax" data-rate="0.35" data-section="skills">
-        <svg viewBox="0 0 500 500" version="1.1">
-            <circle cx="225" cy="225" r="200" fill="none" id="theMotionPath"/>
+<section id="skillsSection">
+    <!-- <div class="test-line"></div> -->
+    <div class="circle-container" id="container" name="parallax" data-rateY="0.6" data-section="skills">
+        <svg viewBox="0 0 500 500" version="1.1">            
+            <g>
+                <circle cx="225" cy="225" r="200" fill="none" id="theMotionPath"/>
+                <!-- y = -205 is perfectly center  -->
+                <text id="middleTextHeader" x=225 y=-205>{{skillsText}}</text>
+
+                <!-- Use this for the tools hover -->
+                <!-- <text id="middleTextHeader" x=225 y=-205>{{skillsText}}</text>
+                <text id="middleTextBody" x=225 y=-205>
+                    <tspan x=225 y=-225>Visual Studio, SSMS, Fiddler</tspan>
+                    <tspan x=225 y=-190>Postman, Sublime, ASP.NET</tspan>
+                    <tspan x=225 y=-155>IIS, REST, Node</tspan>                    
+                </text>                 -->
+
+            </g>
             <g name="dot" class="button" data-rate="0.875">
                 <g id="innerGroup" data-text="Tools">
                     <circle stroke="#CC5500" stroke-width="5" cx="0" cy="0" r="35" fill="#ffe29b"/>
@@ -52,8 +66,10 @@
             </g>
         </svg>
       </div>
+            
+      <!-- <img src="../../assets/man_smiling.png" id="firstGuy" name="parallax" data-rateY="1" data-rateX="1" data-direction="horizontal" data-section="skillsImages" data-order="1"/>
+      <img src="../../assets/woman_winking.png" id="womanWinking" name="parallax" data-rateY="1" data-rateX="-1" data-direction="horizontal" data-section="skillsImages" data-order="2"/> -->
 
-    <h1 id="headerText">
-        <!-- {{skillsText}} -->
-    </h1>
+      <!-- <img src="../../assets/retro_robot.png" id="robot" name="parallax" data-rateY="-0.5" data-rateX="0" data-direction="horizontal" data-section="skillsImages"/>
+      <img src="../../assets/retro_robot_flipped.png" id="robotTwo" name="parallax" data-rateY="1" data-rateX="-1" data-direction="horizontal" data-section="skillsImages"/> -->
 </section>
