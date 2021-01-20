@@ -1,0 +1,102 @@
+.text-container {    
+    text-align: justify;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50vw;
+    overflow: hidden;
+}
+
+.text-container > h1, .text-container > div > h1 {
+    font-family: 'Oswald';
+    font-size: 10vw;
+    /* line-height: 11.5vw; */
+    line-height: 14.5vw;
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.your-text-mask {
+    width: 25vw;
+    overflow: hidden;
+}
+
+#yourText {
+    color: #CC5500;
+    transform: translateX(-30vw);
+    transition: transform 0.45s linear, color 0.45s linear;    
+}
+
+#yourText.show-text {
+    color: #64021B;
+    transform: translateX(0vw);
+}
+
+.almost-text-mask {
+    width: 33vw;
+    overflow: hidden;
+}
+
+#almostText {
+    color: #E8A653;
+    transform: translateX(-35vw);
+    transition: transform 0.45s linear, color 0.45s linear;    
+}
+
+#almostText.show-text {
+    /* TODO: Maybe figure out another color to change this to */
+    color: #FFBD4D;
+    transform: translateX(0vw);
+}
+
+.there-text-mask {
+    width: 27vw;
+    overflow: hidden;
+}
+
+#thereText {
+    color: #FFBD4D;
+    transform: translateX(-33vw);
+    transition: transform 0.45s linear, color 0.45s linear;    
+}
+
+#thereText.show-text {
+    color: #9D3E0C;
+    transform: translateX(0vw);
+}
+
+.keep-text-mask {
+    width: 21vw;
+    overflow: hidden;
+}
+
+#keepText {
+    color: #9D3E0C;
+    transform: translateX(-28vw);
+    transition: transform 0.45s linear, color 0.45s linear;    
+}
+
+#keepText.show-text {
+    color: #64021B;
+    transform: translateX(0vw);
+}
+
+.scrolling-text-mask {
+    width: 47vw;
+    overflow: hidden;
+}
+
+#scrollingText {
+    color: #64021B;
+    transform: translateX(-48.5vw);
+    transition: transform 0.45s linear, color 0.45s linear;    
+}
+
+#scrollingText.show-text {
+    color: #CC5500;
+    transform: translateX(0vw);
+}

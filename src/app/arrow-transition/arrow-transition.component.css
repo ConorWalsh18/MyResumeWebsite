@@ -62,15 +62,11 @@ img {
     0% {
         top: 130vh;
     }
-    /* 80% {
-        opacity: 1;
-    } */
     90% {
         opacity: 1;
     }    
     100% {
         opacity: 0;
-        /* top: 350vh; */
         top: 320vh;
     } 
 }

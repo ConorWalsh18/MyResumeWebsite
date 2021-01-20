@@ -15,6 +15,7 @@ import { WorkExperienceComponent } from './work-experience/work-experience.compo
 import * as $ from 'jquery';
 import { ArrowTransitionComponent } from './arrow-transition/arrow-transition.component';
 import { ResumeDownloadComponent } from './resume-download/resume-download.component';
+import { TextTransitionComponent } from './text-transition/text-transition.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ResumeDownloadComponent } from './resume-download/resume-download.compo
     ContactComponent,
     WorkExperienceComponent,
     ArrowTransitionComponent,
-    ResumeDownloadComponent    
+    ResumeDownloadComponent,
+    TextTransitionComponent    
   ],
   imports: [
     BrowserModule,
