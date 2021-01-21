@@ -15,6 +15,7 @@ export class MainComponent implements OnInit {
   aboutMeSection: any;
   workExperienceSection: any;
   skillsSection: any;
+  textTransitionSection: any;
   contactSection: any;
 
   ngOnInit(): void {
@@ -23,17 +24,18 @@ export class MainComponent implements OnInit {
     this.skillsSection = document.getElementById("skillsSection");
     this.workExperienceSection = document.getElementById("workExperienceSection");
     this.contactSection = document.getElementById("contactSection");
+    this.textTransitionSection = document.getElementById("textTransitionSection");
 
-    var pictureFrame = document.getElementById("pictureFrame");
-    var pictureFrameTwo = document.getElementById("pictureFrame2");
-    pictureFrame.addEventListener("animationiteration", () => {
+    var malePictureFrame = document.getElementById("malePictureFrame");
+    var femalePictureFrame = document.getElementById("femalePictureFrame");
+    malePictureFrame.addEventListener("animationiteration", () => {
       if (this.stopSwinging) {
-        pictureFrame.style.animationPlayState = "paused";
-        pictureFrameTwo.style.animationPlayState = "paused";
+        malePictureFrame.style.animationPlayState = "paused";
+        femalePictureFrame.style.animationPlayState = "paused";
       }
       else {
-        pictureFrame.style.animationPlayState = "running";
-        pictureFrameTwo.style.animationPlayState = "running";
+        malePictureFrame.style.animationPlayState = "running";
+        femalePictureFrame.style.animationPlayState = "running";
       }
     }, false);
 
@@ -120,9 +122,9 @@ export class MainComponent implements OnInit {
               this.target[index].style.top = "10vh";
             }
             // Switch the circle container to absolute so it doesn't carry over to the contact page
-            else if (window.pageYOffset >= this.contactSection.offsetTop - window.innerHeight) {
+            else if (window.pageYOffset >= this.textTransitionSection.offsetTop - window.innerHeight) {
               this.target[index].style.position = "absolute";              
-              var skillCircleTop = (this.contactSection.offsetTop - this.skillsSection.offsetTop - window.innerHeight + 100) / 10;
+              var skillCircleTop = (this.textTransitionSection.offsetTop - this.skillsSection.offsetTop - window.innerHeight + 100) / 10;
               skillCircleTop = ((skillCircleTop / 4) + 100) - 8;
               this.target[index].style.top = skillCircleTop.toString() + 'vh';
             }

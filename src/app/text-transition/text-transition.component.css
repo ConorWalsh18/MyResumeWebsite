@@ -1,102 +1,104 @@
+#textTransitionSection {
+    /* background: green; */
+}
+
 .text-container {    
     text-align: justify;
     z-index: 4;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     width: 50vw;
     overflow: hidden;
+    transform: scale(1.2);
+    margin-bottom: 5vw;
 }
 
-.text-container > h1, .text-container > div > h1 {
+.text-container > div {
+    margin-bottom: 3vh;
+    overflow: hidden;
+    min-height: 11vh;
+}
+
+.text-container > div > h1 {
     font-family: 'Oswald';
-    font-size: 10vw;
-    /* line-height: 11.5vw; */
-    line-height: 14.5vw;
+    font-size: 10vh;
+    line-height: 15vh;
     font-weight: 700;
     text-align: left;
     text-transform: uppercase;
     white-space: nowrap;
+    transition: transform 0.45s linear, color 0.45s linear;
+    height: 12.5vh;
 }
 
 .your-text-mask {
-    width: 25vw;
-    overflow: hidden;
+    width: 25vh;
 }
 
 #yourText {
-    color: #CC5500;
-    transform: translateX(-30vw);
-    transition: transform 0.45s linear, color 0.45s linear;    
+    color: #FFBD4D;
+    transform: translateX(-30vh);     
 }
 
 #yourText.show-text {
     color: #64021B;
-    transform: translateX(0vw);
+    transform: translateX(0vh);
 }
 
 .almost-text-mask {
-    width: 33vw;
-    overflow: hidden;
+    width: 33vh;
 }
 
 #almostText {
     color: #E8A653;
-    transform: translateX(-35vw);
-    transition: transform 0.45s linear, color 0.45s linear;    
+    transform: translateX(-35vh);
 }
 
 #almostText.show-text {
-    /* TODO: Maybe figure out another color to change this to */
-    color: #FFBD4D;
-    transform: translateX(0vw);
+    color: #CC5500;
+    transform: translateX(0vh);
 }
 
 .there-text-mask {
-    width: 27vw;
-    overflow: hidden;
+    width: 27vh;
 }
 
 #thereText {
-    color: #FFBD4D;
-    transform: translateX(-33vw);
-    transition: transform 0.45s linear, color 0.45s linear;    
+    color: #e66b2a;
+    transform: translateX(-33vh);     
 }
 
 #thereText.show-text {
-    color: #9D3E0C;
-    transform: translateX(0vw);
+    color: #FFBD4D;
+    transform: translateX(0vh);
 }
 
 .keep-text-mask {
-    width: 21vw;
-    overflow: hidden;
+    width: 21vh;
 }
 
 #keepText {
     color: #9D3E0C;
-    transform: translateX(-28vw);
-    transition: transform 0.45s linear, color 0.45s linear;    
+    transform: translateX(-28vh);     
 }
 
 #keepText.show-text {
-    color: #64021B;
-    transform: translateX(0vw);
+    color: #E8A653;
+    transform: translateX(0vh);
 }
 
 .scrolling-text-mask {
-    width: 47vw;
-    overflow: hidden;
+    width: 47vh;
 }
 
 #scrollingText {
     color: #64021B;
-    transform: translateX(-48.5vw);
-    transition: transform 0.45s linear, color 0.45s linear;    
+    transform: translateX(-48.5vh);     
 }
 
 #scrollingText.show-text {
-    color: #CC5500;
-    transform: translateX(0vw);
+    color: #f28700;
+    transform: translateX(0vh);
 }
