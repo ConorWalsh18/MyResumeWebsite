@@ -22,26 +22,10 @@ export class NavigationBarComponent implements OnInit {
       if (this.links[i].classList.contains("active")) {
         this.links[i].classList.remove("active");
       }
-    }
+    }    
 
     element.target.classList.add("active");
 
     document.getElementById(section).scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-
-    // var sectionTop = document.getElementById(section).offsetTop;
-
-    // $('html, body').animate(
-    //   {
-    //     scrollTop: sectionTop
-    //   }
-    //   ,2000
-    //   ,'swing'
-    // );
-
-    // window.scroll({
-    //   behavior: 'smooth',
-    //   left: 0,
-    //   top: document.getElementById(section).offsetTop
-    // });
   }
 }

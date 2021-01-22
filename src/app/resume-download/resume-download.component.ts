@@ -27,8 +27,6 @@ export class ResumeDownloadComponent implements OnInit {
       }
 
       if (window.pageYOffset >= resumeSection.offsetTop) {
-        console.log("hands = ", hands);
-
         for (var i = 0; i < hands.length; i++) {
           hands[i].classList.add("move")
         }
