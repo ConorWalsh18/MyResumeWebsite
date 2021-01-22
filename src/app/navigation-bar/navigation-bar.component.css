@@ -1,0 +1,45 @@
+.navbar {
+    width: 100%;
+    background-color: beige;
+    overflow: auto;
+    position: fixed;
+    z-index: 1000;
+    border-bottom: 3px solid #CC5500;
+    white-space: nowrap;
+}
+  
+.link {
+    float: left;
+    padding: 12px;
+    text-decoration: none;
+    font-family: "Oswald";
+    /* font-size: 2.2vw; */
+    font-size: 3.5vw;
+    width: 16%;
+    text-align: center;
+    font-weight: 700;
+    -webkit-text-stroke: 1.5px;
+    -webkit-text-stroke-color: #CC5500;
+    margin-block: 0px;
+    color: beige;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+  
+.link:hover {
+    color: #CC5500;
+}
+
+.link.active {
+    color: #CC5500;
+}
+  
+@media screen and (max-width: 500px) {
+    .link {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: left; /* If you want the text to be left-aligned on small screens */
+    }
+}  

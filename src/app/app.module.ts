@@ -16,6 +16,7 @@ import * as $ from 'jquery';
 import { ArrowTransitionComponent } from './arrow-transition/arrow-transition.component';
 import { ResumeDownloadComponent } from './resume-download/resume-download.component';
 import { TextTransitionComponent } from './text-transition/text-transition.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { TextTransitionComponent } from './text-transition/text-transition.compo
     WorkExperienceComponent,
     ArrowTransitionComponent,
     ResumeDownloadComponent,
-    TextTransitionComponent    
+    TextTransitionComponent,
+    NavigationBarComponent    
   ],
   imports: [
     BrowserModule,

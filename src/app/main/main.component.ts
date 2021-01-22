@@ -137,6 +137,10 @@ export class MainComponent implements OnInit {
               this.target[index].style.top = "10vh";              
             }
           }
+          else if (this.target[index].dataset.section == "resume" && this.target[index].id == "rightHand") {
+            posX = window.pageYOffset * Number(this.target[index].dataset.ratex);
+            this.target[index].style.transform = 'translate3d('+posX+'px, 0px, 0px) rotateY(180deg)';
+          }
           else {
             // This is for vertical and horizontal movement
             posX = window.pageYOffset * Number(this.target[index].dataset.ratex);
