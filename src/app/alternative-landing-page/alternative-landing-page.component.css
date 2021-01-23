@@ -1,7 +1,16 @@
+/* .text-container {    
+    text-align: justify;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
 .text-container {
     position: absolute;
     width: auto;
-    top: 26vh;
+    top: 36vh;
     right: 27vw;
     z-index: 1;
     transform: rotate(-25deg);
@@ -16,17 +25,16 @@
     line-height:1.2em;
     margin:0;
     color:#CC5500;
-    /* color: #E8A653; */
 }
 
-.circle {
+/* .circle {
     width: 60vw;
     height: 60vw;
     max-width: 600px;
     max-height: 600px;
     border-radius: 50%;
     background-color: #FFBD4D;
-}
+} */
 
 #inside {
     display: flex;
@@ -36,42 +44,45 @@
     justify-content: center;
 }
 
-.contact-container {  
+.circle-container {
+    width: 30%;
+    height: 300px;
     position: absolute;
-    bottom: 3.5vw;
-    right: 43.4vw;
-    z-index: 1;
-  }
-  
-  .fab, .fas {
-    font-size: 3rem;
-    padding-right: 14px;
-  }
-  
-.fab:hover, .fas:hover {
-    color: #CC5500
+    max-width: 30%;
+    bottom: 41vh;
+    z-index: 0;
 }
 
-
-/* Figure out the best way to center the text and have it resize */
-/* .test-container {    
-    position: relative;
-    text-align: center;
-    transform: rotate(-25deg);
+.circle {
+    border-radius: 50%;
+    width: 100%;
+    padding-bottom: 100%;
+    background: #FFBD4D;
 }
 
-.test-text { 
-    text-align:center;
-    font-size: 6.5vw;
-    font-family:'Oswald';
-    font-weight:300;
-    text-transform:uppercase;
-    line-height:1.2em;
-    margin:0;    
-    color: #E8A653;
-
+img {    
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
+    width: 45%;
+    max-width: 45%;
+    top: 3vw;   
+}
+
+#robot {
+    transform: rotate(35deg);
+    left: -22vw;
+}
+
+#robot2 {
+    transform: rotateY(180deg) rotate(35deg);
+    right: -22vw;
+}
+
+.laser-beam {
+    width: 1%;
+    height: 80%;
+    background: green;
+    position: absolute;
+    top: -20vh;
+    left: 63vh;
+    transform: rotate(70deg);
+}

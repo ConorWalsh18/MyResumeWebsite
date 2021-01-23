@@ -35,11 +35,16 @@
     color: #CC5500;
 }
   
-@media screen and (max-width: 500px) {
+/* @media screen and (max-width: 500px) {
     .link {
         float: none;
         display: block;
         width: 100%;
-        text-align: left; /* If you want the text to be left-aligned on small screens */
+    } 
+} */
+
+@media screen and (min-width: 1200px) {
+    .link {
+        font-size: 40px;
     }
-}  
+}
