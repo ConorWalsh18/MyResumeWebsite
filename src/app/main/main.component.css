@@ -46,3 +46,21 @@
 #manSmiling {
     background-image: url("../../assets/man_smiling_and_pointing.png");
 }
+
+@media (max-width: 375px) {
+    #femaleWinking {
+        margin-left: -700vw;
+    }
+    
+    #manSmiling {        
+        margin-left: 700vw;
+    }
+
+    .image-container {        
+        transform: scale(0.3);
+    }
+
+    .repeat-image {
+        height: 80%;
+    }
+}

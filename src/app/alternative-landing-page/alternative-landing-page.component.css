@@ -1,16 +1,16 @@
-/* .text-container {    
+.flex-container {    
     text-align: justify;
     z-index: 4;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-} */
+}
 
 .text-container {
     position: absolute;
     width: auto;
-    top: 36vh;
+    top: 30vh;
     right: 27vw;
     z-index: 1;
     transform: rotate(-25deg);
@@ -18,30 +18,16 @@
 
 .title { 
     text-align:center;
-    font-size: 6.5vw;
+    /* font-size: 6.5vw; */
+    /* font-size: 10.5vh; */
+    font-size: 9em;
     font-family:'Oswald';
     font-weight:300;
     text-transform:uppercase;
     line-height:1.2em;
     margin:0;
     color:#CC5500;
-}
-
-/* .circle {
-    width: 60vw;
-    height: 60vw;
-    max-width: 600px;
-    max-height: 600px;
-    border-radius: 50%;
-    background-color: #FFBD4D;
-} */
-
-#inside {
-    display: flex;
-    width: 50vw;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
+    white-space: nowrap;
 }
 
 .circle-container {
@@ -49,7 +35,7 @@
     height: 300px;
     position: absolute;
     max-width: 30%;
-    bottom: 41vh;
+    bottom: 50vh;
     z-index: 0;
 }
 
@@ -60,29 +46,40 @@
     background: #FFBD4D;
 }
 
-img {    
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: 700px;
+    max-width: 800px;
+    margin: 50px;
+    perspective: 800px;
+    perspective-origin: 50% 50%;
+    position: relative;
+}
+
+.stage {
+    transform-style: preserve-3d;
     position: absolute;
-    width: 45%;
-    max-width: 45%;
-    top: 3vw;   
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) rotate(-25deg);
 }
 
-#robot {
-    transform: rotate(35deg);
-    left: -22vw;
+@media (max-width: 375px) {
+    .title {        
+        font-size: 3em;
+    }
+
+    .stage {
+        left: 48%;
+    }
 }
 
-#robot2 {
-    transform: rotateY(180deg) rotate(35deg);
-    right: -22vw;
-}
-
-.laser-beam {
-    width: 1%;
-    height: 80%;
-    background: green;
-    position: absolute;
-    top: -20vh;
-    left: 63vh;
-    transform: rotate(70deg);
+@media (max-width: 900px) {
+    .title {        
+        font-size: 14vw;
+    }
 }

@@ -106,7 +106,7 @@ svg {
 
 .text-container .small-text {
     font-size: 1.5vw;
-    margin-bottom: 1vw;
+    margin-bottom: 1vh;
     color: #CC5500;
 }
 
@@ -118,4 +118,24 @@ svg {
     color: beige;
     -webkit-text-stroke: 2px;
     -webkit-text-stroke-color: #CC5500;
+}
+
+@media (max-width: 750px) {
+    .text-container > div {
+        font-size: 7vw;
+        line-height: 10.5vw;        
+    }
+
+    .text-container .small-text {
+        font-size: 3.5vw;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .outline-text {
+        color: beige;
+        -webkit-text-stroke: 1px;
+        -webkit-text-stroke-color: #CC5500;
+    }
 }
