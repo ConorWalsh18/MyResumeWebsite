@@ -339,6 +339,79 @@ $borderW: 2px;
 
 @media (max-width: 500px) {
     .blob-btn {        
-        font-size: 1vw;
+        font-size: 3vw;
+    }
+
+    #rightHand {
+        right: -437vh;
+        // top: 58vh;
+    }
+
+    #leftHand {
+        left: -437vh;
+        // top: 58vh;
+    }
+
+    #rightHand.move {
+        animation: right-hand-point 5s linear forwards infinite;
+    }
+    
+    #leftHand.move {
+        animation: left-hand-point 5s linear forwards infinite;
+    }
+
+    .hands {
+        width: 32%;
+        max-width: 32%;
+    }
+
+    @keyframes left-hand-point {
+        0% {
+            left: -437vh;
+        }
+        25% {
+            left: -436vh;
+        }
+        50% {
+            left: -437vh;
+        }
+        75% {
+            left: -438vh;
+        }  
+        100% {
+            left: -437vh;
+        }
+    }
+    
+    @keyframes right-hand-point {
+        0% {
+            right: -437vh;
+        }
+        25% {
+            right: -436vh;
+        }
+        50% {
+            right: -437vh;
+        }
+        75% {
+            right: -438vh;
+        }  
+        100% {
+            right: -437vh;
+        }
+    }
+
+    .text-container {
+        width: 65vw;
+        margin-bottom: 55vw;
+        margin-top: 0vw;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    .text-container > div {
+        font-size: 5.5vw;
     }
 }

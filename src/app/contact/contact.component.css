@@ -89,3 +89,30 @@ h1 {
 .fab:hover, .fas:hover {
     color: #CC5500
 }
+
+@media (max-width: 375px) {
+    .text-item {
+        position: absolute;
+        top: 22vh;
+        font-size: 3em;
+    }
+
+    .text-container > div.text-item {
+        top: 28vh;
+        width: 50%;
+        font-size: 4.5vw;
+        line-height: 0vh;
+        margin-top: 12%;
+        line-height: 3vh;
+    }
+
+    .text-container > div.contact-container {
+        line-height: 0vh;
+        width: 70vw;
+        margin-bottom: 20vw;
+    }
+    
+    .fab {
+        font-size: 2rem;
+    }
+}

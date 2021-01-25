@@ -102,3 +102,53 @@
     color: #f28700;
     transform: translateX(0vh);
 }
+
+@media (max-width: 375px) {
+    .your-text-mask {
+        width: 16vh;
+    }
+
+    .text-container {
+        width: 75vw;
+    }
+
+    .text-container > div > h1 {
+        font-size: 7vh;
+    }
+
+    .almost-text-mask {
+        width: 23vh;
+    }
+
+    .there-text-mask {
+        width: 19vh;
+    }
+
+    .keep-text-mask {
+        width: 15vh;
+    }
+
+    .scrolling-text-mask {
+        width: 32vh;
+    }
+
+    #yourText {
+        transform: translateX(-21vh);
+    }
+
+    #almostText {
+        transform: translateX(-24vh);
+    }
+
+    #keepText {        
+        transform: translateX(-19vh);
+    }
+
+    #thereText {
+        transform: translateX(-23vh);
+    }
+
+    #scrollingText {
+        transform: translateX(-34vh);     
+    }
+}
