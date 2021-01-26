@@ -34,12 +34,12 @@
 }
 
 .your-text-mask {
-    width: 25vh;
+    width: 29vh;
 }
 
 #yourText {
     color: #FFBD4D;
-    transform: translateX(-30vh);     
+    transform: translateX(-36vh);     
 }
 
 #yourText.show-text {
@@ -103,9 +103,9 @@
     transform: translateX(0vh);
 }
 
-@media (max-width: 375px) {
+@media (max-width: 750px) {
     .your-text-mask {
-        width: 16vh;
+        width: 20vh;
     }
 
     .text-container {
@@ -133,7 +133,7 @@
     }
 
     #yourText {
-        transform: translateX(-21vh);
+        transform: translateX(-25.5vh);
     }
 
     #almostText {

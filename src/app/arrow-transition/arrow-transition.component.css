@@ -132,7 +132,7 @@ svg {
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 750px) {
     .outline-text {
         color: beige;
         -webkit-text-stroke: 1px;

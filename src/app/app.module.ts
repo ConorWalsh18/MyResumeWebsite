@@ -17,6 +17,8 @@ import { ArrowTransitionComponent } from './arrow-transition/arrow-transition.co
 import { ResumeDownloadComponent } from './resume-download/resume-download.component';
 import { TextTransitionComponent } from './text-transition/text-transition.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { ImageTransitionComponent } from './image-transition/image-transition.component';
+import { StaticSkillsComponent } from './static-skills/static-skills.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
     ArrowTransitionComponent,
     ResumeDownloadComponent,
     TextTransitionComponent,
-    NavigationBarComponent    
+    NavigationBarComponent,
+    ImageTransitionComponent,
+    StaticSkillsComponent    
   ],
   imports: [
     BrowserModule,

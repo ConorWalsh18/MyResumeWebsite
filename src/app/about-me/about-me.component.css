@@ -139,7 +139,7 @@ img {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 750px) {
     .text-container > div {
         font-size: 3.5vw;        
     }

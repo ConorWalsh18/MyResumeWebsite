@@ -90,7 +90,7 @@ h1 {
     color: #CC5500
 }
 
-@media (max-width: 375px) {
+@media (max-width: 750px) {
     .text-item {
         position: absolute;
         top: 22vh;
