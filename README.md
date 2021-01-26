@@ -1,3 +1,7 @@
+# Deployement
+
+Use `ng build --prod --output-path docs` to create deployable code for GitHub Pages. Once that's done, copy the CNAME file into docs.
+
 # SpaceOgreWebsite
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
@@ -13,8 +17,6 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-Use `ng build --prod --output-path docs` to create deployable code for GitHub Pages.
 
 ## Running unit tests
 
