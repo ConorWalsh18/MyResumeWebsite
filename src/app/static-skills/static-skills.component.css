@@ -13,7 +13,6 @@
     transform-origin: center center;
     transform: rotate(-90deg) translate(0, -45%);
     position: absolute;
-    top: 1.5vh;
     left: 50%;
     width: 80%;
     max-width: 800px;
