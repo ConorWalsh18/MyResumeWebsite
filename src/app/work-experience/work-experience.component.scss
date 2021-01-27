@@ -1,3 +1,7 @@
+// #workExperienceSection {
+//     background: pink;
+// }
+
 // If this works add it to other/future sections
 .work-experience-container {
     display: flex;
@@ -16,20 +20,20 @@
     text-transform: uppercase;
     line-height: 9vw;
     text-align: center;
-    width: 100%;    
+    width: 100%;
     flex: 1;
-    padding-top: 8vw;
+    padding-top: 5vw;
 }
 
 .body-text-container {
     width: 100%;
     margin: 0;
     font-family: "Oswald";
-    font-size: 2.5vw;
+    font-size: 2vw;
     flex: 0 0 70%;
     display: flex;
     transform: scale(0.7);
-    padding-top: 5vw;
+    // padding-top: 5vw;
     text-align: justify;
 }
 
@@ -67,25 +71,17 @@
 }
 
 .header {
-    font-size: 5vw;
+    font-size: 3.7vw;
     font-weight: 700;
-    text-decoration: underline 7.5px #CC5500;
     padding-bottom: 20px;
     text-align: center;
+    color: #CC5500; //Maybe make the color black
 }
-
-// .inner-body-text-container {
-//     background: #DAD870;
-//     border-radius: 5%;
-//     height: 100%;
-//     padding: 50px;
-//     border: 15px solid #CC5500;
-// }
 
 .inner-body-text-container {
     height: 100%;
     padding: 50px;
-    border: 5px solid #CC5500;
+    border: 3px solid #CC5500;
     box-shadow: 30px 30px 0 #CC5500;
 }
 
@@ -95,19 +91,6 @@
 
 .inner-body-bottom-text {
     height: 30%;
-}
-
-@media only screen and (min-width: 1650px) {
-    .title-text-container {
-        font-size: 8vw;
-        line-height: 7vw;
-    }
-    .body-text-container {
-        font-size: 2vw;
-    }
-    .header {
-        font-size: 3.7vw;
-    }
 }
 
 @media only screen and (min-width: 2350px) {
@@ -123,7 +106,51 @@
     }
 }
 
-@media (max-width: 750px) {
+@media only screen and (max-width: 1650px) {
+    // .title-text-container {
+    //     font-size: 8vw;
+    //     line-height: 7vw;
+    // }
+    .body-text-container {
+        font-size: 2vw;
+    }
+    .header {
+        font-size: 3.7vw;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .title-text-container {
+        font-size: 12vw;
+        line-height: 12vw;
+        padding-top: 13vw;
+    }
+    .body-text-container {
+        font-size: 2.5vw;
+    }
+    .header {
+        font-size: 4.5vw;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .title-text-container {
+        font-size: 19vw;
+        line-height: 21vw;
+        padding-top: 14vw;
+    }
+    .body-text-container {
+        font-size: 3.5vw;
+    }
+    .header {
+        font-size: 7vw;
+    }
+    .left-inner-body {
+        margin-right: 8vw;
+    }
+}
+
+@media (max-width: 650px) {
     .title {
         text-shadow: 7px 7px 0 #CC5500;
         font-weight: 700;
@@ -134,9 +161,9 @@
     }
 
     .title-text-container {
-        font-size: 18vw;
-        line-height: 21vw;        
-        padding-top: 12vw;
+        font-size: 19vw;
+        line-height: 10vh;
+        padding-top: 6vh;
     }
 
     .body-text-container {

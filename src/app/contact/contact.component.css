@@ -19,11 +19,13 @@
 .swing-image {
     -webkit-transform-origin: 50% 0;
     transform-origin: 50% 0;
-    -webkit-animation: swinging 2.25s ease-in-out forwards 999999;
-    animation: swinging 2.25s ease-in-out forwards 999999;
+
+    /* TEMP */
+    /* -webkit-animation: swinging 2.25s ease-in-out forwards 999999;
+    animation: swinging 2.25s ease-in-out forwards 999999; */
 }
 
-img {
+/* img {
     width: 17%;
     filter: drop-shadow(12px 12px 8px grey);
     max-height: 50%;
@@ -31,15 +33,71 @@ img {
     position: absolute;
     top: 28%;
     z-index: 2;
-}
+} */
 
-#malePictureFrame {
+/* #malePictureFrame {
     left: 7vw;
 }
 
 #femalePictureFrame {
     right: 7vw;
     animation-direction: reverse;
+} */
+
+.frame-container {
+    height: 60vw;
+    width: 120vw;
+    position: relative;
+}
+
+img {
+    width: 100%;
+    filter: drop-shadow(12px 12px 8px grey);
+    max-height: 50%;
+    max-width: 70%;
+    position: absolute;
+    top: 39%;
+    z-index: 2;
+    left: 1vw;
+}
+
+#linkedinPictureFrame {
+    /* left: 7vw; */
+}
+
+#facebookPictureFrame {
+    /* left: 30vw; */
+}
+
+#instagramPictureFrame {
+    /* left: 53vw; */
+    animation-direction: reverse;   
+}
+
+#githubPictureFrame {
+    /* left: 76vw; */
+    animation-direction: reverse;
+}
+
+.picture-content-container {
+    display: inline-grid;
+    width: 15vw;
+    justify-items: center;
+    position: absolute;
+    top: 52%;
+    left: 8%;
+    z-index: 2;
+    transition: color 0.2s;
+}
+
+.fab, .fas {
+    font-size: 5vw;
+    font-weight: 800;
+}
+
+.picture-content-container > i, .picture-content-container > div {
+    grid-column: 1;
+    grid-row: 1;
 }
 
 .text-container {    
@@ -50,6 +108,10 @@ img {
     align-items: center;
     width: 45vw;
     z-index: 1;
+
+    /* Potentially TEMP */
+    position: absolute;
+    top: 10vh;
 }
 
 .text-container > div {
@@ -86,15 +148,34 @@ h1 {
     margin-top: 150px;
     z-index: 1;
     white-space: nowrap; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    width: 25vw;
+    z-index: 1;
+    margin-top: 0vw;
 }
-  
-.fab, .fas {
+
+/* .fab, .fas {
     font-size: 3rem;
     padding-right: 14px;
-}
+    line-height: 7vh;
+    font-weight: 800;
+} */
   
-.fab:hover, .fas:hover {
+.fab:hover, .fas:hover, .picture-content-container:hover {
     color: #CC5500
+}
+
+.icon-text {
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    /* padding-left: 8px; */
+    font-size: 3vw;
+    font-weight: 800;
+    line-height: 15vw;
 }
 
 /* Need to fix this */

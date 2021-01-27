@@ -1,10 +1,12 @@
 #rightHand {
     transform: rotateY(180deg);
-    right: -440vh;
+    right: -375vh;
+    margin-right: -3%;
 }
 
 #leftHand {
-    left: -440vh;
+    left: -375vh;
+    margin-left: -3%;
 }
 
 .hands {
@@ -24,37 +26,37 @@
 
 @keyframes left-hand-point {
     0% {
-        left: -440vh;
+        left: -375vh;
     }
     25% {
-        left: -438vh;
+        left: -373vh;
     }
     50% {
-        left: -440vh;
+        left: -375vh;
     }
     75% {
-        left: -442vh;
+        left: -377vh;
     }  
     100% {
-        left: -440vh;
+        left: -375vh;
     } 
 }
 
 @keyframes right-hand-point {
     0% {
-        right: -440vh;
+        right: -375vh;
     }
     25% {
-        right: -438vh;
+        right: -373vh;
     }
     50% {
-        right: -440vh;
+        right: -375vh;
     }
     75% {
-        right: -442vh;
+        right: -377vh;
     }  
     100% {
-        right: -440vh;
+        right: -375vh;
     }  
 }
 
@@ -225,180 +227,41 @@ $borderW: 2px;
 
 @media (max-width: 1500px) {
     #rightHand {
-        right: -450vh;
+        margin-right: -13vh;
     }
 
     #leftHand {
-        left: -450vh;
+        margin-left: -13vh;
+    }
+}
+
+@media (max-width: 1250px) {
+    #rightHand {
+        margin-right: -17vh;
     }
 
-    #rightHand.move {
-        animation: right-hand-point 5s linear forwards infinite;
-    }
-    
-    #leftHand.move {
-        animation: left-hand-point 5s linear forwards infinite;
-    }
-
-    @keyframes left-hand-point {
-        0% {
-            left: -450vh;
-        }
-        25% {
-            left: -448vh;
-        }
-        50% {
-            left: -450vh;
-        }
-        75% {
-            left: -452vh;
-        }  
-        100% {
-            left: -450vh;
-        }
-    }
-    
-    @keyframes right-hand-point {
-        0% {
-            right: -450vh;
-        }
-        25% {
-            right: -448vh;
-        }
-        50% {
-            right: -450vh;
-        }
-        75% {
-            right: -452vh;
-        }  
-        100% {
-            right: -450vh;
-        }
+    #leftHand {
+        margin-left: -17vh;
     }
 }
 
 @media (max-width: 1000px) {
-    #rightHand {
-        right: -455vh;
-    }
-
-    #leftHand {
-        left: -455vh;
-    }
-
-    #rightHand.move {
-        animation: right-hand-point 5s linear forwards infinite;
-    }
-    
-    #leftHand.move {
-        animation: left-hand-point 5s linear forwards infinite;
-    }
-
-    @keyframes left-hand-point {
-        0% {
-            left: -455vh;
-        }
-        25% {
-            left: -453vh;
-        }
-        50% {
-            left: -455vh;
-        }
-        75% {
-            left: -457vh;
-        }  
-        100% {
-            left: -455vh;
-        }
-    }
-    
-    @keyframes right-hand-point {
-        0% {
-            right: -455vh;
-        }
-        25% {
-            right: -453vh;
-        }
-        50% {
-            right: -455vh;
-        }
-        75% {
-            right: -457vh;
-        }  
-        100% {
-            right: -455vh;
-        }
-    }
-}
-
-@media (max-width: 1100px) {
     .blob-btn {
         padding: 2vw 4.6vw;
     }
 }
 
 @media (max-width: 750px) {
-    .blob-btn {        
-        font-size: 3vw;
-    }
-
     #rightHand {
-        right: -437vh;
-        // top: 58vh;
+        margin-right: -22vh;
     }
 
     #leftHand {
-        left: -437vh;
-        // top: 58vh;
+        margin-left: -22vh;
     }
 
-    #rightHand.move {
-        animation: right-hand-point 5s linear forwards infinite;
-    }
-    
-    #leftHand.move {
-        animation: left-hand-point 5s linear forwards infinite;
-    }
-
-    .hands {
-        width: 32%;
-        max-width: 32%;
-    }
-
-    @keyframes left-hand-point {
-        0% {
-            left: -437vh;
-        }
-        25% {
-            left: -436vh;
-        }
-        50% {
-            left: -437vh;
-        }
-        75% {
-            left: -438vh;
-        }  
-        100% {
-            left: -437vh;
-        }
-    }
-    
-    @keyframes right-hand-point {
-        0% {
-            right: -437vh;
-        }
-        25% {
-            right: -436vh;
-        }
-        50% {
-            right: -437vh;
-        }
-        75% {
-            right: -438vh;
-        }  
-        100% {
-            right: -437vh;
-        }
+    .blob-btn {        
+        font-size: 3vw;
     }
 
     .text-container {
@@ -413,5 +276,19 @@ $borderW: 2px;
 
     .text-container > div {
         font-size: 5.5vw;
+    }
+}
+
+@media (max-width: 400px) {
+    #rightHand {
+        margin-right: -21vh;
+    }
+
+    .buttons {
+        left: 4.25vh;
+    }
+
+    .blob-btn {        
+        font-size: 2.5vw;
     }
 }
