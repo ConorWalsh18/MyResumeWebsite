@@ -95,7 +95,7 @@ export class SkillsComponent implements OnInit {
         scrollPercentage = 1;
       }
 
-      var pt = svgPath.getPointAtLength((scrollPercentage * Number(dots[i].dataset.rate)) * svgPathLen);
+      var pt = svgPath.getPointAtLength((scrollPercentage * Number(dots[i].dataset.rate)) * svgPathLen);            
       dots[i].setAttribute("transform", "translate("+ pt.x + "," + pt.y + ")");
     }
   }

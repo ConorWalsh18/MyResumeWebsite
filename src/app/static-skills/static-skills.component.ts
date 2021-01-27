@@ -11,13 +11,13 @@ export class StaticSkillsComponent implements OnInit {
 
   skillsText: string = "Skills & Tools";
   skillsSection: any;
-  contactSection: any;
+  textTransitionSection: any;
   circleContainer: any;
   circleContainerSize: any;
 
   ngOnInit(): void {
     this.skillsSection = document.getElementById("skillsSection");
-    this.contactSection = document.getElementById("contactSection");
+    this.textTransitionSection = document.getElementById("textTransitionSection");
     var lastScrollTop = 0;
 
     var parallaxTransition = document.getElementById("parallaxImageTransition");    
@@ -26,44 +26,40 @@ export class StaticSkillsComponent implements OnInit {
 
     // console.log("circle container size = ", this.circleContainerSize);
 
-    window.addEventListener('scroll', () => {
-      // console.log("document.documentElement.scrollTop = ", document.documentElement.scrollTop);
+    var alreadyAnimated = false;
+    this.animateDots(false);
 
+    window.addEventListener('scroll', () => {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      var scrollingUp = false;
+      var scrollingUp = false;      
 
       if (scrollTop < lastScrollTop) {
         scrollingUp = true;
       }
 
-      // Use this for the fade-in animation if we want to use it
-      // if (window.pageYOffset >= parallaxTransition.offsetTop + this.circleContainerSize) {
-      //   this.circleContainer.classList.add("show");
-      // }
-      // else {
-      //   this.circleContainer.classList.remove("show");
-      // }
-
-      if ((window.pageYOffset >= this.skillsSection.offsetTop - (this.circleContainerSize * 0.25) || scrollingUp) && window.pageYOffset < this.contactSection.offsetTop) {
-        this.moveDots(true);
-
-        // var posY = window.pageYOffset * Number(this.circleContainer.dataset.ratey) * -1;
-        // this.circleContainer.style.transform = 'rotate(-90deg) translate(0, -45%) translateX('+posY+'px)';
+      if (!alreadyAnimated) {
+        if (!scrollingUp
+            && window.pageYOffset >= this.skillsSection.offsetTop - (window.innerHeight * 0.2)
+            && window.pageYOffset < this.textTransitionSection.offsetTop) {
+          this.animateDots(true);
+          alreadyAnimated = true;
+        }
+        else if (scrollingUp && window.pageYOffset <= this.skillsSection.offsetTop){
+          this.animateDots(true);
+          alreadyAnimated = true;
+        }
       }
-      else if (window.pageYOffset >= this.contactSection.offsetTop) {
-        this.moveDots(false);
+      else if (window.pageYOffset >= this.textTransitionSection.offsetTop
+               || window.pageYOffset <= this.skillsSection.offsetTop - window.innerHeight
+               && !scrollingUp) {
+        this.animateDots(false);
+        alreadyAnimated = false;
       }
       
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-     });
+    });
     
-    if (window.pageYOffset >= this.contactSection.offsetTop) {
-      this.moveDots(false);
-    }
-    else if (window.pageYOffset < this.skillsSection.offsetTop + 100) {
-      this.moveDots(false, true);
-    }
-        
+    // Add the hover event listener to the buttons
     var dots = document.getElementsByClassName("button");
     for (var i = 0; i < dots.length; i++) {
       dots[i].addEventListener("mouseover", event => {        
@@ -75,28 +71,40 @@ export class StaticSkillsComponent implements OnInit {
       dots[i].addEventListener("mouseout", event => {
         this.skillsText = "Skills & Tools";
       });
-    }
+    }  
   }
 
-  moveDots(animate: boolean, above: boolean = false) {
+  animateDots(animate: boolean) {
     var element = <unknown>document.getElementById("theMotionPath");
     var svgPath = <SVGPathElement>element;
     var svgPathLen = svgPath.getTotalLength();  
-    var dots = document.getElementsByName("dot");        
-
-    for (var i = 0; i < dots.length; i++) {
-      var scrollPercentage = animate ? (document.documentElement.scrollTop - (window.innerHeight * 4.25) - this.circleContainerSize) / (window.innerHeight) : 1;
-
-      if (above) {
-        scrollPercentage = 0;
+    var dots = document.getElementsByName("dot");
+    
+    var scrollPercentage = 0;        
+    var perSecond = 0.018;
+    
+    if (!animate) {
+      for (var i = 0; i < dots.length; i++) {
+        var pt = svgPath.getPointAtLength((0 * Number(dots[i].dataset.rate)) * svgPathLen);
+        dots[i].setAttribute("transform", "translate("+ pt.x + "," + pt.y + ")");
       }
-
-      if (scrollPercentage >= 1 ) {
-        scrollPercentage = 1;
+    }
+    else {
+      function update(){
+        scrollPercentage += perSecond;
+          
+        if (scrollPercentage > 1) {
+          scrollPercentage = 1;
+          clearInterval(interval);
+        }
+  
+        for (var i = 0; i < dots.length; i++) {
+          var pt = svgPath.getPointAtLength((scrollPercentage * Number(dots[i].dataset.rate)) * svgPathLen);
+          dots[i].setAttribute("transform", "translate("+ pt.x + "," + pt.y + ")");
+        }
       }
-
-      var pt = svgPath.getPointAtLength((scrollPercentage * Number(dots[i].dataset.rate)) * svgPathLen);
-      dots[i].setAttribute("transform", "translate("+ pt.x + "," + pt.y + ")");
+      
+      var interval = setInterval(update, 18);
     }
   }
 }

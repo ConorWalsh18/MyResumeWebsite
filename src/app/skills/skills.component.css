@@ -21,9 +21,15 @@
     top: 7.5vh;
 
     left: 50%;
-    width: 90%;
+    
+    /* width: 90%;
     max-width: 950px;
-    max-height: 950px;
+    max-height: 950px; */
+
+    width: 80%;
+    max-width: 800px;
+    max-height: 800px;
+    
     margin-bottom: 8%;
     z-index: 7;
 }

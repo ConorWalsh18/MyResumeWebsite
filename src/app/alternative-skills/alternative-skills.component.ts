@@ -16,31 +16,29 @@ export class AlternativeSkillsComponent implements OnInit {
     var lastScrollTop = 0;
 
     window.addEventListener('scroll', () => {
-      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      var scrollingUp = false;
+      // var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      // var scrollingUp = false;
 
-      if (scrollTop < lastScrollTop) {
-        scrollingUp = true;
-      }      
+      // if (scrollTop < lastScrollTop) {
+      //   scrollingUp = true;
+      // }      
 
-      if ((window.pageYOffset >= window.innerHeight + 1100 || scrollingUp) && window.pageYOffset <= ((window.innerHeight + 550) * 2)) {
-        this.moveDots(true);                        
-      }
-      else if (window.pageYOffset >= ((window.innerHeight + 550)* 2)) {
-        this.moveDots(false);
-      }
+      // if ((window.pageYOffset >= window.innerHeight + 1100 || scrollingUp) && window.pageYOffset <= ((window.innerHeight + 550) * 2)) {
+      //   this.moveDots(true);                        
+      // }
+      // else if (window.pageYOffset >= ((window.innerHeight + 550)* 2)) {
+      //   this.moveDots(false);
+      // }
       
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      // lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
      });
 
-    if (window.pageYOffset >= ((window.innerHeight + 550) * 2)) {
-      this.moveDots(false);
-    }
-    else if (window.pageYOffset < skillsSection.offsetTop + 100) {
-      this.moveDots(false, true);
-    }
-        
-    var dots = document.getElementsByClassName("button");
+    var delay = 1.35;    
+    var element = <unknown>document.getElementById("theMotionPath");
+    var dots = document.getElementsByName("dot");
+    var svgPath = <SVGPathElement>element;
+    var svgPathLen = svgPath.getTotalLength();
+
     for (var i = 0; i < dots.length; i++) {
       dots[i].addEventListener("mouseover", event => {        
         var activeDot = event.target as HTMLElement;
@@ -51,30 +49,16 @@ export class AlternativeSkillsComponent implements OnInit {
       dots[i].addEventListener("mouseout", event => {
         this.skillsText = "Skills & Tools";
       });
-    }
-  }
 
-  moveDots(animate: boolean, above: boolean = false) {
-    var skillsSection = document.getElementById("skillsSection");
-    var element = <unknown>document.getElementById("theMotionPath");
-    var svgPath = <SVGPathElement>element;
-    var svgPathLen = svgPath.getTotalLength();  
-    var dots = document.getElementsByName("dot");                  
+      delay -= 0.16875;
 
-    // console.log("window.innerHeight = ", window.innerHeight);
-    // console.log("skillsSection offsetTop = ", skillsSection.offsetTop);
-    // console.log("document.documentElement.scrollTop = ", document.documentElement.scrollTop);
-    // console.log("document.documentElement.scrollTop - window.innerHeight - 1100 = ", document.documentElement.scrollTop - window.innerHeight - 1100);
-
-    for (var i = 0; i < dots.length; i++) {
-      var scrollPercentage = animate ? (document.documentElement.scrollTop - window.innerHeight - 1100) / (window.innerHeight) : 1;
-
-      if (above) {
-        scrollPercentage = 0;
+      if (dots[i].id != "firstDot") {
+        var pt = svgPath.getPointAtLength((1 * Number(dots[i].dataset.rate)) * svgPathLen);
+        dots[i].setAttribute("transform", "translate("+ pt.x + "," + pt.y + ")");
+        dots[i].setAttribute("style", "transition-delay:" + delay + "s");
       }
 
-      var pt = svgPath.getPointAtLength((scrollPercentage * Number(dots[i].dataset.rate)) * svgPathLen);
-      dots[i].setAttribute("transform", "translate("+ pt.x + "," + pt.y + ")");             
+      dots[i].classList.add("show");
     }
-  }
+  }  
 }

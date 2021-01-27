@@ -78,7 +78,14 @@ h1 {
 }
 
 .contact-container {  
-
+    /* transform-style: preserve-3d;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    margin-top: 150px;
+    z-index: 1;
+    white-space: nowrap; */
 }
   
 .fab, .fas {
@@ -90,6 +97,7 @@ h1 {
     color: #CC5500
 }
 
+/* Need to fix this */
 @media (max-width: 750px) {
     .text-item {
         position: absolute;
@@ -99,20 +107,25 @@ h1 {
 
     .text-container > div.text-item {
         top: 28vh;
-        width: 50%;
-        font-size: 4.5vw;
-        line-height: 0vh;
-        margin-top: 12%;
+        width: 42%;
+        font-size: 4.75vw;
+        margin-top: 10%;
         line-height: 3vh;
     }
 
     .text-container > div.contact-container {
         line-height: 0vh;
         width: 70vw;
-        margin-bottom: 20vw;
+        margin-bottom: 10vw;
     }
     
     .fab {
         font-size: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .text-container > div.contact-container {        
+        margin-bottom: 20vw;
     }
 }
