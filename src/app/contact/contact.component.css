@@ -1,6 +1,6 @@
-@-webkit-keyframes swinging {    
+@-webkit-keyframes swinging {            
     0%{-webkit-transform: rotate(0deg);}
-    20%{-webkit-transform: rotate(15deg);}
+    20%{-webkit-transform: rotate(10deg);}
     40%{-webkit-transform: rotate(-10deg);}
     60%{-webkit-transform: rotate(5deg);}
     80%{-webkit-transform: rotate(-5deg);}
@@ -17,32 +17,12 @@
 }
 
 .swing-image {
-    -webkit-transform-origin: 50% 0;
-    transform-origin: 50% 0;
-
-    /* TEMP */
-    /* -webkit-animation: swinging 2.25s ease-in-out forwards 999999;
-    animation: swinging 2.25s ease-in-out forwards 999999; */
+    /* TODO: Figure out if the animation style should be ease-in-out, linear, or something else */
+    -webkit-transform-origin: center 40%;
+    transform-origin: center 40%;
+    -webkit-animation: swinging 2.25s ease-in-out forwards infinite;
+    animation: swinging 2.25s ease-in-out forwards infinite;
 }
-
-/* img {
-    width: 17%;
-    filter: drop-shadow(12px 12px 8px grey);
-    max-height: 50%;
-    max-width: 25%;
-    position: absolute;
-    top: 28%;
-    z-index: 2;
-} */
-
-/* #malePictureFrame {
-    left: 7vw;
-}
-
-#femalePictureFrame {
-    right: 7vw;
-    animation-direction: reverse;
-} */
 
 .frame-container {
     height: 60vw;
@@ -58,44 +38,44 @@ img {
     position: absolute;
     top: 39%;
     z-index: 2;
-    left: 1vw;
+    left: 4vw;
 }
 
 #linkedinPictureFrame {
-    /* left: 7vw; */
+    
 }
 
 #facebookPictureFrame {
-    /* left: 30vw; */
+    animation-direction: reverse;
 }
 
 #instagramPictureFrame {
-    /* left: 53vw; */
-    animation-direction: reverse;   
+
 }
 
 #githubPictureFrame {
-    /* left: 76vw; */
     animation-direction: reverse;
 }
 
 .picture-content-container {
     display: inline-grid;
-    width: 15vw;
+    width: 13vw;
     justify-items: center;
     position: absolute;
     top: 52%;
-    left: 8%;
+    left: 24.5%;
     z-index: 2;
     transition: color 0.2s;
+    color: #64021B;
+    /* color: #CC5500; */
 }
 
 .fab, .fas {
-    font-size: 5vw;
+    font-size: 9vw;
     font-weight: 800;
 }
 
-.picture-content-container > i, .picture-content-container > div {
+.picture-content-container > i {
     grid-column: 1;
     grid-row: 1;
 }
@@ -140,15 +120,6 @@ h1 {
 }
 
 .contact-container {  
-    /* transform-style: preserve-3d;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
-    margin-top: 150px;
-    z-index: 1;
-    white-space: nowrap; */
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -157,25 +128,19 @@ h1 {
     z-index: 1;
     margin-top: 0vw;
 }
-
-/* .fab, .fas {
-    font-size: 3rem;
-    padding-right: 14px;
-    line-height: 7vh;
-    font-weight: 800;
-} */
   
 .fab:hover, .fas:hover, .picture-content-container:hover {
     color: #CC5500
 }
 
 .icon-text {
+    grid-column: 1;
+    grid-row: 2;
     font-family: 'Oswald';
     text-transform: uppercase;
-    /* padding-left: 8px; */
-    font-size: 3vw;
+    font-size: 2.5vw;
     font-weight: 800;
-    line-height: 15vw;
+    line-height: 6vw;
 }
 
 /* Need to fix this */

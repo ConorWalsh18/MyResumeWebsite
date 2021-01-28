@@ -25,21 +25,6 @@ export class MainComponent implements OnInit {
     this.workExperienceSection = document.getElementById("workExperienceSection");
     this.contactSection = document.getElementById("contactSection");
     this.textTransitionSection = document.getElementById("textTransitionSection");
-
-    // TODO: ADD this back in for the picture frame logic
-    // var malePictureFrame = document.getElementById("malePictureFrame");
-    // var femalePictureFrame = document.getElementById("femalePictureFrame");
-    // malePictureFrame.addEventListener("animationiteration", () => {
-    //   if (this.stopSwinging) {
-    //     malePictureFrame.style.animationPlayState = "paused";
-    //     femalePictureFrame.style.animationPlayState = "paused";
-    //   }
-    //   else {
-    //     malePictureFrame.style.animationPlayState = "running";
-    //     femalePictureFrame.style.animationPlayState = "running";
-    //   }
-    // }, false);
-
     var lastScrollTop = 0;    
 
     //Do the animation logic when the user is scrolling
@@ -108,12 +93,7 @@ export class MainComponent implements OnInit {
             
             // this.target[index].style.transform = 'translate3d('+posX+'px, 0px, 0px)';
           }
-
-          // TODO: ADD this back in for the picture frame logic
-          // else if (window.pageYOffset > 1000 && this.target[index].dataset.section == "sectionThree") {
-          //   this.target[index].style.animationPlayState = "running";
-          // }
-
+          //TODO: Move this to the skills TS file and comment it out in case we want to use it in the future
           else if (this.target[index].dataset.section == "skills") {
             // The circle container starts in an absolute position, then switches to fixed, then switches to absoulte right
             // before the bottom so it doesn't carry over to the contact page. Also need to switch back to absolute on scroll
