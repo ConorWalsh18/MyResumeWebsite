@@ -66,14 +66,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 45vw;
-    margin-bottom: 30vw;
+    width: 40vw;
+    margin-bottom: 25vw;
     margin-top: 5vw;
 }
 
 .text-container > div {
     font-family: 'Oswald';
-    font-size: 2.5vw;
+    // font-size: 2.5vw;
+    font-size: 2vw;
     font-weight: 400;
     text-align: center;
     color: black;
@@ -81,7 +82,8 @@
 }
 
 h1 {
-    font-size: 5em;
+    // font-size: 5em;
+    font-size: 7vw;
     font-family: 'Oswald';
     font-weight: 500;
     text-transform: uppercase;
@@ -233,6 +235,10 @@ $borderW: 2px;
     #leftHand {
         margin-left: -13vh;
     }
+
+    .text-container > div {
+        font-size: 2.5vw;
+    }
 }
 
 @media (max-width: 1250px) {
@@ -243,11 +249,23 @@ $borderW: 2px;
     #leftHand {
         margin-left: -17vh;
     }
+
+    h1 {
+        font-size: 9vw;
+    }
+
+    .text-container > div {
+        font-size: 3vw;        
+    }
 }
 
 @media (max-width: 1000px) {
     .blob-btn {
         padding: 2vw 4.6vw;
+    }
+
+    .text-container {
+        margin-bottom: 30vw;
     }
 }
 
@@ -266,16 +284,12 @@ $borderW: 2px;
 
     .text-container {
         width: 65vw;
-        margin-bottom: 55vw;
+        margin-bottom: 40vw;
         margin-top: 0vw;
     }
 
-    h1 {
-        font-size: 3em;
-    }
-
     .text-container > div {
-        font-size: 5.5vw;
+        font-size: 4.5vw;
     }
 }
 

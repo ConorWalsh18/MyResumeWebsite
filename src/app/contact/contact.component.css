@@ -1,3 +1,7 @@
+/* #contactSection {
+    background: pink;
+} */
+
 @-webkit-keyframes swinging {            
     0%{-webkit-transform: rotate(0deg);}
     20%{-webkit-transform: rotate(10deg);}
@@ -28,6 +32,8 @@
     height: 60vw;
     width: 120vw;
     position: relative;
+    max-width: 20%;
+    margin-bottom: 0vw;
 }
 
 img {
@@ -36,22 +42,22 @@ img {
     max-height: 50%;
     max-width: 70%;
     position: absolute;
-    top: 39%;
+    top: 47%;
     z-index: 2;
     left: 4vw;
 }
 
-#linkedinPictureFrame {
+/* #linkedinPictureFrame {
     
-}
+} */
 
 #facebookPictureFrame {
     animation-direction: reverse;
 }
 
-#instagramPictureFrame {
+/* #instagramPictureFrame {
 
-}
+} */
 
 #githubPictureFrame {
     animation-direction: reverse;
@@ -59,10 +65,10 @@ img {
 
 .picture-content-container {
     display: inline-grid;
-    width: 13vw;
+    width: 12vw;
     justify-items: center;
     position: absolute;
-    top: 52%;
+    top: 56%;
     left: 24.5%;
     z-index: 2;
     transition: color 0.2s;
@@ -81,52 +87,34 @@ img {
 }
 
 .text-container {    
-    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 45vw;
+    width: 60vw;
     z-index: 1;
-
-    /* Potentially TEMP */
     position: absolute;
-    top: 10vh;
+    margin-bottom: 27vw;
+    margin-top: 3vw;
 }
 
 .text-container > div {
     font-family: 'Oswald';
-    font-size: 2.5vw;
+    font-size: 2vw;
     font-weight: 400;
     text-align: center;
     color: black;
-    line-height: 10vh;
-}
-
-.text-item {    
-    margin-bottom: 20px;
-    margin-top: 1px;
-    width: 90%;
+    margin-top: 1vw;
 }
 
 h1 {
-    font-size: 5em;
+    font-size: 7vw;
     font-family: 'Oswald';
     font-weight: 500;
     text-transform: uppercase;
     line-height: 1.3em;
     text-align: center;
     color: #CC5500;
-}
-
-.contact-container {  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: baseline;
-    width: 25vw;
-    z-index: 1;
-    margin-top: 0vw;
 }
   
 .fab:hover, .fas:hover, .picture-content-container:hover {
@@ -138,40 +126,39 @@ h1 {
     grid-row: 2;
     font-family: 'Oswald';
     text-transform: uppercase;
-    font-size: 2.5vw;
+    font-size: 2vw;
     font-weight: 800;
-    line-height: 6vw;
+    line-height: 5vw;
 }
 
-/* Need to fix this */
-@media (max-width: 750px) {
-    .text-item {
-        position: absolute;
-        top: 22vh;
-        font-size: 3em;
+@media (max-width: 1250px) {
+    .text-container {
+        margin-bottom: 38vw;
     }
 
-    .text-container > div.text-item {
-        top: 28vh;
-        width: 42%;
-        font-size: 4.75vw;
-        margin-top: 10%;
-        line-height: 3vh;
+    h1 {
+        font-size: 9vw;
     }
 
-    .text-container > div.contact-container {
-        line-height: 0vh;
-        width: 70vw;
-        margin-bottom: 10vw;
-    }
-    
-    .fab {
-        font-size: 2rem;
+    .text-container > div {
+        font-size: 3vw;
     }
 }
 
 @media (max-width: 500px) {
-    .text-container > div.contact-container {        
-        margin-bottom: 20vw;
+    .text-container {
+        margin-bottom: 60vw;
+    }
+    
+    h1 {
+        font-size: 12vw;
+    }
+
+    .text-container > div {
+        font-size: 4.5vw;
+    }
+
+    img {
+        filter: drop-shadow(6px 6px 8px grey);
     }
 }
