@@ -163,11 +163,13 @@
     .title-text-container {
         font-size: 19vw;
         line-height: 10vh;
-        padding-top: 6vh;
+        // padding-top: 6vh;
+        padding-top: 13vh;
     }
 
     .body-text-container {
-        font-size: 4.5vw;
+        // font-size: 4.5vw;
+        font-size: 1rem;
     }
     
     .inner-body-text-container {
@@ -180,3 +182,20 @@
         font-size: 7.5vw;
     }
 }
+
+
+
+
+/*
+
+.title-text-container[_ngcontent-mcf-c5] {
+    font-size: 19vw;
+    line-height: 10vh;
+    padding-top: 13vh;
+}
+
+.body-text-container[_ngcontent-mcf-c5] {
+    font-size: 1rem;
+}
+
+*/
