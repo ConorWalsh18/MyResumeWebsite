@@ -119,11 +119,8 @@
 
     .text-container > div > h1 {
         font-size: 7vh;
-
-        /* line-height: 0vh; */
         line-height: 1;
-
-        height: 0.5vh;
+        height: 1.5vh;
     }
 
     .almost-text-mask {

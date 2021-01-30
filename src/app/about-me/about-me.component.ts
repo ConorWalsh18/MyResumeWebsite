@@ -26,3 +26,28 @@ export class AboutMeComponent implements OnInit {
     });
   }
 }
+
+
+/*********************************************************************************************
+// This is for reverse vertical movement
+if (window.pageYOffset > 1000 && this.target[index].dataset.section == "sectionTwo") {
+  if (Number(this.target[index].dataset.rate) > 0) {
+    reverseRate = window.pageYOffset * Number(this.target[index].dataset.rate) - 50;
+    pos = 450 - reverseRate;
+  }
+  else {                
+    reverseRate = window.pageYOffset * Number(this.target[index].dataset.rate) + 50;
+    pos = -450 - reverseRate;
+  }
+}
+
+// This is for reverse horizontal movement
+if (Number(this.target[index].dataset.ratex) > 0) {
+  //For the reverse direction we need to subtract the difference of the end position of the image with
+  //the growing pageYOffset * rate from the end position of the image.
+  posX = 500 - (window.pageYOffset * Number(this.target[index].dataset.ratex) - 500);
+}
+else {
+  posX = -500 - (window.pageYOffset * Number(this.target[index].dataset.ratex) + 500);
+}
+**********************************************************************************************/

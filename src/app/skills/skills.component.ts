@@ -24,8 +24,6 @@ export class SkillsComponent implements OnInit {
     this.circleContainer = document.getElementById("container");
     this.circleContainerSize = $(this.circleContainer).height();
 
-    // console.log("circle container size = ", this.circleContainerSize);
-
     window.addEventListener('scroll', () => {
       // console.log("document.documentElement.scrollTop = ", document.documentElement.scrollTop);
 
@@ -46,9 +44,6 @@ export class SkillsComponent implements OnInit {
 
       if ((window.pageYOffset >= this.skillsSection.offsetTop - (this.circleContainerSize * 0.25) || scrollingUp) && window.pageYOffset < this.contactSection.offsetTop) {
         this.moveDots(true);
-
-        // var posY = window.pageYOffset * Number(this.circleContainer.dataset.ratey) * -1;
-        // this.circleContainer.style.transform = 'rotate(-90deg) translate(0, -45%) translateX('+posY+'px)';
       }
       else if (window.pageYOffset >= this.contactSection.offsetTop) {
         this.moveDots(false);
@@ -100,3 +95,35 @@ export class SkillsComponent implements OnInit {
     }
   }
 }
+
+/*********************************************************************************************
+// Add this back into main if you want to use the skill circle growing on scroll logic
+
+else if (this.target[index].dataset.section == "skills") {
+  // The circle container starts in an absolute position, then switches to fixed, then switches to absoulte right
+  // before the bottom so it doesn't carry over to the contact page. Also need to switch back to absolute on scroll
+  // up so the circle container doesn't go behind the image transition section.
+
+  // Switch the circle container to fixed so it stays in a fixed position on the screen
+  if (window.pageYOffset >= this.skillsSection.offsetTop && window.pageYOffset <= this.skillsSection.offsetTop + 100) {
+    var circleTop = this.target[index].getBoundingClientRect();
+    this.target[index].style.position = "fixed";
+    this.target[index].style.top = "10vh";
+  }
+  // Switch the circle container to absolute so it doesn't carry over to the contact page
+  else if (window.pageYOffset >= this.textTransitionSection.offsetTop - window.innerHeight) {
+    this.target[index].style.position = "absolute";              
+    var skillCircleTop = (this.textTransitionSection.offsetTop - this.skillsSection.offsetTop - window.innerHeight + 100) / 10;
+    skillCircleTop = ((skillCircleTop / 4) + 100) - 8;
+    this.target[index].style.top = skillCircleTop.toString() + 'vh';
+  }
+  else if (window.pageYOffset < this.skillsSection.offsetTop) {
+    this.target[index].style.position = "absolute";
+    this.target[index].style.top = "7.5vh";
+  }
+  else {
+    this.target[index].style.position = "fixed";
+    this.target[index].style.top = "10vh";              
+  }
+}
+**********************************************************************************************/
