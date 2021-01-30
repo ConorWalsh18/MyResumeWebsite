@@ -40,7 +40,7 @@
   
 .navbar a.icon {
     display: none;            
-    margin-top: -10.25%;
+    margin-top: -11.25%;
     margin-left: 3%;
     float: left;
     font-size: 6vw;
@@ -100,8 +100,8 @@
     }
 }
 
-@media screen and (max-width: 400px) {    
+/* @media screen and (max-width: 400px) {    
     .link {
         width: 95%;
     }
-}
+} */
