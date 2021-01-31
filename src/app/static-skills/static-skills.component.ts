@@ -9,7 +9,8 @@ export class StaticSkillsComponent implements OnInit {
 
   constructor() { }
 
-  skillsText: string = "Skills & Tools";
+  // skillsText: string = "Skills & Tools";
+  skillsText: string = "Skills";
   skillsSection: any;
   textTransitionSection: any;
   circleContainer: any;
@@ -44,7 +45,7 @@ export class StaticSkillsComponent implements OnInit {
           this.animateDots(true);
           alreadyAnimated = true;
         }
-        else if (scrollingUp && window.pageYOffset <= this.skillsSection.offsetTop){
+        else if (scrollingUp && window.pageYOffset <= this.skillsSection.offsetTop) {
           this.animateDots(true);
           alreadyAnimated = true;
         }
@@ -69,7 +70,8 @@ export class StaticSkillsComponent implements OnInit {
       });
   
       dots[i].addEventListener("mouseout", event => {
-        this.skillsText = "Skills & Tools";
+        // this.skillsText = "Skills & Tools";
+        this.skillsText = "Skills";
       });
     }  
   }

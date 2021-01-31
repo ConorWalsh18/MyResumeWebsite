@@ -23,10 +23,12 @@
 
 #femaleWinking {
     background-image: url("../../assets/woman_winking.png");
+    /* background-image: url("../../assets/image_band_top.png"); */
 }
 
 #manSmiling {
     background-image: url("../../assets/man_smiling_and_pointing.png");
+    /* background-image: url("../../assets/image_band_bottom.png"); */
 }
 
 @media (max-width: 750px) {

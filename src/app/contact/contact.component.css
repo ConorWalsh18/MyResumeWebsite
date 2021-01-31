@@ -21,9 +21,8 @@
 }
 
 .swing-image {
-    /* TODO: Figure out if the animation style should be ease-in-out, linear, or something else */
-    -webkit-transform-origin: center 40%;
-    transform-origin: center 40%;
+    -webkit-transform-origin: center 45%;
+    transform-origin: center 45%;
     -webkit-animation: swinging 2.25s ease-in-out forwards infinite;
     animation: swinging 2.25s ease-in-out forwards infinite;
 }
@@ -78,7 +77,6 @@ img {
 
 .fab, .fas {
     font-size: 9vw;
-    font-weight: 800;
 }
 
 .picture-content-container > i {
