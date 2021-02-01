@@ -41,7 +41,7 @@ export class StaticSkillsComponent implements OnInit {
       if (!alreadyAnimated) {
         if (!scrollingUp
             && window.pageYOffset >= this.skillsSection.offsetTop - (window.innerHeight * 0.2)
-            && window.pageYOffset < this.textTransitionSection.offsetTop) {
+            && window.pageYOffset < this.textTransitionSection.offsetTop) {          
           this.animateDots(true);
           alreadyAnimated = true;
         }
@@ -73,15 +73,19 @@ export class StaticSkillsComponent implements OnInit {
         // this.skillsText = "Skills & Tools";
         this.skillsText = "Skills";
       });
-    }  
+    }
   }
 
   animateDots(animate: boolean) {
     var element = <unknown>document.getElementById("theMotionPath");
     var svgPath = <SVGPathElement>element;
-    var svgPathLen = svgPath.getTotalLength();  
-    var dots = document.getElementsByName("dot");
-    
+    var svgPathLen = svgPath.getTotalLength();
+
+    //Changing this logic because getElementsByName is not working on Firefox
+    // var dots = document.getElementsByName("dot");
+    var dotElements = <unknown>document.querySelectorAll("g.button[name='dot'");
+    var dots = dotElements as Array<HTMLElement>;
+
     var scrollPercentage = 0;        
     var perSecond = 0.018;
     
