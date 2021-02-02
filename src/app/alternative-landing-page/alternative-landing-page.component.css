@@ -92,14 +92,23 @@ a {
     color: black;
 }
 
-@media (max-width: 900px) {
+@media (max-height: 800px) {
+    .title {        
+        font-size: 6em;
+    }
+
+    .contact-container {
+        margin-top: 280px;
+    }
+}
+
+@media screen and (max-width: 900px) and (min-height: 800px){
     .title {        
         font-size: 14vw;
     }
 }
 
 @media (max-width: 500px) {
-/* @media (max-width: 750px) { */
     .title {        
         font-size: 3em;
     }
@@ -109,7 +118,6 @@ a {
     }
 
     .contact-container {
-        /* margin-top: 57vw; */
         margin-top: 32vw;
         left: 53%;
     }
@@ -123,10 +131,3 @@ a {
         padding-right: 10px;
     }
 }
-
-/* @media (max-width: 375px) {
-    .fab, .fas {
-        font-size: 2.2rem;
-        padding-right: 10px;
-    }
-} */

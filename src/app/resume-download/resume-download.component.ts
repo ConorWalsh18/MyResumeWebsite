@@ -54,4 +54,8 @@ export class ResumeDownloadComponent implements OnInit {
         return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
     }
   }
+
+  downloadResume() {
+    alert("Resume not available yet.");
+  }
 }

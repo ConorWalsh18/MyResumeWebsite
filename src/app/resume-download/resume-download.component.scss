@@ -227,6 +227,12 @@ $borderW: 2px;
 /* Resizing Logic
 /*********************/
 
+@media (max-height: 800px) {
+    .blob-btn__blob {
+        width: 30%;
+    }
+}
+
 @media (max-width: 1500px) {
     #rightHand {
         margin-right: -13vh;

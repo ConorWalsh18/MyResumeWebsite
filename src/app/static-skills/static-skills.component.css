@@ -15,9 +15,13 @@
     position: absolute;
     left: 50%;
     width: 80%;
-    max-width: 800px;
-    max-height: 800px;
-    margin-bottom: 8%;
+    
+    /* max-width: 800px;
+    max-height: 800px;     */
+    max-width: 80vh;
+    max-height: 80vh;
+
+    margin-bottom: 2%;
     z-index: 7;
 }
 

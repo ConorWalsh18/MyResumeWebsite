@@ -51,7 +51,6 @@ export class MainComponent implements OnInit {
           var pos = window.pageYOffset * Number(this.target[index].dataset.rate);
           var posX = 0;
           var posY = 0;
-          var reverseRate = 0;
 
           // console.log("window.innerHeight = ", window.innerHeight);
           // console.log("window.pageYOffset = ", window.pageYOffset);
