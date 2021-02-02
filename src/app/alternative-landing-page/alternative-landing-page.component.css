@@ -93,6 +93,10 @@ a {
 }
 
 @media (max-height: 800px) {
+    .wrapper {
+        width: 500px;
+    }
+
     .title {        
         font-size: 6em;
     }

@@ -33,6 +33,7 @@
     position: relative;
     max-width: 20%;
     margin-bottom: 0vw;
+    z-index: 2;
 }
 
 img {
