@@ -92,7 +92,10 @@ img {
     width: 60vw;
     z-index: 1;
     position: absolute;
-    margin-bottom: 27vw;
+
+    /* margin-bottom: 27vw; */
+    padding-bottom: 27vw;
+
     margin-top: 3vw;
 }
 
@@ -131,7 +134,8 @@ h1 {
 
 @media (max-width: 1250px) {
     .text-container {
-        margin-bottom: 38vw;
+        /* margin-bottom: 38vw; */
+        padding-bottom: 38vw;
     }
 
     h1 {
@@ -146,7 +150,8 @@ h1 {
 @media (max-width: 500px) {
     .text-container {
         /* margin-bottom: 60vw; */
-        margin-bottom: 27vw;
+        /* margin-bottom: 27vw; */
+        padding-bottom: 27vw;
         margin-top: -27vw;
     }
     

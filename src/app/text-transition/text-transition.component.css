@@ -160,6 +160,62 @@
     }
 }
 
+@media (max-height: 800px) {
+    .your-text-mask {
+        width: 20vh;
+    }
+
+    /* .text-container {
+        width: 75vw;
+    } */
+
+    .text-container > div {
+        margin-bottom: 2vh;
+    }
+
+    .text-container > div > h1 {
+        font-size: 7vh;
+        line-height: 1;
+        height: 1.5vh;
+    }
+
+    .almost-text-mask {
+        width: 23vh;
+    }
+
+    .there-text-mask {
+        width: 19vh;
+    }
+
+    .keep-text-mask {
+        width: 15vh;
+    }
+
+    .scrolling-text-mask {
+        width: 32vh;
+    }
+
+    #yourText {
+        transform: translateX(-25.5vh);
+    }
+
+    #almostText {
+        transform: translateX(-24vh);
+    }
+
+    #keepText {        
+        transform: translateX(-19vh);
+    }
+
+    #thereText {
+        transform: translateX(-23vh);
+    }
+
+    #scrollingText {
+        transform: translateX(-34vh);     
+    }
+}
+
 /*
 
 .text-container[_ngcontent-ofg-c8] > div[_ngcontent-ofg-c8] {
