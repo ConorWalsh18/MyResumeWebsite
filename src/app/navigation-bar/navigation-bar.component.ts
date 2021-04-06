@@ -28,19 +28,19 @@ export class NavigationBarComponent implements OnInit {
     this.contactSection = document.getElementById("contactSection").offsetTop;
     this.resumeSection = document.getElementById("resumeSection").offsetTop;
 
-    this.makeLinkActive();
+    this.makeLinkActive();    
 
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', () => {      
       this.makeLinkActive();
     });
   }
 
   makeLinkActive() {
-    if (!document.getElementById("home").classList.contains("active") && window.pageYOffset < this.aboutMeSection) {
+    if (!document.getElementById("home").classList.contains("active") && window.pageYOffset < (this.aboutMeSection / 2)) {
       this.removeActiveClass();
       document.getElementById("home").classList.add("active");
     }
-    else if (!document.getElementById("about").classList.contains("active") && this.checkPagePosition(this.aboutMeSection, this.workExperienceSection)) {
+    else if (!document.getElementById("about").classList.contains("active") && window.pageYOffset >= (this.aboutMeSection / 2) && this.checkPagePosition(this.aboutMeSection, this.workExperienceSection)) {
       this.removeActiveClass();
       document.getElementById("about").classList.add("active");
     }
