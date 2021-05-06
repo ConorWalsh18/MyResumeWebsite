@@ -19,7 +19,7 @@ export class HomePageRefactorComponent implements OnInit {
     window.addEventListener('scroll', () => {      
       if (window.pageYOffset > homeSection.offsetTop + window.innerHeight - 20 || window.pageYOffset < homeSection.offsetTop / 2) {
           for (var i = 0; i < elements.length; i++) {
-            elements[i].classList.remove("show");                        
+            // elements[i].classList.remove("show");
           }
       }
       else {
