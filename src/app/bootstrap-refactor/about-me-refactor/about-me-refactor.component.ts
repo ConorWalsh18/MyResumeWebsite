@@ -16,14 +16,16 @@ export class AboutMeRefactorComponent implements OnInit {
 
     window.addEventListener('scroll', () => {      
       //TODO: Fix when the "show" class is removed
-      if (window.pageYOffset > aboutMeSection.offsetTop + window.innerHeight - 20 || window.pageYOffset < aboutMeSection.offsetTop / 2) {
-          for (var i = 0; i < elements.length; i++) {
-            // elements[i].classList.remove("show")
-          }
-      }
-      else {
-        this.fadeAndMoveIn.start(elements);
-      }
+      // if (window.pageYOffset > aboutMeSection.offsetTop + window.innerHeight - 20 || window.pageYOffset < aboutMeSection.offsetTop / 2) {
+      //     for (var i = 0; i < elements.length; i++) {
+      //       // elements[i].classList.remove("show")
+      //     }
+      // }
+      // else {
+      //   this.fadeAndMoveIn.start(elements);
+      // }
+
+      this.fadeAndMoveIn.start(elements);
     });
   }
 }
