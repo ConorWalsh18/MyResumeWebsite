@@ -71,8 +71,7 @@ h1 {
 .vertical-center-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    /* width: 101%; */
+    justify-content: center;    
     width: 100%;
 }
 

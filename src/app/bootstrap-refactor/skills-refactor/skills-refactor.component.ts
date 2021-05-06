@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FadeAndMoveInService } from 'src/app/fade-and-move-in.service';
 
 @Component({
   selector: 'skills-refactor',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsRefactorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fadeAndMoveIn: FadeAndMoveInService) { }
 
   skillsTopText: string = "Hover on an icon";
   skillsBottomText: string = "for more info";
@@ -18,11 +19,15 @@ export class SkillsRefactorComponent implements OnInit {
 
   ngOnInit(): void {
     this.skillsSection = document.getElementById("skillsSection");
-    this.contactSection = document.getElementById("contactSection");    
+    this.contactSection = document.getElementById("contactSection");
+    var elements = this.skillsSection.getElementsByClassName("fade-and-move-in");
 
     this.alreadyAnimated = false;
 
-    window.addEventListener('scroll', () => {      
+    this.fadeAndMoveIn.start(elements);
+    window.addEventListener('scroll', () => {
+      this.fadeAndMoveIn.start(elements);
+
       var container = document.getElementById("container");
       if (this.isElementInView(container) && !this.alreadyAnimated) {
         this.animateDots(true);
@@ -30,7 +35,7 @@ export class SkillsRefactorComponent implements OnInit {
         // Add the hover event listener to the buttons
         var dots = document.getElementsByClassName("button");            
         for (var i = 0; i < dots.length; i++) {
-          dots[i].addEventListener("mouseover", event => {        
+          dots[i].addEventListener("mouseover", event => {
             var activeDot = event.target as HTMLElement;
             var parent = activeDot.parentElement;
             this.skillsTopText = parent.dataset.text;

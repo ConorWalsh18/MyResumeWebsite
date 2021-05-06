@@ -53,15 +53,15 @@ export class FadeAndMoveInService {
 
       elementBottom = elementTop + $(element).height();
       
-      // if (element.dataset.test) {
-      //   console.log("elementHeight = ", elementHeight)
-      //   console.log("pageTop = ", pageTop);
-      //   console.log("elementTop = ", elementTop);
-      //   console.log("pageBottom = ", pageBottom);
-      //   console.log("elementBottom = ", elementBottom);
-      //   console.log("pageTop < elementTop = ", pageTop < elementTop);
-      //   console.log("pageBottom > elementBottom = ", pageBottom > elementBottom);
-      // }
+      if (element.dataset.test) {
+        console.log("elementHeight = ", elementHeight)
+        console.log("pageTop = ", pageTop);
+        console.log("elementTop = ", elementTop);
+        console.log("pageBottom = ", pageBottom);
+        console.log("elementBottom = ", elementBottom);
+        console.log("pageTop < elementTop = ", pageTop < elementTop);
+        console.log("pageBottom > elementBottom = ", pageBottom > elementBottom);
+      }
             
       return ((pageTop < elementTop) && (pageBottom > elementBottom));      
     }

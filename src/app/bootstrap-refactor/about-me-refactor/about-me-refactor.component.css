@@ -37,7 +37,7 @@ h2, h5 {
 }
 
 @media (max-width: 768px) {
-    .sub-header, #school {
+    .sub-header {
         text-align: center;
     }
 

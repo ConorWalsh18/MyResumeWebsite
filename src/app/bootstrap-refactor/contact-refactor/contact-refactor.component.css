@@ -46,6 +46,13 @@ p {
     color: black;
 }
 
+@media (max-width: 440px)
+{
+    .container-sm {
+        max-width: 365px;
+    }
+}
+
 @media (min-width: 576px)
 {
     .container-sm {
@@ -68,7 +75,7 @@ p {
 
     p {
         font-size: 1.25rem;
-    }
+    }    
 }
 
 @media screen and (min-width: 992px)

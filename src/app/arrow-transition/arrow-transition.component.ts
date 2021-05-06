@@ -21,7 +21,7 @@ export class ArrowTransitionComponent implements OnInit {
     window.addEventListener('scroll', () => {      
       if (window.pageYOffset > arrowSection.offsetTop + window.innerHeight - 20 || window.pageYOffset < arrowSection.offsetTop / 2) {
         for (var i = 0; i < textElements.length; i++) {
-          textElements[i].classList.remove("show")
+          // textElements[i].classList.remove("show")
         }
       }
       else {

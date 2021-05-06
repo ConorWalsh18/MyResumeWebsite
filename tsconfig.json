@@ -15,7 +15,8 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "allowJs": true
   },
-  "types": ["jquery"]
+  "types": ["jquery", "node"]
 }
