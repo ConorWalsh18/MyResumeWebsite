@@ -19,6 +19,13 @@ import { TextTransitionComponent } from './text-transition/text-transition.compo
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { ImageTransitionComponent } from './image-transition/image-transition.component';
 import { StaticSkillsComponent } from './static-skills/static-skills.component';
+import { ResumeDownloadRefactorComponent } from './bootstrap-refactor/resume-download-refactor/resume-download-refactor.component';
+import { AboutMeRefactorComponent } from './bootstrap-refactor/about-me-refactor/about-me-refactor.component';
+import { ContactRefactorComponent } from './bootstrap-refactor/contact-refactor/contact-refactor.component';
+import { HomePageRefactorComponent } from './bootstrap-refactor/home-page-refactor/home-page-refactor.component';
+import { SkillsRefactorComponent } from './bootstrap-refactor/skills-refactor/skills-refactor.component';
+import { NavigationBarRefactorComponent } from './bootstrap-refactor/navigation-bar-refactor/navigation-bar-refactor.component';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +44,13 @@ import { StaticSkillsComponent } from './static-skills/static-skills.component';
     TextTransitionComponent,
     NavigationBarComponent,
     ImageTransitionComponent,
-    StaticSkillsComponent    
+    StaticSkillsComponent,
+    ResumeDownloadRefactorComponent,
+    AboutMeRefactorComponent,
+    ContactRefactorComponent,
+    HomePageRefactorComponent,
+    SkillsRefactorComponent,
+    NavigationBarRefactorComponent    
   ],
   imports: [
     BrowserModule,

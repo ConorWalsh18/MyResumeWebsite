@@ -1,0 +1,240 @@
+#hand.move {
+    animation: left-hand-point 3.5s linear forwards infinite;
+}
+
+@keyframes left-hand-point {
+    0% {
+        transform: translateX(0px);
+    }
+    25% {
+        transform: translateX(15px);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+    75% {
+        transform: translateX(-15px);
+    }  
+    100% {
+        transform: translateX(0px);
+    } 
+}
+
+h1 {
+    font-size: 19vw;
+    font-family: "Oswald";
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #CC5500;
+    transform: scaleY(1.5);
+    transform-origin: 0 0;
+    // line-height: 1.5;
+}
+
+h1.resume-header {
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: #CC5500;
+    margin-block: 0px;
+    color: beige;
+}
+
+// div > #header-row {
+//     margin-bottom: 1rem !important;
+// }
+
+/*********************/
+/* Blob Button Styling
+/*********************/
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.buttons {
+    text-align: center;
+}
+
+$borderW: 2px;
+
+.blob-btn {
+    $numOfBlobs: 4;
+    z-index: 1;
+    position: relative;
+    padding: 20px 46px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #CC5500;
+    font-size: 2.75vw;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: color 0.5s, transform 0.3s;
+    cursor: pointer;
+    border-radius:30px;
+
+    &:before {
+        content: "";
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border: 3px solid #CC5500;
+        border-radius:30px;
+    }
+
+    &:after {
+        content: "";
+        z-index: -2;
+        position: absolute;
+        left: $borderW*1.5;
+        top: $borderW*1.5;
+        width: 100%;
+        height: 100%;
+
+        transition: all 0.3s 0.2s;
+        border-radius:30px;
+    }
+
+    &:hover {
+        color: beige;
+        border-radius:30px;
+        
+        &:after {
+        transition: all 0.3s;
+        left: 0;
+        top: 0;
+        border-radius:30px;
+        }
+    }
+
+    &:active {
+        transform: translateY(10px);
+    }
+
+    &__inner {
+        z-index: -1;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius:30px;
+        background: beige;
+    }
+
+    // additional container created, because in FF blobs are breaking overflow:hidden of element with svg gooey filter
+    &__blobs {
+        position: relative;
+        display: block;
+        height: 100%;
+        filter: url('#goo');
+    }
+
+    &__blob {
+        position: absolute;
+        top: $borderW;
+        width: 100% / $numOfBlobs;
+        height: 100%;
+        background: #CC5500;
+        border-radius: 100%;
+        transform: translate3d(0,150%,0) scale(1.7);
+        transition: transform 0.45s;
+        
+        @supports(filter: url('#goo')) {
+            transform: translate3d(0,150%,0) scale(1.4);
+        }
+        
+            @for $i from 1 through $numOfBlobs {
+            &:nth-child(#{$i}) {
+                left: ($i - 1) * (120% / $numOfBlobs);
+                transition-delay: ($i - 1) * 0.08s;
+            }
+        }
+        
+        .blob-btn:hover & {
+            transform: translateZ(0) scale(1.7);
+            
+            @supports(filter: url('#goo')) {
+                transform: translateZ(0) scale(1.4);
+            }
+        }
+    }
+}
+
+/*********************/
+/* Resizing Logic
+/*********************/
+
+@media (max-height: 800px) {
+    .blob-btn__blob {
+        width: 30%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .blob-btn {
+        padding: 2vw 4.6vw;
+    }
+}
+
+@media (max-width: 575px) {
+    #header-row {
+        margin-bottom: 1rem !important;
+    }
+
+    #resumeSection {
+        height: 90vh;
+    }
+}
+
+@media (min-width: 576px) {
+    h1 {
+        font-size: 7rem;
+    }
+
+    #header-row {
+        margin-bottom: 2rem !important;
+    } 
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 9rem;
+    }
+
+    h1.resume-header {
+        -webkit-text-stroke: 3px;
+        -webkit-text-stroke-color: #CC5500;
+    }
+
+    div > .buttons {
+        text-align: end;
+    }
+
+    #header-row {
+        margin-bottom: 3rem !important;
+    } 
+}
+
+@media (min-width: 992px) {
+    h1 {
+        font-size: 10rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 11rem;
+    }
+
+    .blob-btn {
+        font-size: 2.2rem;
+    }
+}

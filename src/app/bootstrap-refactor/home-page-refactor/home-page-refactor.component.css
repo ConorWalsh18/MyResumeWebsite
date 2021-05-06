@@ -1,0 +1,58 @@
+#homeSection {
+    z-index: 10;
+    position: relative;
+    background: beige;
+}
+
+.inner-text {
+    font-size: 1.5rem;
+}
+
+.list-group {
+    font-size: 3.5rem;
+}
+
+.inner-text, .list-group {
+    padding-left: 6px;
+}
+
+.list-item {
+    position: relative;
+    display: block;    
+    padding-right: 1rem;
+}
+
+a {
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .header {
+        font-size: 3.5rem;
+        margin-top: 1.5rem;
+        text-align: center;
+    }
+
+    .list-group {
+        justify-content: center;
+        align-content: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        font-size: 4.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .header {
+        font-size: 6rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header {
+        font-size: 7rem;
+    }
+}

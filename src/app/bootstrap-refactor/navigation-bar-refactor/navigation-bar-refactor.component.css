@@ -1,0 +1,13 @@
+.navbar {
+    font-family: 'Oswald';
+    background: beige;
+    border-bottom: 3px #CC5500 solid;
+}
+
+#navbarNav {
+    flex-direction: row-reverse;
+}
+
+.nav-link {
+    color: #CC5500 !important;
+}

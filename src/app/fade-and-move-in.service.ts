@@ -24,11 +24,25 @@ export class FadeAndMoveInService {
 
     // Checks if the element is fully in the view
     if (!partial) {
-        return ((pageTop < elementTop) && (pageBottom > elementBottom));
+      return ((pageTop < elementTop) && (pageBottom > elementBottom));
     }
     // Checks if the element is partially in the view
     else {
-        return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
+      var elementHeight = $(element).height() / 1.5;
+      elementTop = $(element).offset().top - elementHeight;
+      elementBottom = elementTop + $(element).height();
+
+      if (element.dataset.test) {
+        console.log("pageTop = ", pageTop);
+        console.log("elementTop = ", elementTop);
+        console.log("pageBottom = ", pageBottom);
+        console.log("elementBottom = ", elementBottom);
+        console.log("pageTop < elementTop = ", pageTop < elementTop);
+        console.log("pageBottom > elementBottom = ", pageBottom > elementBottom);
+      }
+            
+      return ((pageTop < elementTop) && (pageBottom > elementBottom));
+      // return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
     }
   }
 }

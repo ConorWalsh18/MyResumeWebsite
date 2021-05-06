@@ -2,8 +2,13 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     overflow-x: hidden;
+    background-color: #F5F5DC;
 }
 
 section {
@@ -26,14 +31,6 @@ h1 {
     margin-block-start: 0;
     margin-block-end: 0;
 } 
-
-p, em {
-    font-family:'Oswald';
-    margin-left: 10px;
-    font-weight: 400;
-    text-align: justify;
-    color: #CC5500;  /* Burnt Orange */
-}
 
 .section-seperator {
     width: 100%;
@@ -63,6 +60,39 @@ p, em {
     background-color: black;
 }
 
-html {
-    scroll-behavior: smooth;
+
+/* Bootstrap Refactor CSS */
+
+.full-page-container {
+    height: 100vh !important;
+}
+
+/* Need to give the container element a height for this to work (e.g. h-100, h-75, h-50, etc.) */
+.vertical-center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 101%; */
+    width: 100%;
+}
+
+.header {
+    color: #CC5500;
+    font-size: 7rem;
+    font-weight: bold;
+}
+
+p, em {
+    font-family:'Oswald';    
+    font-weight: 100;    
+    color: black;
+    font-size: 1.35rem;
+}
+
+.fab:hover, .fas:hover, #icon-container:hover {
+    color: #CC5500;    
+}
+
+a {
+    text-decoration: none;
 }

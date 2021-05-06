@@ -1,26 +1,18 @@
 #skillsSection {
-    height: 100vh;
+    height: 65vh;
     z-index: 0;
-    
-    /* Use this z-index if you want to use the fade-in animation */
-    /* z-index: 2; */
-
-    /* Change this back to beige at the end */
-    /* background: pink; */
+    margin-top: 8rem !important;
+    margin-bottom: 3rem !important;
 }
 
-.circle-container {
+.circle-container {    
     transform-origin: center center;
     transform: rotate(-90deg) translate(0, -45%);
     position: absolute;
     left: 50%;
-    width: 80%;
-    
-    /* max-width: 800px;
-    max-height: 800px;     */
+    width: 95%;
     max-width: 80vh;
     max-height: 80vh;
-
     margin-bottom: 2%;
     z-index: 7;
 }
@@ -53,21 +45,18 @@ svg g g#innerGroup:hover {
 }
 
 #middleTextHeader {
-    font-size: 2.5em;
+    font-size: 2.25em;
     font-family: 'Oswald';
-    font-weight: 800;
+    font-weight: 500;
     text-transform: uppercase;    
-    fill: #CC5500;  
+    fill: #64021B;  
     text-anchor: middle;
     transform: rotate(90deg);
 } 
 
-#middleTextBody {
-    font-family:'Oswald';
-    font-size: 1.5em;
-    font-weight: 400;
-    transform: rotate(90deg);
-    text-anchor: middle;
+.experience-text {
+    font-size: 0.85em;
+    text-transform: none;
 }
 
 .fade-in {
@@ -99,46 +88,44 @@ svg g g#innerGroup:hover {
     );
 }
 
-/* @media (max-width: 750px) {
-   #skillsSection {
-       height: 175vh;
-   }
-} */
-
-img {
-    position: absolute;
-    width: 40%;
-    /* max-width: 780px;     */
-    transform: rotate(45deg);
-    left: -20vh;
+@media (max-width: 576px) {    
+    .header {
+        font-size: 4rem;        
+    }
 }
 
-#robot {    
-    /* bottom: -225vh;
-    left: -156px; */
-}
-
-#robotTwo {
-    bottom: 384vh;
-    right: -3210px;
-}
-
-.test-container {
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 50vh;
-}
-
-@media (max-width: 500px) {
+@media (min-width: 576px) {    
     #skillsSection {
-        height: 40vh !important;
+        height: 80vh;
     }
 
+    .header {        
+        font-size: 5rem;        
+    }
+}
+
+@media (min-width: 768px) {
+    /* #skillsSection {
+        height: 90vh;
+    } */
+
     .circle-container {
-        width: 95% !important;
+        width: 80% !important;
+    }
+
+    .header {        
+        font-size: 6rem;
+    }
+}
+
+@media (min-width: 870px) {    
+    .circle-container {
+        width: 70% !important;
+    }
+}
+
+@media (min-width: 1080px) {    
+    .circle-container {
+        width: 680px !important;
     }
 }

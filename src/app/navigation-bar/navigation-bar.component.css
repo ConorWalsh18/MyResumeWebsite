@@ -11,10 +11,17 @@
     border-bottom: 3px solid #CC5500;
     white-space: nowrap;
 }
-  
+
+#links {
+    width: 100%;
+}
+
 .link {
     float: left;
-    padding: 12px;
+
+    /* This is probably temp */
+    padding-left: 12%;
+
     text-decoration: none;
     font-family: "Oswald";
     font-size: 3vw;
@@ -40,8 +47,8 @@
   
 .navbar a.icon {
     display: none;            
-    margin-top: -11.25%;
-    margin-left: 3%;
+    margin-top: -10%;
+    /* margin-left: 3%; */
     float: left;
     font-size: 6vw;
     width: 5%;
@@ -93,15 +100,10 @@
         display: block;
         width: 100%;
         font-size: 7vw;
+        padding-left: 0px;
     }
 
     .navbar a.icon {
         display: block;
     }
 }
-
-/* @media screen and (max-width: 400px) {    
-    .link {
-        width: 95%;
-    }
-} */

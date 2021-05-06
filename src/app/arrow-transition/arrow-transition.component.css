@@ -22,28 +22,28 @@ img {
     top: 150vh;
 }
 
-#arrowSection .first-arrow {    
-    transform: rotate(180deg) translateX(-30vw) translateY(20vh);
+#arrowSection .first-arrow {        
+    transform: rotate(180deg) translateX(-30vw) translateY(80vh);
     width: 45%;
     max-width: 45%;
 }
 
 #arrowSection .second-arrow {
-    transform: rotate(180deg) translateX(45vw);
+    transform: rotate(180deg) translateX(45vw) translateY(65vh);
     width: 35%;
     max-width: 35%;
     animation-delay: 0.75s;
 }
 
 #arrowSection .third-arrow {
-    transform: rotate(180deg) translateX(-50vw);
+    transform: rotate(180deg) translateX(-50vw) translateY(65vh);
     width: 15%;
     max-width: 15%;
     animation-delay: 1.25s;
 }
 
 #arrowSection .fourth-arrow {        
-    transform: rotate(180deg) translateX(-16vw);
+    transform: rotate(180deg) translateX(-16vw) translateY(65vh);
     width: 15%;
     max-width: 15%;
     animation-delay: 2s;
@@ -51,7 +51,7 @@ img {
 }
 
 #arrowSection .fifth-arrow {
-    transform: rotate(180deg) translateX(25vw);
+    transform: rotate(180deg) translateX(25vw) translateY(65vh);
     width: 7%;
     max-width: 7%;
     animation-delay: 2.5s;
@@ -60,28 +60,30 @@ img {
 
 @keyframes move-arrow {
     0% {
-        top: 130vh;
+        top: 100vh;
     }
-    90% {
+    50% {
         opacity: 1;
-    }    
+    }
+    70% {
+        opacity: 0;        
+        top: 280vh;
+    }
     100% {
-        opacity: 0;
-        top: 320vh;
-    } 
+        opacity: 0;        
+        top: 280vh;
+    }
 }
 
 svg {
     position: absolute;
-    overflow: visible;
-    /* top: 130vh;
-    animation: move-arrow 6s ease-in forwards infinite; */
+    overflow: visible;    
     z-index: 2;
 }
 
-.arrow-transition {
-    top: 130vh;
-    animation: move-arrow 6s ease-in forwards infinite;
+.arrow-transition {    
+    top: 100vh;
+    animation: move-arrow 10s ease-in forwards infinite;    
 }
 
 .text-container {    
@@ -97,8 +99,8 @@ svg {
 
 .text-container > div {
     font-family: 'Oswald';
-    font-size: 5vw;
-    line-height: 5.5vw;
+    font-size: 7vw;
+    line-height: 7.5vw;
     font-weight: 700;
     text-align: center;
     text-transform: uppercase;
@@ -120,22 +122,61 @@ svg {
     -webkit-text-stroke-color: #CC5500;
 }
 
-@media (max-width: 750px) {
-    .text-container > div {
-        font-size: 7vw;
-        line-height: 10.5vw;        
+.big-screen-text-container {
+    display: block;
+}
+
+.small-screen-text-container {
+    display: none;
+}
+
+@media screen and (max-width: 767px)
+{
+    .text-container > .big-screen-text-container {
+        display: none;
+    }
+
+    .text-container > .small-screen-text-container {
+        display: block;
+        padding-right: 5%;
+        padding-left: 5%;
+        font-size: 13vw;
+        line-height: 16vw;
+        color: #CC5500;
     }
 
     .text-container .small-text {
-        font-size: 3.5vw;
+        font-size: 4vw;
+        line-height: 20vw;        
+    }
+
+    .outline-text {
+        color: beige;
+        -webkit-text-stroke: 1.5px;
+        -webkit-text-stroke-color: #CC5500;
+    }
+
+    @keyframes move-arrow {
+        0% {
+            top: 120vh;
+        }
+        60% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 0;        
+            top: 280vh;
+        }
+        100% {
+            opacity: 0;
+            top: 280vh;
+        }
     }
 }
 
-
-@media (max-width: 750px) {
-    .outline-text {
-        color: beige;
-        -webkit-text-stroke: 1px;
-        -webkit-text-stroke-color: #CC5500;
+@media (min-width: 1300px) {
+    .text-container > div {        
+        font-size: 6.25rem;
+        line-height: 6.75rem;
     }
 }

@@ -15,7 +15,7 @@ export class ArrowTransitionComponent implements OnInit {
 
   ngOnInit(): void {
     var arrowSection = document.getElementById("arrowSection");
-    var workExperienceSection = document.getElementById("workExperienceSection");
+    var aboutMeSection = document.getElementById("aboutMeSection");
     var textElements = arrowSection.getElementsByClassName("fade-and-move-in");
 
     window.addEventListener('scroll', () => {      
@@ -34,7 +34,7 @@ export class ArrowTransitionComponent implements OnInit {
     this.finalArrow = document.getElementById("finalArrow");
 
     this.finalArrow.addEventListener('animationiteration', () => {
-      if (window.pageYOffset > workExperienceSection.offsetTop - 200) {
+      if (window.pageYOffset > aboutMeSection.offsetTop - 200) {
         this.showArrowTransition = false;
         this.finalArrow.classList.remove("arrow-transition");
       }
