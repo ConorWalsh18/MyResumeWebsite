@@ -1,7 +1,7 @@
 .navbar {
-    font-family: 'Oswald';
-    background: beige;
-    border-bottom: 3px #CC5500 solid;
+    font-family: 'Oswald';        
+    background: #CC5500;
+    padding: .35rem 1rem;
 }
 
 #navbarNav {
@@ -9,5 +9,53 @@
 }
 
 .nav-link {
-    color: #CC5500 !important;
+    color: beige !important;
+    font-size: 1.35rem;
+}
+
+
+
+.img-circle {
+    border-radius: 50%;
+    border: 4px beige solid;
+}
+
+
+.icon-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon-text {
+    margin-left: 7px;
+    color: beige;
+    font-weight: 500;
+    font-size: 1.35rem;
+}
+
+i {
+    color: beige;
+    font-size: 2.35rem;
+}
+
+.block {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.circle {
+    background: beige;
+    border-radius: 50%;    
+    height: 40px;
+    width: 40px;
+    display: table;    
+}
+
+.circle p, .circle i {
+    vertical-align: middle;
+    display: table-cell;
+    color: #CC5500;
+    font-size: 1.5rem;
+    font-weight: bold;
 }

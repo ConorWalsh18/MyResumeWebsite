@@ -124,7 +124,7 @@ svg g g#innerGroup:hover {
     }
 }
 
-@media (min-width: 1080px) {    
+@media (min-width: 1000px) {    
     .circle-container {
         width: 680px !important;
     }

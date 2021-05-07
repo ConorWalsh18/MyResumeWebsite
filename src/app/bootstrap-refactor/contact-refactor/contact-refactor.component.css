@@ -27,7 +27,7 @@ img {
     filter: drop-shadow(12px 12px 8px grey);
 }
 
-#facebookPictureFrame, #githubPictureFrame {
+#facebookPictureFrame, #emailPictureFrame {
     animation-direction: reverse;
 }
 
