@@ -26,11 +26,20 @@ a {
     color: black;
 }
 
+.img-circle {
+    border-radius: 50%;
+    border: 12px #CC5500 solid;
+}
+
 @media (max-width: 768px) {
+    #text-block {
+        text-align: center;
+    }
+
     .header {
         font-size: 3.5rem;
         margin-top: 1.5rem;
-        text-align: center;
+        /* text-align: center; */
     }
 
     .list-group {

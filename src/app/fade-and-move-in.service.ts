@@ -35,13 +35,10 @@ export class FadeAndMoveInService {
     var elementTop = $(element).offset().top;
     var elementBottom = elementTop + $(element).height();
     var partial = element.dataset.partial;
-
-    // Checks if the element is fully in the view
-    if (!partial) {
-      return ((pageTop < elementTop) && (pageBottom > elementBottom));
-    }
+    var alwaysLoad = element.dataset.always;    
+    
     // Checks if the element is partially in the view
-    else {
+    if (partial) {
       var elementHeight = $(element).height();
       
       if (this.scrollingUp) {
@@ -61,9 +58,14 @@ export class FadeAndMoveInService {
         console.log("elementBottom = ", elementBottom);
         console.log("pageTop < elementTop = ", pageTop < elementTop);
         console.log("pageBottom > elementBottom = ", pageBottom > elementBottom);
-      }
-            
-      return ((pageTop < elementTop) && (pageBottom > elementBottom));      
+      }      
+    }    
+
+    if (alwaysLoad) {      
+      return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
+    }    
+    else {            
+      return ((pageTop < elementTop) && (pageBottom > elementBottom));
     }
   }
 }
