@@ -1,8 +1,9 @@
 #skillsSection {
-    height: 65vh;
-    z-index: 0;
+    height: 65vh;    
     margin-top: 8rem !important;
     margin-bottom: 3rem !important;
+    z-index: 10;
+    position: relative;
 }
 
 .circle-container {    
@@ -49,7 +50,10 @@ svg g g#innerGroup:hover {
     font-family: 'Oswald';
     font-weight: 500;
     text-transform: uppercase;    
-    fill: #CC5500;
+    
+    /* fill: #CC5500; */
+    fill: black;
+    
     text-anchor: middle;
     transform: rotate(90deg);
 } 
@@ -96,7 +100,7 @@ svg g g#innerGroup:hover {
 
 @media (min-width: 576px) {    
     #skillsSection {
-        height: 80vh;
+        height: 90vh;
     }
 
     .header {        

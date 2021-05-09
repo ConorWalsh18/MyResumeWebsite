@@ -1,15 +1,5 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="#">
-      <!-- Selfie and text -->
-      <!-- <img src="../assets/pic.jpg" width="50" class="d-inline-block align-top img-circle" alt="">
-      Conor Walsh -->
-
-      <!-- FA profile icon and text -->
-      <!-- <div class="icon-container">
-        <i class="fas fa-user-circle"></i>
-        <div class="icon-text">Conor Walsh</div>
-      </div> -->
-            
+    <a class="navbar-brand" href="#">            
       <!-- FA robot icon and text -->
       <div class="icon-container">
         <div class="block d-inline-block align-top">
@@ -30,25 +20,25 @@
         <div class="icon-text">Conor Walsh</div>
       </div> -->
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button id="navBarButton" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" (click)="scrollToSecton('#homeSection', $event)">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+          <a class="nav-link" (click)="scrollToSecton('#aboutMeSection', $event, 40)">About <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Skills <span class="sr-only">(current)</span></a>
+          <a class="nav-link" (click)="scrollToSecton('#skillsSection', $event, 70)">Skills <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact <span class="sr-only">(current)</span></a>
+          <a class="nav-link" (click)="scrollToSecton('#contactSection', $event)">Contact <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link">Resume <span class="sr-only">(current)</span></a>
+            <a class="nav-link" (click)="scrollToSecton('#resumeSection', $event)">Resume <span class="sr-only">(current)</span></a>
         </li>
       </ul>
     </div>
