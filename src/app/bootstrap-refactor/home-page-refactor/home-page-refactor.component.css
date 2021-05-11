@@ -45,6 +45,10 @@ a {
         justify-content: center;
         align-content: center;
     }
+
+    .container {
+        height: 90vh !important;
+    }
 }
 
 @media (min-width: 768px) {
