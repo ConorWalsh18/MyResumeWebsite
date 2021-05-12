@@ -25,6 +25,7 @@ import { ContactRefactorComponent } from './bootstrap-refactor/contact-refactor/
 import { HomePageRefactorComponent } from './bootstrap-refactor/home-page-refactor/home-page-refactor.component';
 import { SkillsRefactorComponent } from './bootstrap-refactor/skills-refactor/skills-refactor.component';
 import { NavigationBarRefactorComponent } from './bootstrap-refactor/navigation-bar-refactor/navigation-bar-refactor.component';
+import { PersonalProjectsComponent } from './personal-projects/personal-projects.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { NavigationBarRefactorComponent } from './bootstrap-refactor/navigation-
     ContactRefactorComponent,
     HomePageRefactorComponent,
     SkillsRefactorComponent,
-    NavigationBarRefactorComponent    
+    NavigationBarRefactorComponent,
+    PersonalProjectsComponent    
   ],
   imports: [
     BrowserModule,
