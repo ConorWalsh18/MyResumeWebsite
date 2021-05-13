@@ -6,14 +6,16 @@ $color-tertiary-light: #2998FF;
 $color-tertiary-dark: #5643FA;
 
 .scene {
-  width: 300px;
-  height: 400px;  
+  max-width: 100%;
+  width: 350px;
+  height: 500px;
   margin: 40px 0;
   perspective: 600px;
 }
 
 .project-card {
-  width: 100%;
+  //Making this 101% gets rid of the issue where a thin white line shows up on the right side of the card
+  width: 101%;
   height: 100%;
   transition: all 1s;
   transform-style: preserve-3d;
@@ -51,7 +53,8 @@ $color-tertiary-dark: #5643FA;
   }
 
   &-2 {
-    background: #ff9800;
+    // background: #ff9800;
+    background: #CC5500;
   }
   
   &-3 {
@@ -75,4 +78,18 @@ $color-tertiary-dark: #5643FA;
 .project-card h2 {
   color: white;
   font-size: 2.5rem;
+}
+
+@media (min-width: 992px) {
+  #project-card-row {
+    flex-direction: row !important;
+  }
+}
+
+@media (min-width: 1276px) {
+  #project-card-row {
+    flex-wrap: nowrap;
+    grid-gap: 25px;
+    margin-right: 10px;
+  }
 }
