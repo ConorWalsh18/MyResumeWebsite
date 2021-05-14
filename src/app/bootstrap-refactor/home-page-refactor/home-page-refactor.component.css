@@ -1,7 +1,9 @@
 #homeSection {
     z-index: 10;
     position: relative;
-    background: beige;
+
+    background: #F5F5DC;
+    /* background: #f5efd7; */
 }
 
 .inner-text {

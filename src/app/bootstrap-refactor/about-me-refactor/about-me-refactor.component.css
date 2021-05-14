@@ -17,7 +17,8 @@ h2, h5 {
 }
 
 .sub-header {
-    color: #F28700;
+    /* color: #F28700; */
+    color: #CC5500;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 2.75rem;

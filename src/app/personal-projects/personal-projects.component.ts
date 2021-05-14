@@ -12,8 +12,7 @@ export class PersonalProjectsComponent implements OnInit {
   ngOnInit(): void {
     var cards = document.querySelectorAll(".project-card");
     cards.forEach(function(card) {
-      card.addEventListener("click", function() {
-        console.log(card)
+      card.addEventListener("click", function() {        
         card.classList.toggle("is-flipped");
       });
     });
