@@ -69,6 +69,7 @@ $color-tertiary-dark: #5643FA;
 .card {
   height: 100%;
   border: none !important;
+  background: whitesmoke;
 }
 
 .front-card-image {
@@ -78,6 +79,26 @@ $color-tertiary-dark: #5643FA;
 .project-card h2 {
   color: white;
   font-size: 2.5rem;
+}
+
+.card-img-top {
+  width: 90%;
+  align-self: center;
+}
+
+// .embed-responsive {
+//   border: 7px solid #8bc34a;
+//   border-radius: 2%;
+// }
+
+h3 {
+  text-decoration: underline 5px #8bc34a;
+  text-underline-offset: 5px;
+}
+
+.btn-primary {  
+  background-color: #8bc34a;
+  border-color: #8bc34a;
 }
 
 @media (max-width: 500px) {
@@ -90,5 +111,13 @@ $color-tertiary-dark: #5643FA;
 @media (min-width: 992px) {
   #project-card-row {
     flex-direction: row !important;
+  }
+}
+
+@media (min-width: 1300px) {
+  #project-card-row {
+    flex-wrap: nowrap;
+    grid-gap: 30px;
+    margin-left: 5px;
   }
 }
