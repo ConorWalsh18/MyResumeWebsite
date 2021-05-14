@@ -80,16 +80,15 @@ $color-tertiary-dark: #5643FA;
   font-size: 2.5rem;
 }
 
-@media (min-width: 992px) {
-  #project-card-row {
-    flex-direction: row !important;
+@media (max-width: 500px) {
+  .scene {
+    width: 300px;
+    height: 450px;
   }
 }
 
-@media (min-width: 1276px) {
+@media (min-width: 992px) {
   #project-card-row {
-    flex-wrap: nowrap;
-    grid-gap: 25px;
-    margin-right: 10px;
+    flex-direction: row !important;
   }
 }
