@@ -106,7 +106,7 @@ $color-tertiary-dark: #5643FA;
   }
   
   &-3 {
-    text-decoration: underline 5px rgb(0, 170, 240);     
+    text-decoration: underline 5px #007fcc;     
     text-underline-offset: 5px;
   }  
 }
@@ -125,8 +125,10 @@ $color-tertiary-dark: #5643FA;
   }
   
   &-3 {    
-    background-color: rgb(0, 170, 240);
-    border-color: rgb(0, 170, 240);
+    background-color: #007fcc;
+    border-color:  #007fcc;
+    // background-color: rgb(0, 170, 240);
+    // border-color: rgb(0, 170, 240);
   }  
 }
 
