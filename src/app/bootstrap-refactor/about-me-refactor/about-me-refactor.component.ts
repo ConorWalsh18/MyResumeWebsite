@@ -14,18 +14,38 @@ export class AboutMeRefactorComponent implements OnInit {
     var aboutMeSection = document.getElementById("aboutMeSection");
     var elements = aboutMeSection.getElementsByClassName("fade-and-move-in");
 
-    window.addEventListener('scroll', () => {      
-      //TODO: Fix when the "show" class is removed
-      // if (window.pageYOffset > aboutMeSection.offsetTop + window.innerHeight - 20 || window.pageYOffset < aboutMeSection.offsetTop / 2) {
-      //     for (var i = 0; i < elements.length; i++) {
-      //       // elements[i].classList.remove("show")
-      //     }
-      // }
-      // else {
-      //   this.fadeAndMoveIn.start(elements);
-      // }
-
-      this.fadeAndMoveIn.start(elements);
+    window.addEventListener('scroll', () => {                  
+      if (this.isElementInView(aboutMeSection)) {
+        this.fadeAndMoveIn.start(elements);
+      }
+      else {
+        for (var i = 0; i < elements.length; i++) {
+          elements[i].classList.remove("show")
+        }
+      }
     });
+  }
+
+  isElementInView(element) {
+    var pageTop = $(window).scrollTop();
+    var pageBottom = pageTop + $(window).height();
+    var elementTop = $(element).offset().top;
+    var elementBottom = elementTop + $(element).height();
+    var partial = element.dataset.partial;
+    var alwaysLoad = element.dataset.always;    
+    
+    // Checks if the element is partially in the view
+    if (partial) {
+      var elementHeight = $(element).height();
+      elementTop = $(element).offset().top - (elementHeight / 1.5);
+      elementBottom = elementTop + $(element).height();      
+    }    
+
+    if (alwaysLoad) {      
+      return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
+    }    
+    else {            
+      return ((pageTop < elementTop) && (pageBottom > elementBottom));
+    }
   }
 }

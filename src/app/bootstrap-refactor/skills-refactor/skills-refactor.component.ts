@@ -13,20 +13,24 @@ export class SkillsRefactorComponent implements OnInit {
   skillsTopText: string = "Hover on an icon";
   skillsBottomText: string = "for more info";
   skillsSection: any;
-  contactSection: any;
   showSkillsCircle: boolean = true;
   alreadyAnimated: any;  
 
   ngOnInit(): void {
     this.skillsSection = document.getElementById("skillsSection");
-    this.contactSection = document.getElementById("contactSection");
     var elements = this.skillsSection.getElementsByClassName("fade-and-move-in");
-
     this.alreadyAnimated = false;
-
     this.fadeAndMoveIn.start(elements);
+
     window.addEventListener('scroll', () => {
-      this.fadeAndMoveIn.start(elements);
+      if (this.isElementInView(this.skillsSection)) {
+        this.fadeAndMoveIn.start(elements);
+      }
+      else {
+        for (var i = 0; i < elements.length; i++) {
+          elements[i].classList.remove("show")
+        }
+      }
 
       var container = document.getElementById("container");
       if (this.isElementInView(container) && !this.alreadyAnimated) {
@@ -97,7 +101,12 @@ export class SkillsRefactorComponent implements OnInit {
     var pageTop = $(window).scrollTop();
     var pageBottom = pageTop + $(window).height();
     var elementTop = $(element).offset().top;
-    var elementBottom = elementTop + $(element).height();    
+    var elementBottom = elementTop + $(element).height();
+    var alwaysLoad = element.dataset.always;
+
+    if (alwaysLoad) {      
+      return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
+    }    
     
     return ((pageTop < elementTop) && (pageBottom > elementBottom));    
   }

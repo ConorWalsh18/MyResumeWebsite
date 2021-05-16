@@ -20,12 +20,8 @@ export class NavigationBarRefactorComponent implements OnInit {
     });  
   }
 
-  scrollToSecton(section, element, offset = 0) {     
-    // element.target.classList.add("active");  
-    // document.getElementById(section).scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});        
-    
+  scrollToSecton(section, element, offset = 0) {
     $('html, body').animate({
-      // scrollTop: $(section).offset().top - 70
       scrollTop: $(section).offset().top - offset
     }, 0);
   }
