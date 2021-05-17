@@ -82,18 +82,18 @@
   text-underline-offset: 5px;
 
   &-1 {
-    text-decoration: underline 5px #8bc34a;
-    text-underline-offset: 5px;    
+    text-decoration: underline 5px #8bc34a !important;
+    text-underline-offset: 5px !important;
   }
 
   &-2 {
-    text-decoration: underline 5px #CC5500;
-    text-underline-offset: 5px;
+    text-decoration: underline 5px #CC5500 !important;
+    text-underline-offset: 5px !important;
   }
   
   &-3 {
-    text-decoration: underline 5px #007fcc;     
-    text-underline-offset: 5px;
+    text-decoration: underline 5px #007fcc !important;
+    text-underline-offset: 5px !important;
   }
 }
 
@@ -122,10 +122,10 @@ h1 {
   font-weight: 500;
   text-transform: uppercase;
   color: #CC5500;
-  text-decoration: 5px underline rgb(255, 210, 41);
-  text-underline-offset: 5px;
-  -webkit-text-decoration: 5px underline rgb(255, 210, 41);
-  -webkit-text-underline-offset: 5px;
+  text-decoration: 5px underline rgb(255, 210, 41) !important;
+  text-underline-offset: 5px !important;
+  // -webkit-text-decoration: 5px underline rgb(255, 210, 41);
+  // -webkit-text-underline-offset: 5px;
 }
 
 @media (max-width: 500px) {
