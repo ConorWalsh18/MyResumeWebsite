@@ -85,7 +85,8 @@
     // text-decoration: underline 5px #8bc34a !important;
     // text-underline-offset: 5px !important;
 
-    text-decoration: underline !important;
+    text-decoration: underline #8bc34a !important;
+    text-underline-offset: 5px !important;
   }
 
   &-2 {
@@ -100,7 +101,8 @@
     // text-decoration: underline 5px #007fcc !important;
     // text-underline-offset: 5px !important;
 
-    text-decoration: underline 5px !important;
+    text-decoration: underline !important;
+    text-decoration-thickness: 5px !important;
     text-underline-offset: 5px !important;
   }
 }
