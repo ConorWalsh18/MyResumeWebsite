@@ -4,7 +4,7 @@ import { FadeAndMoveInService } from '../fade-and-move-in.service';
 @Component({
   selector: 'personal-projects',
   templateUrl: './personal-projects.component.html',
-  styleUrls: ['./personal-projects.component.scss']
+  styleUrls: ['./personal-projects.component.css']
 })
 export class PersonalProjectsComponent implements OnInit {
 
@@ -23,7 +23,7 @@ export class PersonalProjectsComponent implements OnInit {
         for (var i = 0; i < elements.length; i++) {
           elements[i].classList.remove("show")
         }
-      }      
+      }
     });
 
     var cards = document.querySelectorAll(".project-card");
