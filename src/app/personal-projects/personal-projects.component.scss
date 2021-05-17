@@ -62,9 +62,6 @@
 .card {
   height: 100%;
   border: none !important;
-
-  // background: whitesmoke;
-  // background: #ffcf92;
   background: rgb(255, 210, 41)
 }
 
@@ -82,13 +79,8 @@
   align-self: center;
 }
 
-// .embed-responsive {
-//   border: 7px solid #8bc34a;
-//   border-radius: 2%;
-// }
-
 .back-header {
-  text-underline-offset: 5px;
+  // text-underline-offset: 5px;
 
   // &-1 {
   //   text-decoration: underline 5px #8bc34a;
@@ -148,9 +140,9 @@ h1 {
   text-transform: uppercase;
   color: #CC5500;
   text-decoration: 5px underline rgb(255, 210, 41);
-  text-underline-offset: 5px;
-  -webkit-text-decoration: 5px underline rgb(255, 210, 41);
-  -webkit-text-underline-offset: 5px;
+  // text-underline-offset: 5px;
+  // -webkit-text-decoration: 5px underline rgb(255, 210, 41);
+  // -webkit-text-underline-offset: 5px;
 }
 
 @media (max-width: 500px) {
