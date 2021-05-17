@@ -32,7 +32,7 @@ export class SkillsRefactorComponent implements OnInit {
       //   }
       // }
 
-      this.fadeAndMoveIn.start(elements);
+      // this.fadeAndMoveIn.start(elements);
 
       var container = document.getElementById("container");
       if (this.isElementInView(container) && !this.alreadyAnimated) {

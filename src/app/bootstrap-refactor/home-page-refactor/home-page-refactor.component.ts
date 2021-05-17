@@ -16,17 +16,17 @@ export class HomePageRefactorComponent implements OnInit {
 
     this.fadeAndMoveIn.start(elements);
 
-    window.addEventListener('scroll', () => {      
-      // if (window.pageYOffset > homeSection.offsetTop + window.innerHeight - 20 || window.pageYOffset < homeSection.offsetTop / 2) {
-      //     for (var i = 0; i < elements.length; i++) {
-      //       // elements[i].classList.remove("show");
-      //     }
-      // }
-      // else {
-      //   this.fadeAndMoveIn.start(elements);
-      // }
+    // window.addEventListener('scroll', () => {      
+    //   // if (window.pageYOffset > homeSection.offsetTop + window.innerHeight - 20 || window.pageYOffset < homeSection.offsetTop / 2) {
+    //   //     for (var i = 0; i < elements.length; i++) {
+    //   //       // elements[i].classList.remove("show");
+    //   //     }
+    //   // }
+    //   // else {
+    //   //   this.fadeAndMoveIn.start(elements);
+    //   // }
 
-      this.fadeAndMoveIn.start(elements);
-    });
+    //   this.fadeAndMoveIn.start(elements);
+    // });
   }
 }
