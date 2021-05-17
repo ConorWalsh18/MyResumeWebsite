@@ -4,7 +4,7 @@ import { FadeAndMoveInService } from '../fade-and-move-in.service';
 @Component({
   selector: 'personal-projects',
   templateUrl: './personal-projects.component.html',
-  styleUrls: ['./personal-projects.component.css']
+  styleUrls: ['./personal-projects.component.scss']
 })
 export class PersonalProjectsComponent implements OnInit {
 
