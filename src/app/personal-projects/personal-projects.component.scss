@@ -79,27 +79,19 @@
 }
 
 .back-header {
-  text-underline-offset: 5px;
-
-  &-1 {
-    // text-decoration: underline 5px #8bc34a !important;
-    // text-underline-offset: 5px !important;
-
-    text-decoration: underline #8bc34a !important;
-    text-decoration-thickness: 5px !important;
-    text-underline-offset: 5px !important;
+  &-1 {    
+    text-decoration: underline #8bc34a;
+    text-decoration-thickness: 5px;
+    text-underline-offset: 5px;
   }
 
   &-2 {
-    text-decoration: underline #CC5500 !important;
-    text-decoration-thickness: 5px !important;
-    text-underline-offset: 5px !important;
+    text-decoration: underline #CC5500;
+    text-decoration-thickness: 5px;
+    text-underline-offset: 5px;
   }
   
-  &-3 {
-    // text-decoration: underline 5px #007fcc !important;
-    // text-underline-offset: 5px !important;
-
+  &-3 {    
     text-decoration: underline #007fcc;
     text-decoration-thickness: 5px;
     text-underline-offset: 5px;
@@ -139,6 +131,20 @@ h1 {
 @media (max-width: 500px) {
   .scene {
     width: 300px;
+  }
+
+  .back-header {
+    &-1 {                
+      text-underline-offset: 6.5px;
+    }
+  
+    &-2 {
+      text-underline-offset: 6.5px;
+    }
+    
+    &-3 {    
+      text-underline-offset: 6.5px;
+    }
   }
 }
 
