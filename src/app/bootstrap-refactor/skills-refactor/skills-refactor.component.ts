@@ -20,17 +20,19 @@ export class SkillsRefactorComponent implements OnInit {
     this.skillsSection = document.getElementById("skillsSection");
     var elements = this.skillsSection.getElementsByClassName("fade-and-move-in");
     this.alreadyAnimated = false;
-    this.fadeAndMoveIn.start(elements);
+    // this.fadeAndMoveIn.start(elements);
 
     window.addEventListener('scroll', () => {
-      if (this.isElementInView(this.skillsSection)) {
-        this.fadeAndMoveIn.start(elements);
-      }
-      else {
-        for (var i = 0; i < elements.length; i++) {
-          elements[i].classList.remove("show")
-        }
-      }
+      // if (this.isElementInView(this.skillsSection)) {
+      //   this.fadeAndMoveIn.start(elements);
+      // }
+      // else {
+      //   for (var i = 0; i < elements.length; i++) {
+      //     elements[i].classList.remove("show")
+      //   }
+      // }
+
+      this.fadeAndMoveIn.start(elements);
 
       var container = document.getElementById("container");
       if (this.isElementInView(container) && !this.alreadyAnimated) {

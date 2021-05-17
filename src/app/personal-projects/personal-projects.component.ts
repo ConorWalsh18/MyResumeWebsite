@@ -16,14 +16,16 @@ export class PersonalProjectsComponent implements OnInit {
     this.fadeAndMoveIn.start(elements);    
 
     window.addEventListener('scroll', () => {
-      if (this.isElementInView(projectSection)) {
-        this.fadeAndMoveIn.start(elements);
-      }
-      else {
-        for (var i = 0; i < elements.length; i++) {
-          elements[i].classList.remove("show")
-        }
-      }
+      // if (this.isElementInView(projectSection)) {
+      //   this.fadeAndMoveIn.start(elements);
+      // }
+      // else {
+      //   for (var i = 0; i < elements.length; i++) {
+      //     elements[i].classList.remove("show")
+      //   }
+      // }
+
+      this.fadeAndMoveIn.start(elements);
     });
 
     var cards = document.querySelectorAll(".project-card");
