@@ -45,12 +45,9 @@ h1 {
     z-index: 0;
 }
 
-.fade-and-move-in {
-    /* SUPER TEMP */    
-    opacity: 1;
-
-    /* transform: translateY(50px);
-    opacity: 0; */
+.fade-and-move-in {    
+    transform: translateY(50px);
+    opacity: 0;
     transition: transform, opacity;
     transition-duration: .8s;
     transition-timing-function: ease;
