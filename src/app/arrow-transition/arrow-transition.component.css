@@ -166,14 +166,12 @@ svg {
     }
 
     .arrow-transition {    
-        /* top: 120vh; */
-        top: 120%;
+        top: 120vh;        
     }
 
     @keyframes move-arrow {
         0% {
-            /* top: 120vh; */
-            top: 120%;
+            top: 120vh;            
         }
         5% {
             opacity: 1;
@@ -184,12 +182,12 @@ svg {
         60% {
             opacity: 0;
             /* top: 280vh; */
-            top: 300%;
+            top: 320vh;
         }
         100% {
             opacity: 0;
             /* top: 280vh; */
-            top: 300%;
+            top: 320vh;
         }
     }
 }
