@@ -25,6 +25,8 @@ export class MainRefactorComponent implements OnInit {
 
     var elements = document.getElementsByClassName("fade-and-move-in");
 
+    this.fadeAndMoveIn.start(elements);
+
     window.addEventListener('scroll', () => {
       this.fadeAndMoveIn.start(elements);
     });
