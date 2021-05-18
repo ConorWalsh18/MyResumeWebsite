@@ -1,5 +1,4 @@
 #skillsSection {
-    /* height: 65vh; */
     margin-top: 8rem !important;
     margin-bottom: 3rem !important;
     z-index: 10;
@@ -9,8 +8,6 @@
 .circle-container {    
     transform-origin: center center;
     transform: rotate(-90deg) translate(0, -45%);
-    /* position: absolute;
-    left: 50%; */
     width: 95%;
     max-width: 80vh;
     max-height: 80vh;
@@ -20,7 +17,7 @@
 }
 
 svg {
-    position: relative;    
+    position: relative;
     overflow: visible;
 }
 
@@ -61,33 +58,8 @@ svg g g#innerGroup:hover {
     text-transform: none;
 }
 
-.fade-in {
-    opacity: 0;
-    transition: opacity;
-    transition-duration: 0.5s;
-    transition-timing-function: ease;
-}
-
-.fade-in.show {
-    opacity: 1;
-}
-
-.radial {
-    position: fixed;
-    top: 0.5vw;
-    width: 100%;
-    height: 100%;
-    background: repeating-radial-gradient(
-        circle
-        ,#FFBD4D
-        ,#FFBD4D 25%
-        ,beige calc(25% + 1px)
-        ,beige 50%
-        ,#FFBD4D calc(50% + 1px)
-        ,#FFBD4D 75%
-        ,beige calc(75% + 1px)
-        ,beige 100%
-    );
+.button {
+    will-change: transform;
 }
 
 @media (max-width: 576px) {    
@@ -96,21 +68,13 @@ svg g g#innerGroup:hover {
     }
 }
 
-@media (min-width: 576px) {    
-    /* #skillsSection {
-        height: 90vh;
-    } */
-
+@media (min-width: 576px) {
     .header {        
         font-size: 5rem;        
     }
 }
 
 @media (min-width: 768px) {
-    /* #skillsSection {
-        height: 90vh;
-    } */
-
     .circle-container {
         width: 80% !important;
     }

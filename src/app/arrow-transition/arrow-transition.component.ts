@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FadeAndMoveInService } from '../fade-and-move-in.service';
+// import { FadeAndMoveInService } from '../fade-and-move-in.service';
 
 @Component({
   selector: 'arrow-transition',

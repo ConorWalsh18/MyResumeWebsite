@@ -83,7 +83,8 @@ svg {
 
 .arrow-transition {    
     top: 100vh;
-    animation: move-arrow 10s ease-in forwards infinite;    
+    animation: move-arrow 10s ease-in forwards infinite;
+    will-change: top, opacity;
 }
 
 .text-container {    

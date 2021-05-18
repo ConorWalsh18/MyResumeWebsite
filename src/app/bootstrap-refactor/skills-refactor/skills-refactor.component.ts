@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FadeAndMoveInService } from 'src/app/fade-and-move-in.service';
+// import { FadeAndMoveInService } from 'src/app/fade-and-move-in.service';
 
 @Component({
   selector: 'skills-refactor',
