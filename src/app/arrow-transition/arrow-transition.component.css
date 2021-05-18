@@ -60,7 +60,8 @@ img {
 
 @keyframes move-arrow {
     0% {
-        top: 100vh;
+        /* top: 100vh; */
+        top: 100%
     }
     5% {
         opacity: 1;
@@ -70,11 +71,13 @@ img {
     }
     70% {
         opacity: 0;        
-        top: 280vh;
+        /* top: 280vh; */
+        top: 280%;
     }
     100% {
         opacity: 0;        
-        top: 280vh;
+        /* top: 280vh; */
+        top: 280%;
     }
 }
 
@@ -85,7 +88,8 @@ svg {
 }
 
 .arrow-transition {    
-    top: 100vh;
+    /* top: 100vh; */
+    top: 100%;
     animation: move-arrow 10s ease-in forwards infinite;
     will-change: top, opacity;
     opacity: 0;
@@ -159,6 +163,11 @@ svg {
         color: beige;
         -webkit-text-stroke: 1.25px;
         -webkit-text-stroke-color: #CC5500;
+    }
+
+    .arrow-transition {    
+        /* top: 120vh; */
+        top: 120%;
     }
 
     @keyframes move-arrow {
