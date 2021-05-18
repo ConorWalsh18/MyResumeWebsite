@@ -8,7 +8,8 @@ import { FadeAndMoveInService } from 'src/app/fade-and-move-in.service';
 })
 export class SkillsRefactorComponent implements OnInit {
 
-  constructor(private fadeAndMoveIn: FadeAndMoveInService) { }
+  // constructor(private fadeAndMoveIn: FadeAndMoveInService) { }
+  constructor() { }
 
   skillsTopText: string = "Hover on an icon";
   skillsBottomText: string = "for more info";
@@ -19,17 +20,17 @@ export class SkillsRefactorComponent implements OnInit {
   ngOnInit(): void {
     this.skillsSection = document.getElementById("skillsSection");
     var elements = this.skillsSection.getElementsByClassName("fade-and-move-in");
-    this.alreadyAnimated = false;    
+    this.alreadyAnimated = false;
 
     window.addEventListener('scroll', () => {
-      if (this.isElementInView(this.skillsSection)) {
-        this.fadeAndMoveIn.start(elements);
-      }
-      else {
-        for (var i = 0; i < elements.length; i++) {
-          elements[i].classList.remove("show")
-        }
-      }      
+      // if (this.isElementInView(this.skillsSection)) {
+      //   this.fadeAndMoveIn.start(elements);
+      // }
+      // else {
+      //   for (var i = 0; i < elements.length; i++) {
+      //     elements[i].classList.remove("show")
+      //   }
+      // }
 
       var container = document.getElementById("container");
       if (this.isElementInView(container) && !this.alreadyAnimated) {

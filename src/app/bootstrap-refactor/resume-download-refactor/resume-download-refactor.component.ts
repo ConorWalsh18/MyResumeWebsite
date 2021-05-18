@@ -8,7 +8,8 @@ import { FadeAndMoveInService } from '../../fade-and-move-in.service';
 })
 export class ResumeDownloadRefactorComponent implements OnInit {
 
-  constructor(private fadeAndMoveIn: FadeAndMoveInService) { }
+  // constructor(private fadeAndMoveIn: FadeAndMoveInService) { }
+  constructor() { }
 
   ngOnInit(): void {
     var resumeSection = document.getElementById("resumeSection");
@@ -17,14 +18,14 @@ export class ResumeDownloadRefactorComponent implements OnInit {
     var hands = resumeSection.getElementsByClassName("hands");
 
     window.addEventListener('scroll', () => {
-      if (!this.isElementInView(resumeTextContainer, true)) {
-          for (var i = 0; i < elements.length; i++) {
-            elements[i].classList.remove("show")
-          }
-      }
-      else {
-        this.fadeAndMoveIn.start(elements);
-      }
+      // if (!this.isElementInView(resumeTextContainer, true)) {
+      //     for (var i = 0; i < elements.length; i++) {
+      //       elements[i].classList.remove("show")
+      //     }
+      // }
+      // else {
+      //   this.fadeAndMoveIn.start(elements);
+      // }
 
       if (window.pageYOffset >= resumeSection.offsetTop) {
         for (var i = 0; i < hands.length; i++) {

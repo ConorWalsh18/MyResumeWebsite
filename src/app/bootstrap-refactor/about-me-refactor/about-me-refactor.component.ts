@@ -8,22 +8,23 @@ import { FadeAndMoveInService } from 'src/app/fade-and-move-in.service';
 })
 export class AboutMeRefactorComponent implements OnInit {
 
-  constructor(private fadeAndMoveIn: FadeAndMoveInService) { }
+  // constructor(private fadeAndMoveIn: FadeAndMoveInService) { }
+  constructor() { }
 
   ngOnInit(): void {
     var aboutMeSection = document.getElementById("aboutMeSection");
     var elements = aboutMeSection.getElementsByClassName("fade-and-move-in");
 
-    window.addEventListener('scroll', () => {
-      if (this.isElementInView(aboutMeSection)) {
-        this.fadeAndMoveIn.start(elements);
-      }
-      else {
-        for (var i = 0; i < elements.length; i++) {
-          elements[i].classList.remove("show")
-        }
-      }      
-    });
+    // window.addEventListener('scroll', () => {
+    //   if (this.isElementInView(aboutMeSection)) {
+    //     this.fadeAndMoveIn.start(elements);
+    //   }
+    //   else {
+    //     for (var i = 0; i < elements.length; i++) {
+    //       elements[i].classList.remove("show")
+    //     }
+    //   }
+    // });
   }
 
   isElementInView(element) {

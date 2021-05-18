@@ -26,6 +26,7 @@ import { HomePageRefactorComponent } from './bootstrap-refactor/home-page-refact
 import { SkillsRefactorComponent } from './bootstrap-refactor/skills-refactor/skills-refactor.component';
 import { NavigationBarRefactorComponent } from './bootstrap-refactor/navigation-bar-refactor/navigation-bar-refactor.component';
 import { PersonalProjectsComponent } from './personal-projects/personal-projects.component';
+import { MainRefactorComponent } from './bootstrap-refactor/main-refactor/main-refactor.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { PersonalProjectsComponent } from './personal-projects/personal-projects
     HomePageRefactorComponent,
     SkillsRefactorComponent,
     NavigationBarRefactorComponent,
-    PersonalProjectsComponent    
+    PersonalProjectsComponent,
+    MainRefactorComponent    
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,8 @@ import { FadeAndMoveInService } from '../fade-and-move-in.service';
 })
 export class ArrowTransitionComponent implements OnInit {
 
-  constructor(private fadeAndMoveIn: FadeAndMoveInService) { }
+  // constructor(private fadeAndMoveIn: FadeAndMoveInService) { }
+  constructor() { }
 
   finalArrow: any;
   showArrowTransition: boolean = true;
@@ -22,13 +23,13 @@ export class ArrowTransitionComponent implements OnInit {
       if (this.isElementInView(arrowSection)) {
         this.showArrowTransition = true;
         this.finalArrow.classList.add("arrow-transition");
-        this.fadeAndMoveIn.start(elements);
+        // this.fadeAndMoveIn.start(elements);
       }
-      else {
-        for (var i = 0; i < elements.length; i++) {
-          elements[i].classList.remove("show")
-        }
-      }
+      // else {
+      //   for (var i = 0; i < elements.length; i++) {
+      //     elements[i].classList.remove("show")
+      //   }
+      // }
     });
 
     this.finalArrow = document.getElementById("finalArrow");

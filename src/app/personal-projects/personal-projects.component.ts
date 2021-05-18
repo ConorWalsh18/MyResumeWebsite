@@ -8,23 +8,25 @@ import { FadeAndMoveInService } from '../fade-and-move-in.service';
 })
 export class PersonalProjectsComponent implements OnInit {
 
-  constructor(private fadeAndMoveIn: FadeAndMoveInService) { }
+  // constructor(private fadeAndMoveIn: FadeAndMoveInService) { }
+  constructor() { }
 
   ngOnInit(): void {
     var projectSection = document.getElementById("projectSection");
     var elements = projectSection.getElementsByClassName("fade-and-move-in");
-    this.fadeAndMoveIn.start(elements);    
+    
+    // this.fadeAndMoveIn.start(elements);
 
-    window.addEventListener('scroll', () => {
-      if (this.isElementInView(projectSection)) {
-        this.fadeAndMoveIn.start(elements);
-      }
-      else {
-        for (var i = 0; i < elements.length; i++) {
-          elements[i].classList.remove("show")
-        }
-      }
-    });
+    // window.addEventListener('scroll', () => {
+    //   if (this.isElementInView(projectSection)) {
+    //     this.fadeAndMoveIn.start(elements);
+    //   }
+    //   else {
+    //     for (var i = 0; i < elements.length; i++) {
+    //       elements[i].classList.remove("show")
+    //     }
+    //   }
+    // });
 
     var cards = document.querySelectorAll(".project-card");
     cards.forEach(function(card) {

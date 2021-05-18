@@ -8,7 +8,8 @@ import { FadeAndMoveInService } from '../../fade-and-move-in.service';
 })
 export class ContactRefactorComponent implements OnInit {
 
-  constructor(private fadeAndMoveIn: FadeAndMoveInService) { }
+  // constructor(private fadeAndMoveIn: FadeAndMoveInService) { }
+  constructor() { }
 
   stopSwinging: boolean = false;
   isScrolling: any;
@@ -32,14 +33,14 @@ export class ContactRefactorComponent implements OnInit {
     }
 
     window.addEventListener('scroll', () => {      
-      if (window.pageYOffset > contactSection.offsetTop + window.innerHeight - 20 || window.pageYOffset < contactSection.offsetTop - window.innerHeight) {
-          for (var i = 0; i < elements.length; i++) {
-            elements[i].classList.remove("show")
-          }
-      }
-      else {
-        this.fadeAndMoveIn.start(elements);
-      }
+      // if (window.pageYOffset > contactSection.offsetTop + window.innerHeight - 20 || window.pageYOffset < contactSection.offsetTop - window.innerHeight) {
+      //     for (var i = 0; i < elements.length; i++) {
+      //       elements[i].classList.remove("show")
+      //     }
+      // }
+      // else {
+      //   this.fadeAndMoveIn.start(elements);
+      // }
 
       //Clear our timeout throughout the scroll
       window.clearTimeout(this.isScrolling);
