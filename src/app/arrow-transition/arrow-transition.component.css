@@ -62,6 +62,9 @@ img {
     0% {
         top: 100vh;
     }
+    5% {
+        opacity: 1;
+    }
     50% {
         opacity: 1;
     }
@@ -85,6 +88,7 @@ svg {
     top: 100vh;
     animation: move-arrow 10s ease-in forwards infinite;
     will-change: top, opacity;
+    opacity: 0;
 }
 
 .text-container {    
@@ -160,6 +164,9 @@ svg {
     @keyframes move-arrow {
         0% {
             top: 120vh;
+        }
+        5% {
+            opacity: 1;
         }
         40% {
             opacity: 1;
