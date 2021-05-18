@@ -161,10 +161,10 @@ svg {
         0% {
             top: 120vh;
         }
-        60% {
+        40% {
             opacity: 1;
         }
-        70% {
+        60% {
             opacity: 0;        
             top: 280vh;
         }
