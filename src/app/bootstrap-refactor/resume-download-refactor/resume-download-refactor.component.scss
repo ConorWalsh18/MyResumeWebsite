@@ -27,8 +27,7 @@ h1 {
     text-transform: uppercase;
     color: #CC5500;
     transform: scaleY(1.5);
-    transform-origin: 0 0;
-    // line-height: 1.5;
+    transform-origin: 0 0;    
 }
 
 h1.resume-header {
@@ -37,10 +36,6 @@ h1.resume-header {
     margin-block: 0px;
     color: beige;
 }
-
-// div > #header-row {
-//     margin-bottom: 1rem !important;
-// }
 
 /*********************/
 /* Blob Button Styling

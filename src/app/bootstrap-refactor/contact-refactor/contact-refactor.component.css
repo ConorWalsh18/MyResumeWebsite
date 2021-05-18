@@ -31,13 +31,13 @@ img {
     animation-direction: reverse;
 }
 
-h1 {
+/* h1 {
     font-size: 4rem;
     font-family: 'Oswald';
     font-weight: 500;
     text-transform: uppercase;
     color: #CC5500;
-}
+} */
 
 p {
     font-family: 'Oswald';    
@@ -85,9 +85,9 @@ p {
         height: 88% !important;
     }
 
-    h1 {
+    /* h1 {
         font-size: 5rem !important;
-    }
+    } */
 
     #icon-container > .fab, #icon-container > .fas {
         font-size: 9rem;

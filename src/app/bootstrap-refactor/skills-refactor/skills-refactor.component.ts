@@ -15,22 +15,24 @@ export class SkillsRefactorComponent implements OnInit {
   skillsBottomText: string = "for more info";
   skillsSection: any;
   showSkillsCircle: boolean = true;
-  alreadyAnimated: any;  
+  alreadyAnimated: any;
+  scrollingUp: boolean = false;
 
   ngOnInit(): void {
     this.skillsSection = document.getElementById("skillsSection");
     var elements = this.skillsSection.getElementsByClassName("fade-and-move-in");
     this.alreadyAnimated = false;
+    var lastScrollTop = 0;
 
     window.addEventListener('scroll', () => {
-      // if (this.isElementInView(this.skillsSection)) {
-      //   this.fadeAndMoveIn.start(elements);
-      // }
-      // else {
-      //   for (var i = 0; i < elements.length; i++) {
-      //     elements[i].classList.remove("show")
-      //   }
-      // }
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      this.scrollingUp = false;
+
+      if (scrollTop < lastScrollTop) {
+        this.scrollingUp = true;
+      }
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 
       var container = document.getElementById("container");
       if (this.isElementInView(container) && !this.alreadyAnimated) {
@@ -100,13 +102,18 @@ export class SkillsRefactorComponent implements OnInit {
   isElementInView(element) {
     var pageTop = $(window).scrollTop();
     var pageBottom = pageTop + $(window).height();
-    var elementTop = $(element).offset().top;
-    var elementBottom = elementTop + $(element).height();
-    var alwaysLoad = element.dataset.always;
+    var elementHeight = $(element).height();
+    var elementTop;
+    var elementBottom;
 
-    if (alwaysLoad) {      
-      return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
-    }    
+    if (this.scrollingUp) {
+      elementTop = $(element).offset().top + (elementHeight / 2);
+    }
+    else {
+      elementTop = $(element).offset().top - (elementHeight / 1.5);
+    }
+
+    elementBottom = elementTop + $(element).height();
     
     return ((pageTop < elementTop) && (pageBottom > elementBottom));    
   }

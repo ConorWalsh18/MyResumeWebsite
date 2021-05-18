@@ -2,7 +2,7 @@ h2, h5 {
     font-family: 'Oswald';
 }
 
-.title {
+/* .title {
     text-shadow: 11px 11px 0 #CC5500;
     font-weight: 700;
     -webkit-text-stroke: 2px;
@@ -10,14 +10,17 @@ h2, h5 {
     margin-block: 0px;
     color: #F5F5DC;
     font-size: 12rem;
-}
+} */
 
-#bottom-title-text {
+/* #bottom-title-text {
+    line-height: 2.75rem;
+} */
+
+.bottom-title-text {
     line-height: 2.75rem;
 }
 
-.sub-header {
-    /* color: #F28700; */
+.sub-header {    
     color: #CC5500;
     font-weight: bold;
     text-transform: uppercase;
@@ -32,8 +35,8 @@ h2, h5 {
 }
 
 @media (max-width: 530px) {
-    .title {
-        font-size: 7.5rem !important;
+    .bottom-title-text {
+        line-height: 1.75rem;
     }
 }
 
@@ -42,7 +45,7 @@ h2, h5 {
         text-align: center;
     }
 
-    .title {
+    /* .title {
         text-shadow: 7px 7px 0 #cc5500;
         font-weight: 700;
         -webkit-text-stroke: 1px;
@@ -50,11 +53,11 @@ h2, h5 {
         margin-block: 0px;
         color: #F5F5DC;
         font-size: 10rem;
-    }
+    } */
 }
 
-@media (min-width: 1000px) {
+/* @media (min-width: 1000px) {
     .title {
         font-size: 15rem;
     }
-}
+} */

@@ -1,5 +1,4 @@
-#skillsSection {
-    margin-top: 8rem !important;
+#skillsSection {    
     margin-bottom: 3rem !important;
     z-index: 10;
     position: relative;
@@ -81,6 +80,10 @@ svg g g#innerGroup:hover {
 
     .header {        
         font-size: 6rem;
+    }
+
+    #title-row {
+        margin-bottom: -1.5rem !important;
     }
 }
 

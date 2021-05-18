@@ -102,3 +102,110 @@ p, em {
 a {
     text-decoration: none;
 }
+
+#resumeSection, #contactSection, #projectSection, #skillsSection, #aboutMeSection {
+    margin-top: 10rem !important
+}
+
+/* .title-box {
+    border-top: 8px solid;
+    border-bottom: 8px solid;
+    padding-left: 45px;
+    padding-right: 45px;
+} */
+
+.title {    
+    font-size: 12rem;
+    font-weight: 700;  
+    -webkit-text-stroke: 2px;    
+    color: #F5F5DC;
+    margin-block: 0px;
+
+    /* Only use this if we're using the title-box class */
+    /* margin-top: -28px; */
+}
+
+#about-me-title {
+    text-shadow: 11px 11px 0 #007fcc;
+    -webkit-text-stroke-color: #007fcc;    
+}
+
+#skills-title {
+    text-shadow: 11px 11px 0 black;
+    -webkit-text-stroke-color: black;
+}
+
+#projects-title {
+    text-shadow: 11px 11px 0 #648939;
+    -webkit-text-stroke-color: #648939;    
+}
+
+#contact-title {
+    text-shadow: 11px 11px 0 #64021B;
+    -webkit-text-stroke-color: #64021B;
+}
+
+#resume-title {
+    text-shadow: 11px 11px 0 #cc5500;
+    -webkit-text-stroke-color: #cc5500;
+}
+
+@media (max-width: 530px) {
+    .title {
+        font-size: 5.5rem !important;
+    }
+
+    #about-me-title {
+        text-shadow: 5px 5px 0 #007fcc !important;
+        font-size: 7.5rem !important;
+    }
+
+    #skills-title {        
+        text-shadow: 5px 5px 0 black !important;
+    }
+
+    #projects-title {        
+        text-shadow: 5px 5px 0 #648939 !important;
+    }
+    
+    #contact-title {        
+        text-shadow: 5px 5px 0 #64021B !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {        
+        font-size: 8rem;
+    }
+
+    #about-me-title {
+        text-shadow: 7px 7px 0 #007fcc;
+        font-size: 10rem;
+    }
+    
+    #skills-title {
+        text-shadow: 7px 7px 0 black;
+    }
+    
+    #projects-title {
+        text-shadow: 7px 7px 0 #648939;        
+    }
+    
+    #contact-title {
+        text-shadow: 7px 7px 0 #64021B;        
+    }
+    
+    #resume-title {
+        text-shadow: 7px 7px 0 #cc5500;        
+    }
+}
+
+@media (min-width: 1000px) {
+    .title {
+        font-size: 12rem;
+    }
+
+    #about-me-title {        
+        font-size: 15rem;
+    }
+}

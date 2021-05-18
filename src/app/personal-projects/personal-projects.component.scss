@@ -42,7 +42,7 @@
 
 .project-card__face--front {  
   &-1 {
-    background: #8bc34a;
+    background: #648939;
   }
 
   &-2 {    
@@ -50,7 +50,7 @@
   }
   
   &-3 {
-    background: rgb(0, 170, 240);
+    background: #007fcc;
   }
 }
 
@@ -80,7 +80,7 @@
 
 .back-header {
   &-1 {    
-    text-decoration: underline #8bc34a;
+    text-decoration: underline #648939;
     text-decoration-thickness: 5px;
     text-underline-offset: 5px;
   }
@@ -102,8 +102,8 @@
   color: white;
   
   &-1 {
-    background-color: #8bc34a;
-    border-color: #8bc34a;
+    background-color: #648939;
+    border-color: #648939;
   }
 
   &-2 {    
@@ -117,16 +117,17 @@
   }
 }
 
-h1 {
-  font-size: 4rem;
-  font-family: 'Oswald';
-  font-weight: 500;
-  text-transform: uppercase;
-  color: #CC5500;
-  text-decoration: underline rgb(255, 210, 41);
-  text-decoration-thickness: 5px;
-  text-underline-offset: 5px;  
-}
+// h1 {
+//   font-size: 4rem;
+//   font-family: 'Oswald';
+//   font-weight: 500;
+//   text-transform: uppercase;
+//   // color: #CC5500;
+//   color: rgb(255, 210, 41);
+//   // text-decoration: underline rgb(255, 210, 41);
+//   // text-decoration-thickness: 5px;
+//   // text-underline-offset: 5px;  
+// }
 
 @media (max-width: 500px) {
   .scene {
@@ -151,10 +152,6 @@ h1 {
 @media (min-width: 992px) {
   #project-card-row {
     flex-direction: row !important;
-  }
-
-  h1 {
-    font-size: 5rem !important;
   }
 }
 
