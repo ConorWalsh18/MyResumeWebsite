@@ -103,8 +103,12 @@ a {
     text-decoration: none;
 }
 
-#resumeSection, #contactSection, #projectSection, #skillsSection, #aboutMeSection {
+#contactSection, #projectSection, #skillsSection {
     margin-top: 10rem !important
+}
+
+#resumeSection {
+    margin-top: 5rem !important;
 }
 
 /* .title-box {
