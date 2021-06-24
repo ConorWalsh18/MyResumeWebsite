@@ -96,6 +96,16 @@ p {
 .card-img-top {
   width: 90%;
   align-self: center;
+  height: 180px;
+  border-radius: 0.5rem;
+}
+
+.play-button.hide, .demo-video.hide {  
+  display: none;
+}
+
+video {
+  background: white;
 }
 
 .back-header {
