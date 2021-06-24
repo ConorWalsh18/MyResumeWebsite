@@ -6,9 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./personal-projects.component.scss']
 })
 export class PersonalProjectsComponent implements OnInit {
-    
-  playVideo: boolean = false;
-
+      
   constructor() { }
 
   ngOnInit(): void {    
@@ -16,11 +14,7 @@ export class PersonalProjectsComponent implements OnInit {
 
     cards.forEach(function(card) {
       card.addEventListener("click", function(event) {        
-        var clickedElement = event.target as HTMLElement;
-
-        console.log(clickedElement);
-        console.log(clickedElement.id);
-        console.log(clickedElement.nodeName);
+        var clickedElement = event.target as HTMLElement;        
 
         if (clickedElement.nodeName != "VIDEO" && clickedElement.nodeName != "A" && clickedElement.id != "play-video") {          
           card.classList.toggle("is-flipped");
