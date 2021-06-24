@@ -21,8 +21,6 @@ export class PersonalProjectsComponent implements OnInit {
         }
         else if (clickedElement.nodeName == "IMG" && clickedElement.id == "play-video") {
           var demoVideo = document.getElementById($(clickedElement).attr("name"));
-          console.log(demoVideo);
-
           clickedElement.classList.add("hide");
           demoVideo.classList.remove("hide");
           demoVideo.getElementsByTagName("video")[0].play();
