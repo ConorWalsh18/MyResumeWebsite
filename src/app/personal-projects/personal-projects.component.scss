@@ -9,7 +9,7 @@
 .project-card {
   //Making this 101% gets rid of the issue where a thin white line shows up on the right side of the card
   width: 101%;
-  height: 100%;
+  height: 104%;
   transition: all 1s;
   transform-style: preserve-3d;
   cursor: pointer;
@@ -63,7 +63,7 @@
 }
 
 .card {
-  height: 100%;
+  height: 104%;
   border: none !important;
   // background: rgb(255, 210, 41);
   background: #CC5500;
@@ -150,6 +150,16 @@ video {
     background-color: #007fcc;
     border-color:  #007fcc;    
   }
+}
+
+.sub-header {
+  width: 100%;
+  height: 100%;
+  border: 3px solid #CC5500;
+  border-radius: 30px;
+  color: #CC5500;
+  padding: 12px;
+  font-weight: 600;
 }
 
 @media (max-width: 500px) {
